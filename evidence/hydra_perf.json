@@ -1,0 +1,67 @@
+{
+  "measured_at": "2026-08-19T07:49:38.810728+00:00",
+  "hydra_url": "http://127.0.0.1:8443",
+  "nodes_written": 10011,
+  "edges_written": 29760,
+  "write_seconds": 5.81,
+  "write_rows_per_second": 5119.2,
+  "engine_write_seconds": 5.62,
+  "edge_cleanup_seconds": 9.37,
+  "edge_cleanup_rows_per_second": 3174.4,
+  "node_cleanup_seconds": null,
+  "orphan_nodes_left": 10011,
+  "orphan_note": "Benchmark vertices are created by UNWIND batches and carry only an id \u2014 no label, no kind, no namespace \u2014 so no product query can reach them once their edges are deleted. Edge deletion runs at roughly 1.6k rows/s; deleting the vertices themselves costs about a second each on this engine, so it is opt-in via --delete-nodes.",
+  "full_scan_note": "An unanchored MATCH ()-[:REL]->() count exceeds the 30 s query timeout once the benchmark subgraph is loaded. Canon never issues one: every product query starts from a vertex id or a namespace predicate. The counts below are namespace-scoped for that reason.",
+  "graph_counts": {
+    "Entity": 20,
+    "ClaimKey": 20,
+    "Proposition": 40,
+    "Assertion": 43,
+    "CanonEvent": 38,
+    "Artifact": 42,
+    "HAS_CLAIM": 20,
+    "HAS_VALUE": 40,
+    "ASSERTS": 43,
+    "IN_ARTIFACT": 43,
+    "SELECTS": 38,
+    "SUPERSEDES": 19
+  },
+  "latency": [
+    {
+      "name": "bench_reverse_traversal",
+      "operation": "Reverse traversal: node <-ASSERTS- fan-in",
+      "runs": 20,
+      "p50_ms": 2.193,
+      "p95_ms": 2.904,
+      "max_ms": 22.11,
+      "result_rows": 41
+    },
+    {
+      "name": "bench_variable_depth_chain",
+      "operation": "Variable-depth traversal: -SUPERSEDES*1..10->",
+      "runs": 20,
+      "p50_ms": 3.325,
+      "p95_ms": 4.488,
+      "max_ms": 4.912,
+      "result_rows": 10
+    },
+    {
+      "name": "bench_two_hop",
+      "operation": "Two-hop neighborhood",
+      "runs": 20,
+      "p50_ms": 14.951,
+      "p95_ms": 17.686,
+      "max_ms": 37.532,
+      "result_rows": 123
+    },
+    {
+      "name": "count_claimkey",
+      "operation": "MATCH (:ClaimKey) count",
+      "runs": 20,
+      "p50_ms": 8.135,
+      "p95_ms": 9.399,
+      "max_ms": 9.416,
+      "result_rows": 1
+    }
+  ]
+}
