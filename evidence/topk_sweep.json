@@ -1,0 +1,29 @@
+{
+  "measured_at": "2026-08-20T09:15:12.283963+00:00",
+  "rows": [
+    {
+      "baseline_current_gold_in_context": 18,
+      "baseline_superseded_in_context": 13,
+      "canon_current_gold_in_context": 20,
+      "canon_superseded_in_context": 1,
+      "questions": 20,
+      "top_k": 5
+    },
+    {
+      "baseline_current_gold_in_context": 18,
+      "baseline_superseded_in_context": 14,
+      "canon_current_gold_in_context": 20,
+      "canon_superseded_in_context": 1,
+      "questions": 20,
+      "top_k": 10
+    },
+    {
+      "baseline_current_gold_in_context": 18,
+      "baseline_superseded_in_context": 15,
+      "canon_current_gold_in_context": 20,
+      "canon_superseded_in_context": 1,
+      "questions": 20,
+      "top_k": 20
+    }
+  ]
+}
