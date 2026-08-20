@@ -246,5 +246,23 @@
       "random_removed_superseded": false,
       "superseded_in_final_context": false
     }
-  ]
+  ],
+  "official": {
+    "harness": "EnterpriseRAG-Bench answer_evaluation (metrics_based_eval, --no-correction)",
+    "judge_model": "claude-sonnet-4-6",
+    "correctness_pct": 70.0,
+    "by_question_type": {
+      "conflicting_info": {
+        "correct": 14,
+        "total": 20
+      },
+      "info_not_found": {
+        "correct": 14,
+        "total": 20
+      }
+    },
+    "empty_judge_reasoning": 0,
+    "questions_scored": 40,
+    "measured_at": "2026-08-20T10:40:49.664758+00:00"
+  }
 }

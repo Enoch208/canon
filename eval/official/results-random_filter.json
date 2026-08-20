@@ -1,0 +1,433 @@
+{
+  "aggregate_stats": {
+    "total_questions": 40,
+    "completed_questions": 40,
+    "skipped_rows": 0,
+    "num_corrected_questions": 0,
+    "average_correctness_pct": 70.0,
+    "average_completeness_pct": 72.1,
+    "combined_correctness_completeness_score": 56.26,
+    "average_recall_pct": 72.5,
+    "average_invalid_extra_docs": 8.6
+  },
+  "question_type_stats": {
+    "conflicting_info": {
+      "count": 20,
+      "average_correctness_pct": 70.0,
+      "average_completeness_pct": 74.2,
+      "combined_correctness_completeness_score": 62.52,
+      "average_recall_pct": 72.5,
+      "average_invalid_extra_docs": 8.6
+    },
+    "info_not_found": {
+      "count": 20,
+      "average_correctness_pct": 70.0,
+      "average_completeness_pct": 70.0,
+      "combined_correctness_completeness_score": 50.0,
+      "average_recall_pct": 0.0,
+      "average_invalid_extra_docs": 0.0
+    }
+  },
+  "questions": [
+    {
+      "question_id": "qst_0411",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer provides no information ('UNKNOWN') about the percentage of interactive burst credits to reserve for priority=high routes, failing to address the query.",
+      "completeness_pct": 40.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0412",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly states ~96% price-normalization correctness at temp=0.0 with strict JSON + canonicalization, compared to the earlier ~89% without canonicalization, matching the gold answer's key facts.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0413",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer directly conflicts with the gold answer by claiming the grace window was changed to 5 business days and approved by an infra manager, whereas the gold answer states cost-ops (Priya Desai) approves termination after the 72h grace window.",
+      "completeness_pct": 37.5,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0414",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the core finding of intermittent driver/kernel launch stalls (not sustained OOM), aligning with the gold answer's conclusion.",
+      "completeness_pct": 60.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0415",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer covers all required enforcement settings from the gold answer: do_sample=false, temperature=0.0, top_k=1, top_p=1.0, num_beams=1 (with the beam search exception), explicit generator, and stable batching order.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0416",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer matches all key figures from the latest projection (60/140/260 QPS and ~150 concurrent chat sessions) and adds minor contextual details without conflicting with the gold answer.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0417",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer describes an ed25519-based signature format with KMS key verification, but does not mention Sigstore/cosign (offline key mode) or GPG, which are the specific tools the gold answer identifies as Redwood's recommendation for signing backup manifests.",
+      "completeness_pct": 33.33,
+      "document_recall_pct": 0.0,
+      "invalid_extra_docs": 10
+    },
+    {
+      "question_id": "qst_0418",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer provides no information about the score ranges or tier thresholds, returning only 'UNKNOWN' instead of addressing the query.",
+      "completeness_pct": 20.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0419",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the primary endpoint and the legacy alias, matching the gold answer's core information.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0420",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer provides no information about the egress cost rate or measurement basis, making it completely misaligned with the gold answer.",
+      "completeness_pct": 42.86,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0421",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies both the current default TTL of 120 seconds and the older default of 180 seconds (3 minutes), matching the gold answer's key information.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0422",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer covers all key points from the gold answer: the super-admin retention override being deprecated, the requirement for an explicit Legal Hold (legal_hold_id) for records beyond retention, the restriction to tenants with Legal Hold enabled, and logging to the immutable audit stream with a ticket reference.",
+      "completeness_pct": 85.71,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0423",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies 12 months, which is the core answer to the query as confirmed by the gold answer.",
+      "completeness_pct": 60.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0424",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies all three current token-based bucket cutoffs matching the gold answer, and also accurately references the earlier smaller bucket values.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0425",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer accurately covers all core aspects from the gold answer: no embedded `signature` blob in v1, the `integrity` field with the three supported values, the `integrity_ref` URI pointing to external signature material, and the contrast with the earlier draft's embedded `signature` field.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0426",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly matches all three updated PRD thresholds from the gold answer: safety sentinel (>0.3% for 5 min), composite quality (>3% for 10 min with cohort-level divert), and business KPI (>4% for 10 min), and even notes the prior KPI threshold consistent with the gold answer's earlier draft mention.",
+      "completeness_pct": 85.71,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0427",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the final po_fingerprint format as a lowercase SHA-256 hex digest of `PO_NUMBER|PO_LINE_UUID` (no whitespace) and the weekly invoice delivery time as Tuesdays by 07:00 PT, aligning with the gold answer's core requirements.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0428",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer provides completely different breakpoints (50M, 200M, 1B tokens) that directly conflict with the gold answer's breakpoints (250k, 2M, 10M monthly tokens).",
+      "completeness_pct": 60.0,
+      "document_recall_pct": 0.0,
+      "invalid_extra_docs": 10
+    },
+    {
+      "question_id": "qst_0429",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer matches the gold answer in all key aspects: tool-signal is automatically enabled when tool calls are present, no per-request enable_tool_signal flag on the public surface, and private deployments can disable via server config.",
+      "completeness_pct": 87.5,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0430",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly captures the core information that BYOK is available for Hosted as an enterprise add-on in select regions subject to feasibility, with fallback to provider-managed keys, which aligns with the gold answer's key points.",
+      "completeness_pct": 71.43,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0481",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' effectively communicates that the information is not available, which aligns with the gold answer's requirement that the query is not answerable, though it lacks explicit mention of why (e.g., not found in documents).",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0482",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' effectively communicates that the information is not available, which aligns with the gold answer's requirement to indicate the query is not answerable, though it lacks any explanation or context.",
+      "completeness_pct": 0.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0483",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' does not explicitly state that the query is not answerable from available documents or provide any caveat/explanation, which is required by the gold answer.",
+      "completeness_pct": 0.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0484",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' implicitly conveys that the information is not available, which aligns with the gold answer's requirement that the response acknowledge the query cannot be fully answered from available documents.",
+      "completeness_pct": 0.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0485",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' effectively communicates that the query cannot be answered, which aligns with the gold answer's requirement to acknowledge that the query is not answerable from available documents.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0486",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' implicitly signals inability to answer the query, which loosely aligns with the gold answer's requirement to acknowledge the query is not fully answerable, though it lacks any explanation or context.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0487",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' does not provide any explanation, acknowledgment, or context about why the query cannot be answered, failing to meet the gold answer's requirement of stating that the query is not fully answerable from available documents.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0488",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' does not adequately communicate that the query is not answerable from available documents, nor does it provide any explanation or caveat; it is too minimal to meet the gold answer's requirement of clearly stating why the query cannot be fully answered.",
+      "completeness_pct": 0.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0489",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' does not explicitly state that the query is not answerable from available documents or provide any caveat explaining why the information cannot be found, which the gold answer requires.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0490",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' effectively conveys that the information is not available, which aligns with the gold answer's requirement to indicate the query is not answerable from available documents.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0491",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' implicitly indicates the information is not available, which aligns with the gold answer's requirement that the response acknowledges the query cannot be fully answered from available documents.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0492",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' effectively communicates that the query cannot be answered, which aligns with the gold answer's requirement to indicate the query is not answerable from available documents.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0493",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' effectively conveys that the information is not available, which aligns with the gold answer's requirement to indicate the query is not fully answerable from available documents.",
+      "completeness_pct": 0.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0494",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' does not explicitly state that the query is not answerable from available documents or provide any caveat/explanation about why the information cannot be found, which the gold answer requires.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0495",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' implicitly acknowledges that the information is not available, which aligns with the gold answer's requirement to indicate the query is not answerable, though it lacks any explanatory context about why.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0496",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' implicitly communicates inability to answer, which loosely aligns with the gold answer's requirement to indicate the query is not answerable, though it lacks any explanation or reference to document limitations.",
+      "completeness_pct": 0.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0497",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' effectively communicates that the information is not available, which aligns with the gold answer's requirement to indicate that the query is not answerable from the available documents.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0498",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' conveys that the information is not available, which aligns with the gold answer's requirement to acknowledge the query cannot be fully answered from available documents.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0499",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' implicitly conveys that the information is not available, which aligns with the gold answer's requirement to indicate the query is not answerable, though it lacks any explanation or context about why.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    },
+    {
+      "question_id": "qst_0500",
+      "corrected": false,
+      "question_type": "info_not_found",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer 'UNKNOWN' does not clearly state that the query is unanswerable from available documents nor provide any caveat or explanation about why the information is not found, as required by the gold answer.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": null,
+      "invalid_extra_docs": null
+    }
+  ]
+}

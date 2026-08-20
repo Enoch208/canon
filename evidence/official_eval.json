@@ -56,6 +56,25 @@
       "invalid_extra_docs": 9.1,
       "label": "Canon, no note",
       "questions_scored": 40
+    },
+    "random_filter": {
+      "by_question_type": {
+        "conflicting_info": {
+          "correct": 14,
+          "total": 20
+        },
+        "info_not_found": {
+          "correct": 14,
+          "total": 20
+        }
+      },
+      "combined_score": 56.26,
+      "completeness_pct": 72.1,
+      "correctness_pct": 70.0,
+      "document_recall_pct": 72.5,
+      "invalid_extra_docs": 8.6,
+      "label": "Random-filter control",
+      "questions_scored": 40
     }
   },
   "harness": "EnterpriseRAG-Bench answer_evaluation (metrics_based_eval, --no-correction)",
