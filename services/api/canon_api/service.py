@@ -403,6 +403,7 @@ def _ask_response(
     documents: list[GroundedDocModel] = []
     for doc in grounding.docs:
         document = store.document(doc.doc_id)
+        span = doc.claims[0].evidence_span if doc.claims else None
         documents.append(
             GroundedDocModel(
                 doc_id=doc.doc_id,
@@ -411,6 +412,7 @@ def _ask_response(
                 disposition=doc.disposition,
                 rank=ranks.get(doc.doc_id),
                 kept=doc.doc_id in kept,
+                evidence_span=span,
             )
         )
     evidence: tuple[EvidenceRow, ...] = ()

@@ -114,6 +114,7 @@ def ground_endpoint(request: AskRequest) -> GroundResponse:
         d.doc_id for d in ask.documents if d.disposition == "superseded_for_current_grounding"
     ]
     spans = {row.doc_id: row.evidence_span for row in ask.evidence}
+    spans.update({d.doc_id: d.evidence_span for d in ask.documents if d.evidence_span})
     final_context = [d.doc_id for d in ask.documents if d.kept] + ask.backfill_doc_ids
     return GroundResponse(
         state=ask.state,

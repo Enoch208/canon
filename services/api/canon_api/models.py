@@ -158,6 +158,7 @@ class GroundedDocModel(BaseModel):
     disposition: DocDisposition
     rank: int | None
     kept: bool
+    evidence_span: str | None = None
 
 
 class AskRequest(BaseModel):

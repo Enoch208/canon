@@ -98,20 +98,31 @@ export function CutClient({
           <ul className="flex flex-col gap-2 pt-4">
             {(response?.documents ?? []).map((doc) => {
               const dropped = doc.disposition === "superseded_for_current_grounding" && mode === "current"
+              const staleSpan = dropped
+                ? (doc.evidence_span ??
+                  response?.evidence.find((row) => row.doc_id === doc.doc_id)?.evidence_span)
+                : null
               return (
                 <li
                   key={doc.doc_id}
-                  className={`flex items-center gap-3 rounded-md border px-4 py-2.5 text-xs font-light ${
+                  className={`flex flex-col gap-1.5 rounded-md border px-4 py-2.5 text-xs font-light ${
                     dropped ? "border-retired/50 bg-retired/[0.05]" : "border-line"
                   }`}
                 >
-                  <span className="w-5 font-mono text-faint">{doc.rank}</span>
-                  <span className={`min-w-0 flex-1 truncate ${dropped ? "text-retired line-through decoration-retired/50" : "text-muted"}`}>
-                    {doc.title || doc.doc_id}
-                  </span>
-                  <span className={`rounded border px-2 py-0.5 font-mono text-[10px] ${DISPOSITION_STYLE[doc.disposition] ?? "border-line text-faint"}`}>
-                    {DISPOSITION_LABEL[doc.disposition] ?? doc.disposition}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <span className="w-5 font-mono text-faint">{doc.rank}</span>
+                    <span className={`min-w-0 flex-1 truncate ${dropped ? "text-retired line-through decoration-retired/50" : "text-muted"}`}>
+                      {doc.title || doc.doc_id}
+                    </span>
+                    <span className={`rounded border px-2 py-0.5 font-mono text-[10px] ${DISPOSITION_STYLE[doc.disposition] ?? "border-line text-faint"}`}>
+                      {DISPOSITION_LABEL[doc.disposition] ?? doc.disposition}
+                    </span>
+                  </div>
+                  {staleSpan ? (
+                    <p className="pl-8 font-mono text-[11px] leading-relaxed text-retired/80">
+                      &ldquo;{staleSpan}&rdquo;
+                    </p>
+                  ) : null}
                 </li>
               )
             })}

@@ -92,6 +92,7 @@ export type GroundedDoc = {
   disposition: string
   rank: number | null
   kept: boolean
+  evidence_span: string | null
 }
 
 export type AskResponse = {
