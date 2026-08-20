@@ -43,6 +43,11 @@ Only the context topology changes.
 
 ## Judge Canon in 90 seconds
 
+**Live console: [canon-bay.vercel.app](https://canon-bay.vercel.app)** — the frontend is on
+Vercel; the API, HydraDB, and the full 511,958-document corpus are served live from the
+development machine, so the site is up whenever that machine is. Everything below also runs
+locally in four commands.
+
 Four numbers, all reproducible from this repository:
 
 | | |
