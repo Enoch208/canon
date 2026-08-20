@@ -1,0 +1,80 @@
+{
+  "dataset": {
+    "documents_indexed": 511958,
+    "repo": "onyx-dot-app/EnterpriseRAG-Bench",
+    "revision": "69916e31c68aa5963c00248fd7f0bc12d04fd235"
+  },
+  "files": {
+    "eval/official/baseline.jsonl": "7f17b3cb567a59d025240404c4097e66a6d80ddf3ae1a4e53aae5042e02ba0bc",
+    "eval/official/canon.jsonl": "92ec5133c7bd3a93f6037b6b15ef4c7a86dcf2918f2684319d332828ad8c5549",
+    "eval/official/canon_filtered.jsonl": "a856330b44d117c4cd1798bc61f97d5344d3640604645bfc735ab5a3864e1ccd",
+    "eval/official/random_filter.jsonl": "2e7085c3a1bb5008c818bdc92b567716980aa1f3e66a5ef545b5340da7372339",
+    "eval/question_ids.json": "c753710f9de34f5b52ab1a8942f3caa20209965ae5c374abbf19645ca22fd3ce",
+    "eval/results/latest.json": "976527fdf06411725f6a8f7800502f2aba3f6806dda88245a0b01e11e87feb63",
+    "eval/results/summary.json": "881c8f821b2c9299f388cf7f2e31c1d21c891fe2c318227d36fb7a4687e62fc5",
+    "evidence/corpus_index.json": "8abafbdefe30f330b0c609bd21a7108342e509cb1799396164bf1d16f6592074",
+    "evidence/entities.json": "0a4abd49aa9b3a2b5a448eecfeebf5f0ae40f1b09898a1bd861593379460a7de",
+    "evidence/graph_stats.json": "256e1bd387b6583d9b71c891f748041293758a96bfdfd124cca149828c85c347",
+    "evidence/hydra_perf.json": "05a01c962b0f4ff27a3d3f6d0eec611d39da5fbf36b1450202a886421be6e2cd",
+    "evidence/official_eval.json": "e9de51d69be5b5fdd9431d1db7405525aec7ff13e3daad4cc47ea26b9e816c08",
+    "evidence/random_control.json": "8c456f2f6d59461827acd50fb08f55ce442c47dbb3f14c6866798565da1c6099",
+    "evidence/seed.json": "a66fd766b670db4601fbf5bb5a96087d4b78d22d43cd03586a0da65422e35910",
+    "evidence/topk_sweep.json": "b2ec84a33274ae8b3b8e558409261c50e0d4654e5b505ef3fbafb9fb93726247",
+    "evidence/verify.json": "3a0aeb484db34fe6ec17b2dd85cef23be5e8ef26cec77b5f84aac796933fa6fe",
+    "research/conflict_inventory.json": "25079e0793ebc687d08aa755f6905237970f903fb17887e7c39c43bc223e9135"
+  },
+  "generated_at": "2026-08-20T09:20:30.265410+00:00",
+  "git_commit": "60a78586e6c501593d1eb7af1454e9343fc30cf3",
+  "hydradb_image": "ghcr.io/hydra-db/hydradb@sha256:db78309a233be54662db29744047e985a39b51c45a270d1a1f47c31a62cdb709",
+  "models": {
+    "answer": "claude-sonnet-5",
+    "judge_three_pass": "claude-sonnet-5",
+    "official_harness_judge": "claude-sonnet-4-6"
+  },
+  "question_sets": {
+    "conflicting_info": [
+      "qst_0411",
+      "qst_0412",
+      "qst_0413",
+      "qst_0414",
+      "qst_0415",
+      "qst_0416",
+      "qst_0417",
+      "qst_0418",
+      "qst_0419",
+      "qst_0420",
+      "qst_0421",
+      "qst_0422",
+      "qst_0423",
+      "qst_0424",
+      "qst_0425",
+      "qst_0426",
+      "qst_0427",
+      "qst_0428",
+      "qst_0429",
+      "qst_0430"
+    ],
+    "info_not_found": [
+      "qst_0481",
+      "qst_0482",
+      "qst_0483",
+      "qst_0484",
+      "qst_0485",
+      "qst_0486",
+      "qst_0487",
+      "qst_0488",
+      "qst_0489",
+      "qst_0490",
+      "qst_0491",
+      "qst_0492",
+      "qst_0493",
+      "qst_0494",
+      "qst_0495",
+      "qst_0496",
+      "qst_0497",
+      "qst_0498",
+      "qst_0499",
+      "qst_0500"
+    ]
+  }
+}
