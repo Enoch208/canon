@@ -1,0 +1,402 @@
+{
+  "started_at": "2026-08-19T07:52:20.520879+00:00",
+  "hydra_url": "http://127.0.0.1:8443",
+  "passed": true,
+  "checks": [
+    {
+      "name": "HydraDB write/read",
+      "passed": true,
+      "detail": "wrote 24 nodes, read back 8 assertions",
+      "elapsed_ms": 1212.3
+    },
+    {
+      "name": "Persistence",
+      "passed": true,
+      "detail": "after restart: 8 assertions still readable",
+      "elapsed_ms": 4576.1
+    },
+    {
+      "name": "Supersession",
+      "passed": true,
+      "detail": "SUPERSEDES chain $0.08 -> $0.06 via EXPLICIT_SUPERSESSION",
+      "elapsed_ms": 147.7
+    },
+    {
+      "name": "Majority adversarial",
+      "passed": true,
+      "detail": "8 assertions of $0.08 vs 1 explicit update -> CURRENT=$0.06",
+      "elapsed_ms": 185.8
+    },
+    {
+      "name": "Residue traversal",
+      "passed": true,
+      "detail": "reverse traversal found 1 residue row(s); proof rows=1",
+      "elapsed_ms": 144.2
+    },
+    {
+      "name": "UNKNOWN",
+      "passed": true,
+      "detail": "VerifyCo Atlas.never_asserted -> UNKNOWN",
+      "elapsed_ms": 4.4
+    },
+    {
+      "name": "CONTESTED",
+      "passed": true,
+      "detail": "two same-date T3 values -> CONTESTED",
+      "elapsed_ms": 308.1
+    }
+  ],
+  "graph_writes": 34,
+  "query_cards": [
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH ClaimKey by key",
+      "query_name": "claim_key_by_key",
+      "cypher": "MATCH (c:ClaimKey {key: $key}) RETURN c.id AS id, c.entity_id AS entity_id, c.key AS key, c.predicate AS predicate, c.question_id AS question_id",
+      "parameters": {
+        "key": "VerifyCo Nova.price_per_1k_tokens"
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 3.899,
+      "query_id": "canon-d6d5feab7005-56-claim_key_by_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Reverse traversal: Proposition <-ASSERTS- Assertion -IN_ARTIFACT-> Artifact",
+      "query_name": "residue_reverse_traversal",
+      "cypher": "MATCH (p:Proposition {id: $proposition_id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.id AS id, a.doc_id AS doc_id, a.source_type AS source_type, a.evidence_span AS evidence_span, a.stance AS stance, a.extraction_method AS extraction_method, a.structured AS structured, a.discovery AS discovery, a.asserted_at AS asserted_at, a.source_field AS source_field, a.residue_class AS residue_class, a.proposition_id AS proposition_id, a.artifact_id AS artifact_id, d.title AS title ORDER BY a.doc_id",
+      "parameters": {
+        "proposition_id": 1434297174578693093
+      },
+      "result_count": 8,
+      "client_round_trip_ms": 16.82,
+      "query_id": "canon-d6d5feab7005-57-residue_reverse_traversal",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH ClaimKey by key",
+      "query_name": "claim_key_by_key",
+      "cypher": "MATCH (c:ClaimKey {key: $key}) RETURN c.id AS id, c.entity_id AS entity_id, c.key AS key, c.predicate AS predicate, c.question_id AS question_id",
+      "parameters": {
+        "key": "VerifyCo Nova.price_per_1k_tokens"
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 4.399,
+      "query_id": "canon-d6d5feab7005-61-claim_key_by_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Reverse traversal: Proposition <-ASSERTS- Assertion -IN_ARTIFACT-> Artifact",
+      "query_name": "residue_reverse_traversal",
+      "cypher": "MATCH (p:Proposition {id: $proposition_id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.id AS id, a.doc_id AS doc_id, a.source_type AS source_type, a.evidence_span AS evidence_span, a.stance AS stance, a.extraction_method AS extraction_method, a.structured AS structured, a.discovery AS discovery, a.asserted_at AS asserted_at, a.source_field AS source_field, a.residue_class AS residue_class, a.proposition_id AS proposition_id, a.artifact_id AS artifact_id, d.title AS title ORDER BY a.doc_id",
+      "parameters": {
+        "proposition_id": 1434297174578693093
+      },
+      "result_count": 8,
+      "client_round_trip_ms": 24.25,
+      "query_id": "canon-d6d5feab7005-62-residue_reverse_traversal",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH ClaimKey by key",
+      "query_name": "claim_key_by_key",
+      "cypher": "MATCH (c:ClaimKey {key: $key}) RETURN c.id AS id, c.entity_id AS entity_id, c.key AS key, c.predicate AS predicate, c.question_id AS question_id",
+      "parameters": {
+        "key": "VerifyCo Nova.price_per_1k_tokens"
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 3.048,
+      "query_id": "canon-d6d5feab7005-63-claim_key_by_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH Entity -HAS_CLAIM-> ClaimKey",
+      "query_name": "entity_of_claim_key",
+      "cypher": "MATCH (e:Entity)-[:HAS_CLAIM]->(c:ClaimKey {id: $claim_key_id}) RETURN e.id AS id, e.name AS name, e.entity_type AS entity_type",
+      "parameters": {
+        "claim_key_id": 1360359760586808239
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 2.58,
+      "query_id": "canon-d6d5feab7005-64-entity_of_claim_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Claim neighborhood: ClaimKey -HAS_VALUE-> Proposition",
+      "query_name": "claim_neighborhood",
+      "cypher": "MATCH (c:ClaimKey {id: $claim_key_id})-[:HAS_VALUE]->(p:Proposition) RETURN p.id AS id, p.value AS value, p.status AS status ORDER BY p.id",
+      "parameters": {
+        "claim_key_id": 1360359760586808239
+      },
+      "result_count": 2,
+      "client_round_trip_ms": 3.021,
+      "query_id": "canon-d6d5feab7005-65-claim_neighborhood",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Canon events: ClaimKey -HAS_VALUE-> Proposition <-SELECTS- CanonEvent",
+      "query_name": "claim_events",
+      "cypher": "MATCH (c:ClaimKey {id: $claim_key_id})-[:HAS_VALUE]->(p:Proposition)<-[:SELECTS]-(ev:CanonEvent) OPTIONAL MATCH (newer:CanonEvent)-[:SUPERSEDES]->(ev) RETURN ev.id AS id, ev.claim_key_id AS claim_key_id, ev.selects_proposition_id AS selects_proposition_id, ev.transition AS transition, ev.temporal_quality AS temporal_quality, ev.evidence_doc_id AS evidence_doc_id, ev.occurred_at AS occurred_at, p.id AS proposition_id, newer.id AS superseded_by",
+      "parameters": {
+        "claim_key_id": 1360359760586808239
+      },
+      "result_count": 2,
+      "client_round_trip_ms": 5.537,
+      "query_id": "canon-d6d5feab7005-66-claim_events",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Supersession lineage: CanonEvent -SUPERSEDES*1..10-> CanonEvent -SELECTS-> Proposition",
+      "query_name": "supersession_chain",
+      "cypher": "MATCH (ev:CanonEvent {id: $event_id})-[:SUPERSEDES*1..10]->(old:CanonEvent)-[:SELECTS]->(p:Proposition) RETURN old.id AS id, old.transition AS transition, old.temporal_quality AS temporal_quality, old.evidence_doc_id AS evidence_doc_id, old.occurred_at AS occurred_at, p.id AS proposition_id, p.value AS value",
+      "parameters": {
+        "event_id": 1524434316523339498
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 120.017,
+      "query_id": "canon-d6d5feab7005-67-supersession_chain",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Reverse traversal: Proposition <-ASSERTS- Assertion -IN_ARTIFACT-> Artifact",
+      "query_name": "residue_reverse_traversal",
+      "cypher": "MATCH (p:Proposition {id: $proposition_id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.id AS id, a.doc_id AS doc_id, a.source_type AS source_type, a.evidence_span AS evidence_span, a.stance AS stance, a.extraction_method AS extraction_method, a.structured AS structured, a.discovery AS discovery, a.asserted_at AS asserted_at, a.source_field AS source_field, a.residue_class AS residue_class, a.proposition_id AS proposition_id, a.artifact_id AS artifact_id, d.title AS title ORDER BY a.doc_id",
+      "parameters": {
+        "proposition_id": 1436220103232616527
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 3.866,
+      "query_id": "canon-d6d5feab7005-68-residue_reverse_traversal",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Reverse traversal: Proposition <-ASSERTS- Assertion -IN_ARTIFACT-> Artifact",
+      "query_name": "residue_reverse_traversal",
+      "cypher": "MATCH (p:Proposition {id: $proposition_id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.id AS id, a.doc_id AS doc_id, a.source_type AS source_type, a.evidence_span AS evidence_span, a.stance AS stance, a.extraction_method AS extraction_method, a.structured AS structured, a.discovery AS discovery, a.asserted_at AS asserted_at, a.source_field AS source_field, a.residue_class AS residue_class, a.proposition_id AS proposition_id, a.artifact_id AS artifact_id, d.title AS title ORDER BY a.doc_id",
+      "parameters": {
+        "proposition_id": 1434297174578693093
+      },
+      "result_count": 8,
+      "client_round_trip_ms": 8.782,
+      "query_id": "canon-d6d5feab7005-69-residue_reverse_traversal",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH ClaimKey by key",
+      "query_name": "claim_key_by_key",
+      "cypher": "MATCH (c:ClaimKey {key: $key}) RETURN c.id AS id, c.entity_id AS entity_id, c.key AS key, c.predicate AS predicate, c.question_id AS question_id",
+      "parameters": {
+        "key": "VerifyCo Nova.price_per_1k_tokens"
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 2.245,
+      "query_id": "canon-d6d5feab7005-70-claim_key_by_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH Entity -HAS_CLAIM-> ClaimKey",
+      "query_name": "entity_of_claim_key",
+      "cypher": "MATCH (e:Entity)-[:HAS_CLAIM]->(c:ClaimKey {id: $claim_key_id}) RETURN e.id AS id, e.name AS name, e.entity_type AS entity_type",
+      "parameters": {
+        "claim_key_id": 1360359760586808239
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 1.583,
+      "query_id": "canon-d6d5feab7005-71-entity_of_claim_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Claim neighborhood: ClaimKey -HAS_VALUE-> Proposition",
+      "query_name": "claim_neighborhood",
+      "cypher": "MATCH (c:ClaimKey {id: $claim_key_id})-[:HAS_VALUE]->(p:Proposition) RETURN p.id AS id, p.value AS value, p.status AS status ORDER BY p.id",
+      "parameters": {
+        "claim_key_id": 1360359760586808239
+      },
+      "result_count": 2,
+      "client_round_trip_ms": 1.856,
+      "query_id": "canon-d6d5feab7005-72-claim_neighborhood",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Canon events: ClaimKey -HAS_VALUE-> Proposition <-SELECTS- CanonEvent",
+      "query_name": "claim_events",
+      "cypher": "MATCH (c:ClaimKey {id: $claim_key_id})-[:HAS_VALUE]->(p:Proposition)<-[:SELECTS]-(ev:CanonEvent) OPTIONAL MATCH (newer:CanonEvent)-[:SUPERSEDES]->(ev) RETURN ev.id AS id, ev.claim_key_id AS claim_key_id, ev.selects_proposition_id AS selects_proposition_id, ev.transition AS transition, ev.temporal_quality AS temporal_quality, ev.evidence_doc_id AS evidence_doc_id, ev.occurred_at AS occurred_at, p.id AS proposition_id, newer.id AS superseded_by",
+      "parameters": {
+        "claim_key_id": 1360359760586808239
+      },
+      "result_count": 2,
+      "client_round_trip_ms": 3.982,
+      "query_id": "canon-d6d5feab7005-73-claim_events",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Supersession lineage: CanonEvent -SUPERSEDES*1..10-> CanonEvent -SELECTS-> Proposition",
+      "query_name": "supersession_chain",
+      "cypher": "MATCH (ev:CanonEvent {id: $event_id})-[:SUPERSEDES*1..10]->(old:CanonEvent)-[:SELECTS]->(p:Proposition) RETURN old.id AS id, old.transition AS transition, old.temporal_quality AS temporal_quality, old.evidence_doc_id AS evidence_doc_id, old.occurred_at AS occurred_at, p.id AS proposition_id, p.value AS value",
+      "parameters": {
+        "event_id": 1524434316523339498
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 155.188,
+      "query_id": "canon-d6d5feab7005-74-supersession_chain",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Reverse traversal: Proposition <-ASSERTS- Assertion -IN_ARTIFACT-> Artifact",
+      "query_name": "residue_reverse_traversal",
+      "cypher": "MATCH (p:Proposition {id: $proposition_id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.id AS id, a.doc_id AS doc_id, a.source_type AS source_type, a.evidence_span AS evidence_span, a.stance AS stance, a.extraction_method AS extraction_method, a.structured AS structured, a.discovery AS discovery, a.asserted_at AS asserted_at, a.source_field AS source_field, a.residue_class AS residue_class, a.proposition_id AS proposition_id, a.artifact_id AS artifact_id, d.title AS title ORDER BY a.doc_id",
+      "parameters": {
+        "proposition_id": 1436220103232616527
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 5.301,
+      "query_id": "canon-d6d5feab7005-75-residue_reverse_traversal",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Reverse traversal: Proposition <-ASSERTS- Assertion -IN_ARTIFACT-> Artifact",
+      "query_name": "residue_reverse_traversal",
+      "cypher": "MATCH (p:Proposition {id: $proposition_id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.id AS id, a.doc_id AS doc_id, a.source_type AS source_type, a.evidence_span AS evidence_span, a.stance AS stance, a.extraction_method AS extraction_method, a.structured AS structured, a.discovery AS discovery, a.asserted_at AS asserted_at, a.source_field AS source_field, a.residue_class AS residue_class, a.proposition_id AS proposition_id, a.artifact_id AS artifact_id, d.title AS title ORDER BY a.doc_id",
+      "parameters": {
+        "proposition_id": 1434297174578693093
+      },
+      "result_count": 8,
+      "client_round_trip_ms": 14.882,
+      "query_id": "canon-d6d5feab7005-76-residue_reverse_traversal",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Reverse traversal: Proposition <-ASSERTS- Assertion -IN_ARTIFACT-> Artifact",
+      "query_name": "residue_reverse_traversal",
+      "cypher": "MATCH (p:Proposition {id: $proposition_id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.id AS id, a.doc_id AS doc_id, a.source_type AS source_type, a.evidence_span AS evidence_span, a.stance AS stance, a.extraction_method AS extraction_method, a.structured AS structured, a.discovery AS discovery, a.asserted_at AS asserted_at, a.source_field AS source_field, a.residue_class AS residue_class, a.proposition_id AS proposition_id, a.artifact_id AS artifact_id, d.title AS title ORDER BY a.doc_id",
+      "parameters": {
+        "proposition_id": 1434297174578693093
+      },
+      "result_count": 9,
+      "client_round_trip_ms": 23.581,
+      "query_id": "canon-d6d5feab7005-81-residue_reverse_traversal",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Proof traversal: Assertion -ASSERTS-> retired Proposition <-SELECTS- CanonEvent <-SUPERSEDES- CanonEvent -SELECTS-> current Proposition",
+      "query_name": "proof_path",
+      "cypher": "MATCH (a:Assertion {id: $assertion_id})-[:ASSERTS]->(retired:Proposition)<-[:SELECTS]-(old:CanonEvent)<-[:SUPERSEDES]-(new:CanonEvent)-[:SELECTS]->(current:Proposition) RETURN retired.id AS retired_id, retired.value AS retired_value, old.id AS old_event_id, new.id AS new_event_id, new.transition AS transition, new.temporal_quality AS temporal_quality, new.evidence_doc_id AS evidence_doc_id, current.id AS current_id, current.value AS current_value",
+      "parameters": {
+        "assertion_id": 1489888345474507835
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 10.832,
+      "query_id": "canon-d6d5feab7005-82-proof_path",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH ClaimKey by key",
+      "query_name": "claim_key_by_key",
+      "cypher": "MATCH (c:ClaimKey {key: $key}) RETURN c.id AS id, c.entity_id AS entity_id, c.key AS key, c.predicate AS predicate, c.question_id AS question_id",
+      "parameters": {
+        "key": "VerifyCo Atlas.never_asserted"
+      },
+      "result_count": 0,
+      "client_round_trip_ms": 4.266,
+      "query_id": "canon-d6d5feab7005-83-claim_key_by_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH ClaimKey by key",
+      "query_name": "claim_key_by_key",
+      "cypher": "MATCH (c:ClaimKey {key: $key}) RETURN c.id AS id, c.entity_id AS entity_id, c.key AS key, c.predicate AS predicate, c.question_id AS question_id",
+      "parameters": {
+        "key": "VerifyCo Atlas.launch_date"
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 3.197,
+      "query_id": "canon-d6d5feab7005-99-claim_key_by_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "MATCH Entity -HAS_CLAIM-> ClaimKey",
+      "query_name": "entity_of_claim_key",
+      "cypher": "MATCH (e:Entity)-[:HAS_CLAIM]->(c:ClaimKey {id: $claim_key_id}) RETURN e.id AS id, e.name AS name, e.entity_type AS entity_type",
+      "parameters": {
+        "claim_key_id": 1351226583513192301
+      },
+      "result_count": 1,
+      "client_round_trip_ms": 3.016,
+      "query_id": "canon-d6d5feab7005-100-entity_of_claim_key",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Claim neighborhood: ClaimKey -HAS_VALUE-> Proposition",
+      "query_name": "claim_neighborhood",
+      "cypher": "MATCH (c:ClaimKey {id: $claim_key_id})-[:HAS_VALUE]->(p:Proposition) RETURN p.id AS id, p.value AS value, p.status AS status ORDER BY p.id",
+      "parameters": {
+        "claim_key_id": 1351226583513192301
+      },
+      "result_count": 2,
+      "client_round_trip_ms": 3.278,
+      "query_id": "canon-d6d5feab7005-101-claim_neighborhood",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    },
+    {
+      "engine": "HydraDB OSS",
+      "operation": "Canon events: ClaimKey -HAS_VALUE-> Proposition <-SELECTS- CanonEvent",
+      "query_name": "claim_events",
+      "cypher": "MATCH (c:ClaimKey {id: $claim_key_id})-[:HAS_VALUE]->(p:Proposition)<-[:SELECTS]-(ev:CanonEvent) OPTIONAL MATCH (newer:CanonEvent)-[:SUPERSEDES]->(ev) RETURN ev.id AS id, ev.claim_key_id AS claim_key_id, ev.selects_proposition_id AS selects_proposition_id, ev.transition AS transition, ev.temporal_quality AS temporal_quality, ev.evidence_doc_id AS evidence_doc_id, ev.occurred_at AS occurred_at, p.id AS proposition_id, newer.id AS superseded_by",
+      "parameters": {
+        "claim_key_id": 1351226583513192301
+      },
+      "result_count": 0,
+      "client_round_trip_ms": 3.592,
+      "query_id": "canon-d6d5feab7005-102-claim_events",
+      "engine_rows_duration_us": null,
+      "engine_ops_observed": null
+    }
+  ]
+}
