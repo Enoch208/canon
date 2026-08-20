@@ -110,7 +110,7 @@ export default async function ResultsPage() {
               <thead>
                 <tr className="border-b border-line text-[10px] tracking-[0.16em] text-faint uppercase">
                   <th className="pb-3 text-left font-light">Metric</th>
-                  {["baseline", "canon_filtered", "canon"].map((arm) => (
+                  {["baseline", "random_filter", "canon_filtered", "canon"].map((arm) => (
                     <th key={arm} className="pb-3 text-right font-light">
                       {official.arms[arm]?.label ?? arm}
                     </th>
@@ -124,7 +124,7 @@ export default async function ResultsPage() {
                   ["Combined (corr x comp)", "combined_score", "high"],
                   ["Document recall", "document_recall_pct", "low"],
                 ].map(([label, key, better]) => {
-                  const values = ["baseline", "canon_filtered", "canon"].map(
+                  const values = ["baseline", "random_filter", "canon_filtered", "canon"].map(
                     (arm) => (official.arms[arm] as unknown as Record<string, number>)[key as string],
                   )
                   const best = better === "high" ? Math.max(...values) : Math.max(...values)

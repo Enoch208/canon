@@ -277,12 +277,12 @@ Scored by the benchmark's own evaluator
 ([`metrics_based_eval`](https://github.com/onyx-dot-app/EnterpriseRAG-Bench), `--no-correction`,
 judge `claude-sonnet-4-6`) — their harness, their judge, their gold answers:
 
-| Metric | baseline | canon_filtered *(no note)* | canon |
-| --- | --- | --- | --- |
-| **Correctness** | 70.0% | **82.5%** | 77.5% |
-| Completeness | 69.8% | 69.9% | **77.5%** |
-| Combined (corr × comp) | 56.84 | **65.82** | 59.44 |
-| Document recall | 80.0% | 52.5% | 52.5% |
+| Metric | baseline | random filter | canon_filtered *(no note)* | canon |
+| --- | --- | --- | --- | --- |
+| **Correctness** | 70.0% | 70.0% | **82.5%** | 77.5% |
+| Completeness | 69.8% | 72.1% | 69.9% | **77.5%** |
+| Combined (corr × comp) | 56.84 | 56.26 | **65.82** | 59.44 |
+| Document recall | 80.0% | 72.5% | 52.5% | 52.5% |
 
 **The middle column carries no claim-graph note** — nothing tells the model which value is current —
 and it still moves correctness from 70.0% to 82.5%. Context topology alone does the work. Document
@@ -314,8 +314,10 @@ Two cheap attacks on our own result, both run:
 documents Canon removes per question — chosen uniformly at random (seeded per question) — and
 backfills from the same ranking. Random removal hit the superseded document in only **1 of 20**
 conflicts, leaving it in context **13/20** versus Canon's **1/20** (`evidence/random_control.json`).
-Filtering as such is not the mechanism; *knowing which document to cut* is, and that knowledge
-lives in the graph.
+On the official scorer the random arm lands at **70.0% — exactly the baseline** (0 judge failures,
+`eval/official/results-random_filter.json`). Cutting the same number of documents buys nothing;
+the entire +12.5 points comes from cutting the *right* one, and knowing which one is right is what
+the graph is for.
 
 **The effect is stable across retrieval depth.** Sweeping `top_k` (`evidence/topk_sweep.json`):
 
