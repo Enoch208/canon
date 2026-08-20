@@ -1,0 +1,43 @@
+[project]
+name = "canon"
+version = "0.1.0"
+description = "Temporal truth integrity for enterprise AI on HydraDB"
+requires-python = ">=3.12"
+dependencies = [
+    "canon-graph",
+    "canon-retrieval",
+    "canon-extraction",
+    "canon-evaluation",
+    "canon-api",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.12",
+]
+
+[tool.uv.workspace]
+members = ["packages/*", "services/api"]
+
+[tool.uv.sources]
+canon-graph = { workspace = true }
+canon-retrieval = { workspace = true }
+canon-extraction = { workspace = true }
+canon-evaluation = { workspace = true }
+canon-api = { workspace = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "N"]
+
+[tool.pytest.ini_options]
+testpaths = ["packages", "services"]
+markers = ["hydra: requires a running HydraDB OSS instance"]
+addopts = "-q"
+
+[tool.ruff.lint.isort]
+known-first-party = ["canon_graph", "canon_retrieval", "canon_extraction", "canon_evaluation", "canon_api"]
