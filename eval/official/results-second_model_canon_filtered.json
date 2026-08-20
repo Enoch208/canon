@@ -1,0 +1,225 @@
+{
+  "aggregate_stats": {
+    "total_questions": 20,
+    "completed_questions": 20,
+    "skipped_rows": 0,
+    "num_corrected_questions": 0,
+    "average_correctness_pct": 80.0,
+    "average_completeness_pct": 76.14,
+    "combined_correctness_completeness_score": 67.99,
+    "average_recall_pct": 52.5,
+    "average_invalid_extra_docs": 9.0
+  },
+  "question_type_stats": {
+    "conflicting_info": {
+      "count": 20,
+      "average_correctness_pct": 80.0,
+      "average_completeness_pct": 76.14,
+      "combined_correctness_completeness_score": 67.99,
+      "average_recall_pct": 52.5,
+      "average_invalid_extra_docs": 9.0
+    }
+  },
+  "questions": [
+    {
+      "question_id": "qst_0411",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies 30% as the reserved percentage for priority=high routes on dp-132-usw, acknowledges the earlier 20% suggestion, and adds relevant context about the application date without conflicting with the gold answer.",
+      "completeness_pct": 80.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0412",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the ~96% price-normalization correctness at temp=0.0 with strict JSON + canonicalization and the earlier ~89% figure without canonicalization, matching the gold answer exactly.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0413",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer introduces infra manager approval as a required step in the process and claims the grace window was changed to 5 business days, both of which conflict with the gold answer, which explicitly states cost-ops approval is sufficient and no infra-manager approval is recorded in the ticket.",
+      "completeness_pct": 50.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0414",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the degraded GPU node issue as intermittent driver/kernel launch stalls (not OOM), matches the telemetry review date (2026-09-01), and aligns fully with the gold answer's core conclusion.",
+      "completeness_pct": 80.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0415",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer includes all required decoding settings from the gold answer (do_sample=false, temperature=0.0, top_k=1, top_p=1.0, num_beams=1 with the beam search exception, explicit generator, and stable batching order) without any conflicting information.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0416",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly matches the latest baseline (60 QPS), growth (140 QPS), peak (260 QPS), and concurrent chat sessions (~150) from the gold answer's most recent projection.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0417",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies Sigstore/cosign (offline key mode) as the recommendation as of Private Toolkit v1.8+, with GPG signatures supported during migration, aligning with the gold answer while adding additional context.",
+      "completeness_pct": 83.33,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0418",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer fails to provide any of the required numerical thresholds for either v2 or previous versions, directly conflicting with the gold answer which contains specific score ranges for all tiers.",
+      "completeness_pct": 20.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0419",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the primary endpoint POST /v1/capacity/migrations/start and mentions the legacy alias POST /v1/migration/start, fully aligning with the gold answer.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0420",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer claims the information is unknown and unavailable, while the gold answer provides specific details including the $0.085/GiB rate and GiB-based billing measurement basis, making it fundamentally misaligned.",
+      "completeness_pct": 42.86,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0421",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the default TTL as 120 seconds, matching the gold answer's primary information, though it omits the historical 180-second default which is supplementary context not directly asked by the query.",
+      "completeness_pct": 83.33,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0422",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies that the super-admin retention override is deprecated, that retrieval beyond retention requires an explicit Legal Hold via legal_hold_id, that this is only for tenants with Legal Hold enabled, and that usage is logged to the immutable audit stream with a ticket reference, all matching the gold answer.",
+      "completeness_pct": 85.71,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0423",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies 12 months, notes the superseded 18-month suggestion, and mentions the condition for expanding the window, fully aligning with the gold answer.",
+      "completeness_pct": 80.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0424",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies all three current prompt_len_bucket cutoffs matching the gold answer exactly, and the additional context provided does not conflict with the gold answer.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0425",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the `integrity` field with the three supported values, the `integrity_ref` URI pointer, and the key design change away from an embedded `signature` field, all consistent with the gold answer.",
+      "completeness_pct": 87.5,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0426",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies all three updated thresholds matching the gold answer: safety sentinel >0.3% for 5 minutes, composite quality >3% for 10 minutes with cohort-level divert, and business KPI >4% for 10 minutes, and even references the earlier draft values consistently.",
+      "completeness_pct": 85.71,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0427",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies both the SHA-256 lowercase hex digest of `PO_NUMBER|PO_LINE_UUID` as the po_fingerprint format and Tuesday 07:00 PT as the weekly invoice delivery time, matching the gold answer's final requirements.",
+      "completeness_pct": 71.43,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0428",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the updated breakpoints (250k, 2M, 10M) and acknowledges the outdated ones (100k/1M/5M), fully aligning with the gold answer.",
+      "completeness_pct": 80.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0429",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer provides no information ('UNKNOWN') and completely fails to address the query, whereas the gold answer gives specific details about tool-signal behavior.",
+      "completeness_pct": 50.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0430",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly states that Hosted uses provider-managed keys by default and that customer-managed KMS (BYOK) is available for enterprise tenants in select regions as an add-on subject to feasibility review, aligning with the core information in the gold answer.",
+      "completeness_pct": 42.86,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    }
+  ]
+}

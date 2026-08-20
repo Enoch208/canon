@@ -1,0 +1,225 @@
+{
+  "aggregate_stats": {
+    "total_questions": 20,
+    "completed_questions": 20,
+    "skipped_rows": 0,
+    "num_corrected_questions": 0,
+    "average_correctness_pct": 75.0,
+    "average_completeness_pct": 78.57,
+    "combined_correctness_completeness_score": 66.8,
+    "average_recall_pct": 80.0,
+    "average_invalid_extra_docs": 8.45
+  },
+  "question_type_stats": {
+    "conflicting_info": {
+      "count": 20,
+      "average_correctness_pct": 75.0,
+      "average_completeness_pct": 78.57,
+      "combined_correctness_completeness_score": 66.8,
+      "average_recall_pct": 80.0,
+      "average_invalid_extra_docs": 8.45
+    }
+  },
+  "questions": [
+    {
+      "question_id": "qst_0411",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies 30% as the reservation target and mentions the previous 20% suggestion, fully aligning with the gold answer.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0412",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies ~96% price-normalization correctness at temp=0.0 with strict JSON + canonicalization, compared to the earlier ~89% figure, matching the gold answer's core information.",
+      "completeness_pct": 80.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0413",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer directly conflicts with the gold answer by claiming infra manager approval is required for termination, whereas the gold answer states cost-ops (Priya Desai) approval is sufficient and no infra-manager approval is recorded.",
+      "completeness_pct": 62.5,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0414",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies that the degraded GPU node experienced intermittent driver/kernel launch stalls (not OOM), matches the correction date of 2026-09-01, and aligns with all core aspects of the gold answer.",
+      "completeness_pct": 80.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0415",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer covers all the required decoding settings from the gold answer (do_sample=false, temperature=0.0, top_k=1, top_p=1.0, num_beams=1 with the beam search exception, explicit generator, and stable batching order) without any conflicting information.",
+      "completeness_pct": 90.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0416",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly matches all key figures from the gold answer's latest projection: 60 QPS baseline, 140 QPS growth, 260 QPS peak, and 150 concurrent chat sessions at peak.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0417",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer conflicts with the gold answer by recommending GPG detached signatures as the preferred option (Option A) for signing backup manifests, while the gold answer states Sigstore/cosign (offline key mode) is the recommendation as of v1.8+, with GPG being for older deployments.",
+      "completeness_pct": 50.0,
+      "document_recall_pct": 0.0,
+      "invalid_extra_docs": 10
+    },
+    {
+      "question_id": "qst_0418",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer does not provide any of the score ranges or thresholds for Tiers 1-4 in v2 or the previous version, which are the core aspects of the query.",
+      "completeness_pct": 20.0,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    },
+    {
+      "question_id": "qst_0419",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies the primary endpoint POST /v1/capacity/migrations/start and mentions the legacy alias POST /v1/migration/start, matching the gold answer's core information.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0420",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer claims the information is unknown and fails to provide the core details requested: the GiB-based measurement basis and the +$0.085 per GiB rate specified in the gold answer.",
+      "completeness_pct": 42.86,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0421",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies both the current default TTL of 120 seconds and the older 180-second (3-minute) default, aligning with the gold answer's core information.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0422",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer accurately reflects all key points from the gold answer: the super-admin override is deprecated, legal hold (legal_hold_id) is now required for records beyond retention, it's only for tenants with Legal Hold enabled, and usage is logged to the immutable audit stream with a ticket reference.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0423",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies 12 months and notes Security will expand only if anomalies are found, aligning with the core information in the gold answer.",
+      "completeness_pct": 80.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0424",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies all three current token-based bucket cutoffs (short <128, medium 128\u20131024, long >1024) matching the gold answer, with minor discrepancy on the earlier draft description (char-based vs. smaller token-based) but the core query is fully addressed.",
+      "completeness_pct": 90.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0425",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer accurately captures all key aspects of the gold answer: the `integrity` field with its valid values, the `integrity_ref` URI for external signature material, and the shift away from an embedded `signature` blob in v1.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0426",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly reflects all three updated thresholds from the gold answer (0.3%/5min safety sentinel, 3%/10min cohort divert, 4%/10min full rollback) and even references the earlier draft's KPI threshold (5% for 5 minutes), fully aligning with the gold answer.",
+      "completeness_pct": 85.71,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0427",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer correctly identifies both the final po_fingerprint format (lowercase SHA-256 hex digest of `PO_NUMBER|PO_LINE_UUID` without whitespace) and the weekly invoice delivery time (Tuesdays by 07:00 PT), consistent with the gold answer.",
+      "completeness_pct": 100.0,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0428",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": false,
+      "correctness_reasoning": "The candidate answer does not provide the correct breakpoints (250k, 2M, and 10M monthly tokens) specified in the gold answer, instead returning UNKNOWN and citing unrelated volume figures from various customer deals.",
+      "completeness_pct": 60.0,
+      "document_recall_pct": 0.0,
+      "invalid_extra_docs": 10
+    },
+    {
+      "question_id": "qst_0429",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer matches the gold answer on all key points: no need for enable_tool_signal flag, automatic enablement when tool calls are present, no per-request flag on public surface, and private deployment config option to disable it, while noting the older flag mention is outdated.",
+      "completeness_pct": 87.5,
+      "document_recall_pct": 100.0,
+      "invalid_extra_docs": 8
+    },
+    {
+      "question_id": "qst_0430",
+      "corrected": false,
+      "question_type": "conflicting_info",
+      "answer_correct": true,
+      "correctness_reasoning": "The candidate answer accurately reflects that Hosted uses provider-managed keys by default, BYOK is available for enterprise tenants in select regions as an add-on subject to feasibility, and that Private/VPC is the recommended path for BYOK, all consistent with the gold answer.",
+      "completeness_pct": 42.86,
+      "document_recall_pct": 50.0,
+      "invalid_extra_docs": 9
+    }
+  ]
+}

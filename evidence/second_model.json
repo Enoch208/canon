@@ -1,0 +1,26 @@
+{
+  "measured_at": "2026-08-20T12:12:31.867705+00:00",
+  "answer_model": "claude-haiku-4-5",
+  "questions": 20,
+  "arms": [
+    "baseline",
+    "canon_filtered"
+  ],
+  "design": "Same 20 conflict questions, same BM25 ranking, same 10-document budget, same prompt template as the primary model. Only the answering model and the context topology change. Scored by the official harness separately.",
+  "official_scores": {
+    "baseline": {
+      "correctness_pct": 75.0,
+      "completeness_pct": 78.57,
+      "combined_score": 66.8,
+      "empty_judge_reasoning": 0
+    },
+    "canon_filtered": {
+      "correctness_pct": 80.0,
+      "completeness_pct": 76.14,
+      "combined_score": 67.99,
+      "empty_judge_reasoning": 0
+    }
+  },
+  "harness": "EnterpriseRAG-Bench answer_evaluation (metrics_based_eval, --no-correction)",
+  "judge_model": "claude-sonnet-4-6"
+}
