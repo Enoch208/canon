@@ -113,9 +113,13 @@ def backfilled_doc_ids(
     grounding: Grounding, backfill: Sequence[Hit], target_docs: int
 ) -> tuple[str, ...]:
     dropped = set(grounding.dropped_doc_ids)
-    doc_ids = list(grounding.kept_doc_ids + grounding.pinned_doc_ids)
+    pinned = [d for d in grounding.pinned_doc_ids if d not in grounding.kept_doc_ids]
+    kept = list(grounding.kept_doc_ids)
+    if target_docs > 0 and pinned:
+        kept = kept[: max(0, target_docs - len(pinned))]
+    doc_ids = kept + pinned
     for hit in backfill:
-        if len(doc_ids) >= target_docs:
+        if target_docs > 0 and len(doc_ids) >= target_docs:
             break
         if hit.doc_id in doc_ids or hit.doc_id in dropped:
             continue

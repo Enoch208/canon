@@ -10,7 +10,13 @@ from canon_evaluation.answering import (
     load_answer_model,
     prompt_for,
 )
-from canon_evaluation.context import BuiltContext, ContextDoc, relevant_window, render
+from canon_evaluation.context import (
+    BuiltContext,
+    ContextDoc,
+    backfilled_doc_ids,
+    relevant_window,
+    render,
+)
 from canon_evaluation.metrics import (
     answer_metrics,
     contains_any,
@@ -21,6 +27,9 @@ from canon_evaluation.metrics import (
 )
 from canon_evaluation.questions import load_question_ids, load_questions
 from canon_evaluation.runner import percentile
+from canon_graph.grounding import DocDisposition, DocGrounding, Grounding, GroundingMode
+from canon_graph.schema import TruthState
+from canon_retrieval.store import Hit
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -146,3 +155,32 @@ def test_relevant_window_centres_on_the_question_terms() -> None:
     assert "250k, 2M, and 10M" in relevant_window(content, question, max_chars=400)
     assert len(relevant_window(content, question, max_chars=400)) == 400
     assert relevant_window("short doc", question, max_chars=400) == "short doc"
+
+
+def grounding_of(kept: int, pinned: tuple[str, ...]) -> "Grounding":
+    docs = tuple(
+        DocGrounding(f"dsid_kept{index}", DocDisposition.UNLINKED, ()) for index in range(kept)
+    )
+    return Grounding(
+        mode=GroundingMode.CURRENT,
+        state=TruthState.CANON,
+        resolutions=(),
+        docs=docs,
+        pinned_doc_ids=pinned,
+        claim_key_matches=(),
+    )
+
+
+def test_pinned_doc_evicts_lowest_rank_instead_of_growing_context() -> None:
+    doc_ids = backfilled_doc_ids(grounding_of(10, ("dsid_pin",)), [], target_docs=10)
+    assert len(doc_ids) == 10
+    assert "dsid_pin" in doc_ids
+    assert "dsid_kept9" not in doc_ids
+    assert doc_ids[:9] == tuple(f"dsid_kept{i}" for i in range(9))
+
+
+def test_backfill_still_fills_after_drop_with_pin() -> None:
+    hits = [Hit(f"dsid_fill{i}", "jira", "t", 1.0, i) for i in range(3)]
+    doc_ids = backfilled_doc_ids(grounding_of(8, ("dsid_pin",)), hits, target_docs=10)
+    assert len(doc_ids) == 10
+    assert doc_ids[-2:] == ("dsid_pin", "dsid_fill0")
