@@ -1,4 +1,4 @@
-.PHONY: hydra-up hydra-down verify test lint index seed graph-stats entities benchmark judge export-answers aggregate perf api
+.PHONY: hydra-up hydra-down verify test lint index seed graph-stats entities benchmark judge export-answers aggregate perf envelope api
 
 export UID := $(shell id -u)
 export GID := $(shell id -g)
@@ -48,6 +48,9 @@ aggregate:
 
 perf:
 	uv run python scripts/benchmark/hydra_perf.py
+
+envelope:
+	uv run python scripts/benchmark/safety_envelope.py
 
 api:
 	uv run uvicorn canon_api.app:app --reload --port 8000

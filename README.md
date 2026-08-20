@@ -333,6 +333,27 @@ the graph is for.
 The wider the retrieval, the more retired truth leaks into the baseline. Canon stays at 1 — the
 contested claim, where dropping anything would be wrong.
 
+### The safety envelope: all 500 questions
+
+A grounding layer that helps on 20 questions and silently corrupts the other 480 would be
+unshippable. So the deterministic grounding layer runs over **every question in the benchmark** —
+no model, no sampling (`make envelope` → `evidence/safety_envelope.json`):
+
+| Across all 500 benchmark questions | |
+| --- | --- |
+| Non-conflict contexts left byte-identical | **471 / 480** |
+| Expected documents removed outside the conflicts | **0** |
+| Documents removed outside the conflicts | 1 |
+| Current-evidence documents pinned outside the conflicts | 8 |
+
+Every one of the nine interventions outside the conflict set traces to a proven supersession
+chain, and the evidence file names each one. Eight pin the *current* gold document of a known
+conflict into a topically adjacent question. The single removed document is the *retired* gold of
+`qst_0419` — retired truth leaking into a neighboring question's retrieval, cut for exactly the
+reason it is cut everywhere else. **Canon is fail-narrow: it changes retrieval only where HydraDB
+can prove supersession, and it never removed an expected document from any question outside the
+conflicts.**
+
 ### Data, stated exactly
 
 - **Indexed:** 511,958 of 511,962 documents (4 duplicate `doc_id`s) in 177 s → `evidence/corpus_index.json`.
