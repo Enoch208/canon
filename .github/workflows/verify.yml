@@ -1,0 +1,42 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest -m "not hydra"
+
+  hydra:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen
+      - name: Start MinIO and HydraDB OSS
+        run: |
+          mkdir -p hydradb-data/cache hydradb-data/minio
+          printf '%s\n' 'local-development-token-32-bytes' > hydradb-data/auth-token
+          UID=$(id -u) GID=$(id -g) docker compose up -d
+          uv run python scripts/verify/wait_for_hydra.py
+      - name: Graph integration tests
+        run: uv run pytest -m hydra
+      - name: make verify
+        run: uv run python scripts/verify/verify_hydra.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verify-evidence
+          path: evidence/verify.json
