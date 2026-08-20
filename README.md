@@ -4,6 +4,8 @@
 
 &nbsp;
 
+<a href="https://x.com/dreyethh/status/2090558437264375887"><img src="assets/thread.svg" width="22" height="22" alt="" /> Thread</a>
+
 [![CI](https://github.com/Enoch208/canon/actions/workflows/verify.yml/badge.svg)](https://github.com/Enoch208/canon/actions/workflows/verify.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Tests](https://img.shields.io/badge/tests-69%20passing-10b981)
@@ -19,7 +21,7 @@ if it were current. Canon inserts a claim-history graph in **HydraDB OSS** betwe
 generation, so evidence that has been explicitly superseded stops reaching the model as
 present-tense context — while staying fully answerable as history.
 
-**[ Judge it in 90 seconds ↗ ](#judge-canon-in-90-seconds)** &nbsp;·&nbsp; **[ The numbers ↗ ](#the-numbers)** &nbsp;·&nbsp; **[ How HydraDB decides ↗ ](#how-i-integrated-hydradb)**
+**[ Thread ↗ ](https://x.com/dreyethh/status/2090558437264375887)** &nbsp;·&nbsp; **[ Judge it in 90 seconds ↗ ](#judge-canon-in-90-seconds)** &nbsp;·&nbsp; **[ The numbers ↗ ](#the-numbers)** &nbsp;·&nbsp; **[ How HydraDB decides ↗ ](#how-i-integrated-hydradb)**
 
 </div>
 
