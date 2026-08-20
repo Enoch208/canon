@@ -225,6 +225,22 @@ export type OfficialEval = {
 export const getOfficial = () =>
   get<OfficialEval>("/official").catch(() => null)
 
+export type SafetyEnvelope = {
+  questions: number
+  known_conflict_questions: number
+  known_conflict_interventions: number
+  other_questions: number
+  other_questions_context_changed: number
+  other_questions_context_unchanged: number
+  other_questions_expected_doc_dropped: number
+  documents_dropped_total: number
+  documents_pinned_total: number
+  other_documents_dropped: number
+  other_documents_pinned: number
+}
+
+export const getEnvelope = () => get<SafetyEnvelope>("/envelope").catch(() => null)
+
 export const getResults = () => get<Results>("/results")
 export const getResidue = () => get<ResidueReport>("/residue")
 export const getEntities = () => get<IdentityReport>("/entities")

@@ -1,6 +1,6 @@
 import { Panel } from "@/components/primitives"
 import { Page } from "@/components/shell"
-import { getOfficial, getResults } from "@/lib/api"
+import { getEnvelope, getOfficial, getResults } from "@/lib/api"
 
 export const dynamic = "force-dynamic"
 
@@ -42,7 +42,11 @@ const ANSWER_ROWS: Array<{ label: string; key: string; better: "low" | "high" }>
 ]
 
 export default async function ResultsPage() {
-  const [results, official] = await Promise.all([getResults(), getOfficial()])
+  const [results, official, envelope] = await Promise.all([
+    getResults(),
+    getOfficial(),
+    getEnvelope(),
+  ])
   const summary = results.summary
   const total = summary.conflict_questions
   const answered = summary.canon_judged_states_current_value !== undefined
@@ -53,6 +57,49 @@ export default async function ResultsPage() {
       title={"Baseline versus Canon on EnterpriseRAG-Bench."}
       lede={"Same corpus, same retriever, same prompt. Each row is labelled deterministic or model-judged."}
     >
+      {envelope ? (
+        <section className="flex flex-col gap-4 pb-10">
+          <Panel
+            title="Safety envelope · all 500 benchmark questions"
+            subtitle="Deterministic sweep, no model. Where does Canon actually intervene?"
+          >
+            <div className="grid gap-8 pt-2 lg:grid-cols-[auto_1fr]">
+              <div className="font-mono text-xs leading-7 text-muted">
+                <p className="text-faint">{envelope.questions} questions</p>
+                <p className="pt-3">
+                  {envelope.other_questions} ordinary
+                  <span className="pl-3 text-faint">non-conflict</span>
+                </p>
+                <p className="pl-4 text-accent">
+                  ├─ {envelope.other_questions_context_unchanged} context unchanged
+                </p>
+                <p className="pl-4">
+                  └─ {envelope.other_questions_context_changed} proven-supersession intervention
+                </p>
+                <p className="pl-11 text-accent">
+                  └─ {envelope.other_questions_expected_doc_dropped} expected documents harmed
+                </p>
+                <p className="pt-4">{envelope.known_conflict_questions} conflict questions</p>
+                <p className="pl-4">
+                  └─ {envelope.known_conflict_interventions} intervened ·{" "}
+                  {envelope.known_conflict_questions - envelope.known_conflict_interventions} left
+                  untouched
+                </p>
+              </div>
+              <p className="max-w-md self-center text-sm leading-relaxed font-light text-muted">
+                Canon is <span className="text-ink">fail-narrow</span>. Across the whole benchmark
+                it changed retrieval only where the graph could prove a supersession, and it never
+                removed a document the benchmark expects on a question outside the conflict set.
+                Every intervention elsewhere traces to a proven chain —{" "}
+                {envelope.other_documents_pinned} pins of current evidence the retriever missed,{" "}
+                {envelope.other_documents_dropped} cut of retired evidence leaking into a
+                neighbouring question.
+              </p>
+            </div>
+          </Panel>
+        </section>
+      ) : null}
+
       <section className="flex flex-col gap-4 pb-10">
         <p className="max-w-2xl text-sm leading-relaxed font-light text-muted">
           Same corpus, same BM25 candidate retrieval, same top-k. The only difference between the
