@@ -1,0 +1,93 @@
+{
+  "runs": [
+    "run-1.json",
+    "run-2.json",
+    "run-3.json"
+  ],
+  "run_count": 3,
+  "conflict_questions": 20,
+  "answer_model": "claude-sonnet-5",
+  "judge_model": "claude-sonnet-5",
+  "metrics": {
+    "retired_gold_doc_in_context": {
+      "baseline": {
+        "mean": 14,
+        "min": 14,
+        "max": 14,
+        "runs": 3
+      },
+      "canon_filtered": {
+        "mean": 1,
+        "min": 1,
+        "max": 1,
+        "runs": 3
+      },
+      "canon": {
+        "mean": 1,
+        "min": 1,
+        "max": 1,
+        "runs": 3
+      }
+    },
+    "judged_states_current_value": {
+      "baseline": {
+        "mean": 14.67,
+        "min": 14,
+        "max": 15,
+        "runs": 3
+      },
+      "canon_filtered": {
+        "mean": 17.67,
+        "min": 17,
+        "max": 18,
+        "runs": 3
+      },
+      "canon": {
+        "mean": 19,
+        "min": 19,
+        "max": 19,
+        "runs": 3
+      }
+    },
+    "judged_presents_retired_as_current": {
+      "baseline": {
+        "mean": 1.33,
+        "min": 1,
+        "max": 2,
+        "runs": 3
+      },
+      "canon_filtered": {
+        "mean": 0.67,
+        "min": 0,
+        "max": 1,
+        "runs": 3
+      },
+      "canon": {
+        "mean": 0.33,
+        "min": 0,
+        "max": 1,
+        "runs": 3
+      }
+    },
+    "judged_abstains": {
+      "baseline": {
+        "mean": 2.33,
+        "min": 2,
+        "max": 3,
+        "runs": 3
+      },
+      "canon_filtered": {
+        "mean": 2,
+        "min": 2,
+        "max": 2,
+        "runs": 3
+      },
+      "canon": {
+        "mean": 0.67,
+        "min": 0,
+        "max": 1,
+        "runs": 3
+      }
+    }
+  }
+}

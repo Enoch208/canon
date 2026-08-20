@@ -1,0 +1,3218 @@
+{
+  "measured_at": "2026-08-19T15:14:41.496266+00:00",
+  "corpus_documents": 511958,
+  "top_k": 10,
+  "answer_model": "claude-sonnet-5",
+  "answers_completed": 100,
+  "not_run": [],
+  "summary": {
+    "conflict_questions": 20,
+    "canon_filtered_retired_gold_doc_in_context": 1,
+    "baseline_retired_gold_doc_in_context": 14,
+    "canon_retired_gold_doc_in_context": 1,
+    "baseline_retired_value_string_in_context": 6,
+    "canon_retired_value_string_in_context": 6,
+    "baseline_current_gold_doc_in_context": 18,
+    "canon_current_gold_doc_in_context": 20,
+    "baseline_leakage_rate": 0.7,
+    "canon_leakage_rate": 0.05,
+    "graph_canon_states": 19,
+    "graph_contested_states": 1,
+    "canon_questions_with_graph_pinned_docs": 2,
+    "historical_keeps_retired_gold": 20,
+    "abstention_questions": 20,
+    "abstention_graph_returns_unknown": 20,
+    "baseline_answer_states_current_value": 6,
+    "canon_answer_states_current_value": 8,
+    "baseline_answer_states_retired_value": 4,
+    "canon_answer_states_retired_value": 5,
+    "baseline_abstained": 20,
+    "canon_abstained": 20,
+    "grounding_ms_p50": 201.62,
+    "grounding_ms_p95": 899.01,
+    "retrieval_ms_p50": 449.01,
+    "retrieval_ms_p95": 1723.21,
+    "judge_model": "claude-sonnet-5",
+    "judged_answers": 60,
+    "judge_passes_per_answer": 3,
+    "judge_unanimous_answers": 59,
+    "baseline_judged_rubric_facts_satisfied": 67,
+    "baseline_judged_rubric_facts_total": 138,
+    "baseline_judged_states_current_value": 15,
+    "baseline_judged_presents_retired_as_current": 1,
+    "baseline_judged_abstains": 2,
+    "canon_filtered_judged_rubric_facts_satisfied": 68,
+    "canon_filtered_judged_rubric_facts_total": 138,
+    "canon_filtered_judged_states_current_value": 18,
+    "canon_filtered_judged_presents_retired_as_current": 0,
+    "canon_filtered_judged_abstains": 2,
+    "canon_judged_rubric_facts_satisfied": 72,
+    "canon_judged_rubric_facts_total": 138,
+    "canon_judged_states_current_value": 19,
+    "canon_judged_presents_retired_as_current": 0,
+    "canon_judged_abstains": 1
+  },
+  "conflicts": [
+    {
+      "question_id": "qst_0411",
+      "question": "On Streamly AI's dedicated pool dp-132-usw, what % of interactive burst credits should be reserved exclusively for priority=high routes?",
+      "claim_key": "Streamly AI dedicated pool dp-132-usw.interactive_burst_credits_priority_high_reservation",
+      "old_value": "20%",
+      "new_value": "30%",
+      "old_doc_id": "dsid_5f3a672da4974781a5577b0f3d4993e9",
+      "new_doc_id": "dsid_8ffbd9fe82df457ca67d4fbc9ff1090c",
+      "graph_state": "CANON",
+      "graph_current_value": "30%",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_5f3a672da4974781a5577b0f3d4993e9"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_8ffbd9fe82df457ca67d4fbc9ff1090c",
+          "dsid_5f3a672da4974781a5577b0f3d4993e9",
+          "dsid_4af697a0a01d4bada5713169e15d33b5",
+          "dsid_8839654ea34744f981c295c84e539d91",
+          "dsid_eef96d66c35e4a00bdb4199ebaa45951",
+          "dsid_6c40ce47635c4c618e636e503a0db787",
+          "dsid_b74aa5b6dc634f6e8b643e352c952c9d",
+          "dsid_7c1b361cdd024b49b15564181bdfc190",
+          "dsid_cda0edb91f3f42e0a3f4c614f31be48c",
+          "dsid_7c46ddff9b7d411fa8245bb6cf01fa8c"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "30%",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_8ffbd9fe82df457ca67d4fbc9ff1090c",
+          "dsid_4af697a0a01d4bada5713169e15d33b5",
+          "dsid_8839654ea34744f981c295c84e539d91",
+          "dsid_eef96d66c35e4a00bdb4199ebaa45951",
+          "dsid_6c40ce47635c4c618e636e503a0db787",
+          "dsid_b74aa5b6dc634f6e8b643e352c952c9d",
+          "dsid_7c1b361cdd024b49b15564181bdfc190",
+          "dsid_cda0edb91f3f42e0a3f4c614f31be48c",
+          "dsid_7c46ddff9b7d411fa8245bb6cf01fa8c",
+          "dsid_51f44a19ac664891ad6fe072b2eb50af"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "30% (updated from a previous internal suggestion of 20%).",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_8ffbd9fe82df457ca67d4fbc9ff1090c",
+          "dsid_4af697a0a01d4bada5713169e15d33b5",
+          "dsid_8839654ea34744f981c295c84e539d91",
+          "dsid_eef96d66c35e4a00bdb4199ebaa45951",
+          "dsid_6c40ce47635c4c618e636e503a0db787",
+          "dsid_b74aa5b6dc634f6e8b643e352c952c9d",
+          "dsid_7c1b361cdd024b49b15564181bdfc190",
+          "dsid_cda0edb91f3f42e0a3f4c614f31be48c",
+          "dsid_7c46ddff9b7d411fa8245bb6cf01fa8c",
+          "dsid_51f44a19ac664891ad6fe072b2eb50af"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "30% of interactive burst credits should be reserved exclusively for priority=high routes on dp-132-usw.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 608.83,
+        "grounding_ms": 716.48
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0412",
+      "question": "For extraction, what price-normalization correctness is reported at temp=0.0 with strict JSON + canonicalization, and what earlier % is it compared to?",
+      "claim_key": "extraction.price_normalization_correctness_temp_0",
+      "old_value": "~89%",
+      "new_value": "~96%",
+      "old_doc_id": "dsid_89c0c31e220c4777b15c3c6ff0eff61d",
+      "new_doc_id": "dsid_a2bf755670ad44e09b42c11e9d73e5d3",
+      "graph_state": "CANON",
+      "graph_current_value": "~96%",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T2",
+      "dropped_doc_ids": [
+        "dsid_89c0c31e220c4777b15c3c6ff0eff61d"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_a2bf755670ad44e09b42c11e9d73e5d3",
+          "dsid_4e6f2af6c9374c11974ac71357882f7f",
+          "dsid_89c0c31e220c4777b15c3c6ff0eff61d",
+          "dsid_e18f8a9779474a498a3f088c99ea92c5",
+          "dsid_860f484480fe49f4a3baf592a58eef41",
+          "dsid_d88cc9ccce114cc18e0efecaae7a28b7",
+          "dsid_c819303ed74d4cc682fb87ae4ce04234",
+          "dsid_9fb030b40cce4662acad9cbe364545f0",
+          "dsid_3e95b214b1e34715a49cf5c92cefbcd3",
+          "dsid_7a39e789c2c84508b90c97bb2d399990"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "At temp=0.0 with strict JSON + canonicalization rules, price normalization correctness is reported at ~96%, compared to ~89% previously without canonicalization.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 2,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_a2bf755670ad44e09b42c11e9d73e5d3",
+          "dsid_4e6f2af6c9374c11974ac71357882f7f",
+          "dsid_e18f8a9779474a498a3f088c99ea92c5",
+          "dsid_860f484480fe49f4a3baf592a58eef41",
+          "dsid_d88cc9ccce114cc18e0efecaae7a28b7",
+          "dsid_c819303ed74d4cc682fb87ae4ce04234",
+          "dsid_9fb030b40cce4662acad9cbe364545f0",
+          "dsid_3e95b214b1e34715a49cf5c92cefbcd3",
+          "dsid_7a39e789c2c84508b90c97bb2d399990",
+          "dsid_c1b51dbeb5eb457ebcda6f4bc660818c"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "At temp=0.0 with strict JSON + canonicalization rules, price normalization correctness is ~96%, compared to ~89% previously without canonicalization.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 2,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_a2bf755670ad44e09b42c11e9d73e5d3",
+          "dsid_4e6f2af6c9374c11974ac71357882f7f",
+          "dsid_e18f8a9779474a498a3f088c99ea92c5",
+          "dsid_860f484480fe49f4a3baf592a58eef41",
+          "dsid_d88cc9ccce114cc18e0efecaae7a28b7",
+          "dsid_c819303ed74d4cc682fb87ae4ce04234",
+          "dsid_9fb030b40cce4662acad9cbe364545f0",
+          "dsid_3e95b214b1e34715a49cf5c92cefbcd3",
+          "dsid_7a39e789c2c84508b90c97bb2d399990",
+          "dsid_c1b51dbeb5eb457ebcda6f4bc660818c"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "Price normalization correctness at temp=0.0 with strict JSON + canonicalization rules is **~96%**, compared to **~89%** without canonicalization.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 2,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 449.01,
+        "grounding_ms": 463.42
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0413",
+      "question": "Who approves terminating STALE-ORPHAN test instances after the 72h grace window-infra manager or cost-ops?",
+      "claim_key": "STALE-ORPHAN test instances.termination_approver",
+      "old_value": "infra manager approval asked, not recorded",
+      "new_value": "cost-ops (Priya Desai) approves after 72h grace",
+      "old_doc_id": "dsid_6df52fdb96ae4edcb76464738bca3340",
+      "new_doc_id": "dsid_6df52fdb96ae4edcb76464738bca3340",
+      "graph_state": "CONTESTED",
+      "graph_current_value": null,
+      "graph_transition": "NONE",
+      "temporal_quality": "T3",
+      "dropped_doc_ids": [],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_6df52fdb96ae4edcb76464738bca3340",
+          "dsid_6205d7b9b72e486488238ee7b1deb287",
+          "dsid_b1c7ff2f1cd14ae7a344067341866938",
+          "dsid_ce5bdf0520a3445dbc637ca664e68223",
+          "dsid_2f31ea22335f44aaa85572d362500050",
+          "dsid_ab1fa41e78cc4f9391f2a6dad6a25e0a",
+          "dsid_a455cf2c5dc243be9d7ae8bc48ef71e5",
+          "dsid_715b0b9fcb67473cbac3f6789ec85f9e",
+          "dsid_64e4a2aa18514b7499a6c63069152261",
+          "dsid_c789afdbc7064c99a9a5dc4aeb2079fa"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on Document 1, the grace window was updated from 72h to 5 business days (per infra manager Nina Hwang's approval). Cost-ops (Priya Desai) approves termination once the grace window expires.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 8,
+          "states_current_value": false,
+          "presents_retired_as_current": true,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": false
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_6df52fdb96ae4edcb76464738bca3340",
+          "dsid_6205d7b9b72e486488238ee7b1deb287",
+          "dsid_b1c7ff2f1cd14ae7a344067341866938",
+          "dsid_ce5bdf0520a3445dbc637ca664e68223",
+          "dsid_2f31ea22335f44aaa85572d362500050",
+          "dsid_ab1fa41e78cc4f9391f2a6dad6a25e0a",
+          "dsid_a455cf2c5dc243be9d7ae8bc48ef71e5",
+          "dsid_715b0b9fcb67473cbac3f6789ec85f9e",
+          "dsid_64e4a2aa18514b7499a6c63069152261",
+          "dsid_c789afdbc7064c99a9a5dc4aeb2079fa"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Per Document 1, **Priya Desai (cost-ops)** approves termination once the grace window expires. Note also that the grace window itself was updated by infra manager Nina Hwang from 72 hours to **5 business days**.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 8,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_6df52fdb96ae4edcb76464738bca3340",
+          "dsid_6205d7b9b72e486488238ee7b1deb287",
+          "dsid_b1c7ff2f1cd14ae7a344067341866938",
+          "dsid_ce5bdf0520a3445dbc637ca664e68223",
+          "dsid_2f31ea22335f44aaa85572d362500050",
+          "dsid_ab1fa41e78cc4f9391f2a6dad6a25e0a",
+          "dsid_a455cf2c5dc243be9d7ae8bc48ef71e5",
+          "dsid_715b0b9fcb67473cbac3f6789ec85f9e",
+          "dsid_64e4a2aa18514b7499a6c63069152261",
+          "dsid_c789afdbc7064c99a9a5dc4aeb2079fa"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "UNKNOWN",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": true
+        },
+        "verdict": {
+          "satisfied_facts": 0,
+          "total_facts": 8,
+          "states_current_value": false,
+          "presents_retired_as_current": false,
+          "abstains": true,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": false,
+      "timing": {
+        "retrieval_ms": 2468.25,
+        "grounding_ms": 899.01
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events"
+      ]
+    },
+    {
+      "question_id": "qst_0414",
+      "question": "INC-9821: was the degraded GPU node an OOM or intermittent driver/kernel launch stalls?",
+      "claim_key": "INC-9821.degraded_gpu_node_root_cause",
+      "old_value": "GPU OOM / generic kernel failure",
+      "new_value": "intermittent driver/kernel launch stalls (corrected 2026-09-01)",
+      "old_doc_id": "dsid_5611f05242ae4e6b9ae68d3c3e91bd54",
+      "new_doc_id": "dsid_0c1f1c83e8d44d2fa3a9f6c7b2d7b9f1",
+      "graph_state": "CANON",
+      "graph_current_value": "intermittent driver/kernel launch stalls (corrected 2026-09-01)",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_0c1f1c83e8d44d2fa3a9f6c7b2d7b9f1",
+          "dsid_725f8c25cf494ea1b9714aa3a328f63c",
+          "dsid_70b8a510ad8740ffad2451cf8413b25b",
+          "dsid_b06eab3a622e4ec991949d2688ecf367",
+          "dsid_d028ae4983b9453a8f4f99066773235d",
+          "dsid_9a4aa4465c6d4779843c5d495d4862b1",
+          "dsid_88ea4e2ae1374d8495f890e6decbb46c",
+          "dsid_b00e4dbdcb37494397613e178b844d87",
+          "dsid_817972faec1c4ec9afe592d4e02e914a",
+          "dsid_119b1cb549244c89913fe91f973b3a2b"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "Intermittent driver/kernel launch stalls (not a sustained OOM), as determined in the post-incident update after deeper node telemetry review.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 2,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_0c1f1c83e8d44d2fa3a9f6c7b2d7b9f1",
+          "dsid_725f8c25cf494ea1b9714aa3a328f63c",
+          "dsid_70b8a510ad8740ffad2451cf8413b25b",
+          "dsid_b06eab3a622e4ec991949d2688ecf367",
+          "dsid_d028ae4983b9453a8f4f99066773235d",
+          "dsid_9a4aa4465c6d4779843c5d495d4862b1",
+          "dsid_88ea4e2ae1374d8495f890e6decbb46c",
+          "dsid_b00e4dbdcb37494397613e178b844d87",
+          "dsid_817972faec1c4ec9afe592d4e02e914a",
+          "dsid_119b1cb549244c89913fe91f973b3a2b"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "Intermittent driver/kernel launch stalls (not a sustained OOM).",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 2,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_0c1f1c83e8d44d2fa3a9f6c7b2d7b9f1",
+          "dsid_725f8c25cf494ea1b9714aa3a328f63c",
+          "dsid_70b8a510ad8740ffad2451cf8413b25b",
+          "dsid_b06eab3a622e4ec991949d2688ecf367",
+          "dsid_d028ae4983b9453a8f4f99066773235d",
+          "dsid_9a4aa4465c6d4779843c5d495d4862b1",
+          "dsid_88ea4e2ae1374d8495f890e6decbb46c",
+          "dsid_b00e4dbdcb37494397613e178b844d87",
+          "dsid_817972faec1c4ec9afe592d4e02e914a",
+          "dsid_119b1cb549244c89913fe91f973b3a2b"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "Intermittent driver/kernel launch stalls. According to the canon claim graph for INC-9821, the current, corrected root cause (as of 2026-09-01) is intermittent driver/kernel launch stalls \u2014 the earlier \"GPU OOM / generic kernel failure\" value was retired via explicit supersession.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 353.5,
+        "grounding_ms": 264.93
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0415",
+      "question": "What must `--deterministic true` enforce in the eval runner (decoding settings)?",
+      "claim_key": "eval_runner.deterministic_true_enforcement",
+      "old_value": "do_sample=false, temperature=0, top_k=1, explicit generator",
+      "new_value": "also top_p=1.0, num_beams=1, stable batch order",
+      "old_doc_id": "dsid_1d487c52d79a44c2b40eb19a0db51122",
+      "new_doc_id": "dsid_05841423a55e4c35abd276d9899b7134",
+      "graph_state": "CANON",
+      "graph_current_value": "also top_p=1.0, num_beams=1, stable batch order",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T2",
+      "dropped_doc_ids": [],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_05841423a55e4c35abd276d9899b7134",
+          "dsid_d17b79cc98de4e068668581e0cb92410",
+          "dsid_475ad916d901433387daa55f648ad83b",
+          "dsid_08fa60e3edb741eabda09875bb759b1d",
+          "dsid_ac281e0611bc43d39dbc18ec79f67077",
+          "dsid_89fb08a2730b4db981fae7ccc45b0770",
+          "dsid_965102aaf2ec4ac19feca758b46192e5",
+          "dsid_8eb2d6a1a90b4826bc26c227a98c9fb6",
+          "dsid_bb48f347de4043caa999b4583e2e5d6e",
+          "dsid_ede5df0fd3de46a5bcf1168974b801c1"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "When `deterministic: true`, the harness MUST enforce:\n\n- `do_sample = false`\n- `temperature = 0.0`\n- `top_k = 1`\n- `top_p = 1.0`\n- `num_beams = 1` (unless the suite explicitly tests beam search)\n- Explicit generator passed into generation APIs\n- Stable batching order (no data-loader shuffling; stable sort by example_id)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 7,
+          "total_facts": 10,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_05841423a55e4c35abd276d9899b7134",
+          "dsid_d17b79cc98de4e068668581e0cb92410",
+          "dsid_475ad916d901433387daa55f648ad83b",
+          "dsid_08fa60e3edb741eabda09875bb759b1d",
+          "dsid_ac281e0611bc43d39dbc18ec79f67077",
+          "dsid_89fb08a2730b4db981fae7ccc45b0770",
+          "dsid_965102aaf2ec4ac19feca758b46192e5",
+          "dsid_8eb2d6a1a90b4826bc26c227a98c9fb6",
+          "dsid_bb48f347de4043caa999b4583e2e5d6e",
+          "dsid_ede5df0fd3de46a5bcf1168974b801c1"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the CI Eval Determinism and Flake Mitigation document, when `deterministic: true`, the harness MUST enforce:\n\n- `do_sample = false`\n- `temperature = 0.0`\n- `top_k = 1`\n- `top_p = 1.0`\n- `num_beams = 1` (unless the suite explicitly tests beam search)\n- Explicit generator passed into generation APIs\n- Stable batching order (no data-loader shuffling; stable sort by example_id)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 7,
+          "total_facts": 10,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_05841423a55e4c35abd276d9899b7134",
+          "dsid_d17b79cc98de4e068668581e0cb92410",
+          "dsid_475ad916d901433387daa55f648ad83b",
+          "dsid_08fa60e3edb741eabda09875bb759b1d",
+          "dsid_ac281e0611bc43d39dbc18ec79f67077",
+          "dsid_89fb08a2730b4db981fae7ccc45b0770",
+          "dsid_965102aaf2ec4ac19feca758b46192e5",
+          "dsid_8eb2d6a1a90b4826bc26c227a98c9fb6",
+          "dsid_bb48f347de4043caa999b4583e2e5d6e",
+          "dsid_ede5df0fd3de46a5bcf1168974b801c1"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Per the canon claim graph (current value), `--deterministic true` must enforce: `top_p=1.0`, `num_beams=1`, and stable batch order, along with an explicit generator passed into generation.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 10,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 252.36,
+        "grounding_ms": 181.53
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0416",
+      "question": "Copperfield Nimbus Dedicated sizing: latest baseline/growth/peak QPS and peak concurrent chat sessions?",
+      "claim_key": "Copperfield Nimbus Dedicated.qps_and_peak_sessions",
+      "old_value": "50 / 120 / 220 QPS, 120 concurrent sessions",
+      "new_value": "60 / 140 / 260 QPS, ~150 concurrent sessions (2026-03-12)",
+      "old_doc_id": "dsid_8ca703d991844bd195b4b8fdc16040fd",
+      "new_doc_id": "dsid_3c3ab5813b264367877e0d02f652ca32",
+      "graph_state": "CANON",
+      "graph_current_value": "60 / 140 / 260 QPS, ~150 concurrent sessions (2026-03-12)",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_8ca703d991844bd195b4b8fdc16040fd"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_3c3ab5813b264367877e0d02f652ca32",
+          "dsid_8ca703d991844bd195b4b8fdc16040fd",
+          "dsid_1ad2a304377049e18f22748b9e5dd045",
+          "dsid_6a217b0375ee44fabc3165d9baa904aa",
+          "dsid_2dfa6150e42b47f1831d5adf37ae23b5",
+          "dsid_a8c2b92d5a1d4eb3ad63e0befdb53dec",
+          "dsid_e955c34064ae4bc48cc180519875a965",
+          "dsid_d2d62518de7849f8b62097aa09be7701",
+          "dsid_e5ca5bfe041f4b81982a6555afe8116c",
+          "dsid_ba8f523bfd894d14aaf6745eddaf2705"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": true,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the most recent sizing update (Document 1, dated 2026-03-18), for Copperfield Nimbus Solutions:\n\n- **Baseline QPS:** 60\n- **Expected growth (6 months) QPS:** 140\n- **Peak QPS:** 260\n- **Peak concurrent chat sessions:** ~150 (with active KV cache)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_3c3ab5813b264367877e0d02f652ca32",
+          "dsid_1ad2a304377049e18f22748b9e5dd045",
+          "dsid_6a217b0375ee44fabc3165d9baa904aa",
+          "dsid_2dfa6150e42b47f1831d5adf37ae23b5",
+          "dsid_a8c2b92d5a1d4eb3ad63e0befdb53dec",
+          "dsid_e955c34064ae4bc48cc180519875a965",
+          "dsid_d2d62518de7849f8b62097aa09be7701",
+          "dsid_e5ca5bfe041f4b81982a6555afe8116c",
+          "dsid_ba8f523bfd894d14aaf6745eddaf2705",
+          "dsid_1beb42ef7b7047259149dc54cad5f1b3"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the latest projection (2026-03-12 sizing follow-up) in the Copperfield Nimbus Solutions document:\n\n- **Baseline:** 60 QPS\n- **Expected growth (6 months):** 140 QPS\n- **Peak:** 260 QPS (daytime sync + product launches)\n- **Peak concurrent chat sessions:** ~150 concurrent sessions (with KV cache active)",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_3c3ab5813b264367877e0d02f652ca32",
+          "dsid_1ad2a304377049e18f22748b9e5dd045",
+          "dsid_6a217b0375ee44fabc3165d9baa904aa",
+          "dsid_2dfa6150e42b47f1831d5adf37ae23b5",
+          "dsid_a8c2b92d5a1d4eb3ad63e0befdb53dec",
+          "dsid_e955c34064ae4bc48cc180519875a965",
+          "dsid_d2d62518de7849f8b62097aa09be7701",
+          "dsid_e5ca5bfe041f4b81982a6555afe8116c",
+          "dsid_ba8f523bfd894d14aaf6745eddaf2705",
+          "dsid_1beb42ef7b7047259149dc54cad5f1b3"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Copperfield Nimbus Solutions Dedicated sizing (current, as of 2026-03-12): baseline 60 QPS, expected growth (6 months) 140 QPS, peak 260 QPS, with ~150 concurrent chat sessions at peak.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 441.13,
+        "grounding_ms": 172.28
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0417",
+      "question": "What does Redwood Private on-prem recommend for signing backup manifests?",
+      "claim_key": "Redwood Private on-prem.backup_manifest_signing",
+      "old_value": "GPG signatures",
+      "new_value": "Sigstore/cosign offline key mode (Private Toolkit v1.8+); GPG still supported during migration",
+      "old_doc_id": "dsid_aa97b7293f9f4f3c8180f645e4fe5911",
+      "new_doc_id": "dsid_10a589a5ee9048d9a33deb4156037171",
+      "graph_state": "CANON",
+      "graph_current_value": "Sigstore/cosign offline key mode (Private Toolkit v1.8+); GPG still supported during migration",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [],
+      "graph_pinned_doc_ids": [
+        "dsid_10a589a5ee9048d9a33deb4156037171"
+      ],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_19e2b867aa1d4fd1b6db5d3e033dd391",
+          "dsid_f59a0860f18c49acab904cea19b3a610",
+          "dsid_73a7f76cc38c441a87b2db271221e462",
+          "dsid_03bea1fa6f944d479b97f6c30123c252",
+          "dsid_08a7d3112d1a401cb106498ba524ba93",
+          "dsid_f1eb92c08224415f873fa21116bb15a1",
+          "dsid_03f1298545124383b72c6e176b123c80",
+          "dsid_55984260cebc414888bc5db6eaf8bb70",
+          "dsid_9e4cffba14a0427798fdcc224b2bc7bf",
+          "dsid_d7b17e7add704a548a022b942ebd3d37"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": false,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Redwood Private recommends signing backup manifests using **ed25519** signatures (per the \"Implement snapshot signing and orchestrated rollback queue\" work). The manifest is a JSON structure that includes `backup_version`, `object_url`, `created_at`, `model_version`, and a `manifest_version` stamp. The operator accepts either a configured public key or a KMS-sourced key for verification, and strict mode (rejecting unsigned/unverifiable manifests) can be enabled via Helm values \u2014 though if no key is configured, the system falls back to a permissive mode with a logged warning.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 0,
+          "total_facts": 6,
+          "states_current_value": false,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_19e2b867aa1d4fd1b6db5d3e033dd391",
+          "dsid_f59a0860f18c49acab904cea19b3a610",
+          "dsid_73a7f76cc38c441a87b2db271221e462",
+          "dsid_03bea1fa6f944d479b97f6c30123c252",
+          "dsid_08a7d3112d1a401cb106498ba524ba93",
+          "dsid_f1eb92c08224415f873fa21116bb15a1",
+          "dsid_03f1298545124383b72c6e176b123c80",
+          "dsid_55984260cebc414888bc5db6eaf8bb70",
+          "dsid_9e4cffba14a0427798fdcc224b2bc7bf",
+          "dsid_d7b17e7add704a548a022b942ebd3d37",
+          "dsid_10a589a5ee9048d9a33deb4156037171"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 11,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": false
+        },
+        "answer": "As of Private Toolkit v1.8+, backup manifests can be signed using **Sigstore/cosign (offline key mode)**. Older deployments may still use **GPG signatures**, and both methods are supported during the migration period.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 5,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_19e2b867aa1d4fd1b6db5d3e033dd391",
+          "dsid_f59a0860f18c49acab904cea19b3a610",
+          "dsid_73a7f76cc38c441a87b2db271221e462",
+          "dsid_03bea1fa6f944d479b97f6c30123c252",
+          "dsid_08a7d3112d1a401cb106498ba524ba93",
+          "dsid_f1eb92c08224415f873fa21116bb15a1",
+          "dsid_03f1298545124383b72c6e176b123c80",
+          "dsid_55984260cebc414888bc5db6eaf8bb70",
+          "dsid_9e4cffba14a0427798fdcc224b2bc7bf",
+          "dsid_d7b17e7add704a548a022b942ebd3d37",
+          "dsid_10a589a5ee9048d9a33deb4156037171"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 11,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": false
+        },
+        "answer": "Sigstore/cosign in offline key mode (Private Toolkit v1.8+); GPG signatures are still supported during the migration period.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 640.61,
+        "grounding_ms": 247.09
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0418",
+      "question": "In the SLO\u2192customer impact classifier, what score ranges map to Tiers 1-4 in v2, and what were the previous thresholds?",
+      "claim_key": "SLO_customer_impact_classifier.tier_score_ranges",
+      "old_value": ">=80 / 60-79 / 30-59 / <30",
+      "new_value": ">=85 / 70-84 / 35-69 / <35 (v2)",
+      "old_doc_id": "dsid_981f4a0281054f9aaaec7887156eebc4",
+      "new_doc_id": "dsid_b837e1140d1a4c3d8efd2f42d9b6a799",
+      "graph_state": "CANON",
+      "graph_current_value": ">=85 / 70-84 / 35-69 / <35 (v2)",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_b837e1140d1a4c3d8efd2f42d9b6a799",
+          "dsid_c122aa9db4264fc2b4454d53ffa014bf",
+          "dsid_bf1c8e6cc60545229aef00bab69f8348",
+          "dsid_fa09d042f7344c6ca853a4836da47664",
+          "dsid_4b5e2e0fa355420596797bca7f3ab867",
+          "dsid_b40321060eab441ab10a9e2c2d218129",
+          "dsid_c2c3318b381244a6a7428bb7204fdd7f",
+          "dsid_f3b952891e434fd6b18b37a5803601ee",
+          "dsid_c6cf80ca9add4f1eae25fbb437058c75",
+          "dsid_5fa7f0196d764798aafa8d579bb92a51"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "UNKNOWN",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": true
+        },
+        "verdict": {
+          "satisfied_facts": 0,
+          "total_facts": 10,
+          "states_current_value": false,
+          "presents_retired_as_current": false,
+          "abstains": true,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_b837e1140d1a4c3d8efd2f42d9b6a799",
+          "dsid_c122aa9db4264fc2b4454d53ffa014bf",
+          "dsid_bf1c8e6cc60545229aef00bab69f8348",
+          "dsid_fa09d042f7344c6ca853a4836da47664",
+          "dsid_4b5e2e0fa355420596797bca7f3ab867",
+          "dsid_b40321060eab441ab10a9e2c2d218129",
+          "dsid_c2c3318b381244a6a7428bb7204fdd7f",
+          "dsid_f3b952891e434fd6b18b37a5803601ee",
+          "dsid_c6cf80ca9add4f1eae25fbb437058c75",
+          "dsid_5fa7f0196d764798aafa8d579bb92a51"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "UNKNOWN",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": true
+        },
+        "verdict": {
+          "satisfied_facts": 0,
+          "total_facts": 10,
+          "states_current_value": false,
+          "presents_retired_as_current": false,
+          "abstains": true,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_b837e1140d1a4c3d8efd2f42d9b6a799",
+          "dsid_c122aa9db4264fc2b4454d53ffa014bf",
+          "dsid_bf1c8e6cc60545229aef00bab69f8348",
+          "dsid_fa09d042f7344c6ca853a4836da47664",
+          "dsid_4b5e2e0fa355420596797bca7f3ab867",
+          "dsid_b40321060eab441ab10a9e2c2d218129",
+          "dsid_c2c3318b381244a6a7428bb7204fdd7f",
+          "dsid_f3b952891e434fd6b18b37a5803601ee",
+          "dsid_c6cf80ca9add4f1eae25fbb437058c75",
+          "dsid_5fa7f0196d764798aafa8d579bb92a51"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Current (v2) tier score ranges: Tier 1 \u226585, Tier 2 70\u201384, Tier 3 35\u201369, Tier 4 <35.\n\nPrevious (retired) thresholds: Tier 1 \u226580, Tier 2 60\u201379, Tier 3 30\u201359, Tier 4 <30.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 10,
+          "total_facts": 10,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 463.91,
+        "grounding_ms": 252.74
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0419",
+      "question": "What is the API endpoint to start a Unified Capacity Transition migration?",
+      "claim_key": "Unified Capacity Transition.migration_start_endpoint",
+      "old_value": "POST /v1/migration/start",
+      "new_value": "POST /v1/capacity/migrations/start (legacy alias temporary)",
+      "old_doc_id": "dsid_db1c1f64721b468dafb35c2e0080a8f8",
+      "new_doc_id": "dsid_113f5cc6931640c3b82adcc07142d829",
+      "graph_state": "CANON",
+      "graph_current_value": "POST /v1/capacity/migrations/start (legacy alias temporary)",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_db1c1f64721b468dafb35c2e0080a8f8"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_113f5cc6931640c3b82adcc07142d829",
+          "dsid_33f79164bed643ef8df980f2f5da74d2",
+          "dsid_e449dbbea0464f11becc3d1369538ad2",
+          "dsid_2f57470b85f344cebaa12d53ad00e3ec",
+          "dsid_7e4f03d3a771402a819065ee33d402e0",
+          "dsid_db1c1f64721b468dafb35c2e0080a8f8",
+          "dsid_06bf3d80e37e4f7b97fc328789950ea4",
+          "dsid_3f9aeda20ac34e89a399208c0f3339fc",
+          "dsid_6cde0c2a6b604c3693ea0822a8326deb",
+          "dsid_59b8f338cbb94bb48cd114fe7cedc33a"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "POST /v1/capacity/migrations/start",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_113f5cc6931640c3b82adcc07142d829",
+          "dsid_33f79164bed643ef8df980f2f5da74d2",
+          "dsid_e449dbbea0464f11becc3d1369538ad2",
+          "dsid_2f57470b85f344cebaa12d53ad00e3ec",
+          "dsid_7e4f03d3a771402a819065ee33d402e0",
+          "dsid_06bf3d80e37e4f7b97fc328789950ea4",
+          "dsid_3f9aeda20ac34e89a399208c0f3339fc",
+          "dsid_6cde0c2a6b604c3693ea0822a8326deb",
+          "dsid_59b8f338cbb94bb48cd114fe7cedc33a",
+          "dsid_2f05eae8f4c04ebba1c3e88001d55584"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "POST /v1/capacity/migrations/start",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_113f5cc6931640c3b82adcc07142d829",
+          "dsid_33f79164bed643ef8df980f2f5da74d2",
+          "dsid_e449dbbea0464f11becc3d1369538ad2",
+          "dsid_2f57470b85f344cebaa12d53ad00e3ec",
+          "dsid_7e4f03d3a771402a819065ee33d402e0",
+          "dsid_06bf3d80e37e4f7b97fc328789950ea4",
+          "dsid_3f9aeda20ac34e89a399208c0f3339fc",
+          "dsid_6cde0c2a6b604c3693ea0822a8326deb",
+          "dsid_59b8f338cbb94bb48cd114fe7cedc33a",
+          "dsid_2f05eae8f4c04ebba1c3e88001d55584"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "POST /v1/capacity/migrations/start",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 358.19,
+        "grounding_ms": 163.78
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0420",
+      "question": "For EXP-002 (eu-west\u2192us-east), what egress cost rate and measurement basis does the cost penalty catalog use?",
+      "claim_key": "EXP-002 eu-west_us-east.egress_cost_rate",
+      "old_value": "+$0.05 per 1k tokens (~$180/hour at 1000 rps)",
+      "new_value": "+$0.085 per GiB, GiB-based billing",
+      "old_doc_id": "dsid_4e65166659394a90922be6a5c7b110a8",
+      "new_doc_id": "dsid_7b2f4b37dfb642e19d78c5f9d2c43f16",
+      "graph_state": "CANON",
+      "graph_current_value": "+$0.085 per GiB, GiB-based billing",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_4e65166659394a90922be6a5c7b110a8"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_7b2f4b37dfb642e19d78c5f9d2c43f16",
+          "dsid_4e65166659394a90922be6a5c7b110a8",
+          "dsid_0f520152110e43ef8fb1fe0bfa0a2f44",
+          "dsid_71cfc8405caa45ec88a42a50ef9d5e0b",
+          "dsid_e6d5205f30c34a2dbb0f1c4cfc416e5f",
+          "dsid_afd1de868bed4462842bfe1f16f08c00",
+          "dsid_2707713184eb4c18b7913f941469b978",
+          "dsid_1dbf29391e33456488485273bb42303f",
+          "dsid_f0e675cb031a4f28a55b0c56e4c13b69",
+          "dsid_5055accef7204725ba113057da48063a"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the fallback experiment matrix (Document 1), EXP-002 uses the **egress-cost-delta** as its cost-metric. The measurement basis for this is specified in the telemetry recipe as:\n\n- **egress_gib_rate{experiment_id=\"EXP-002\"}** \u2014 sourced from the network collector plus sampled trace attribution\n- Additional instrumentation requires emitting egress bytes by **src_region->dst_region at 1-minute resolution** for cross-region tests\n\nThe document notes this egress metric is \"new,\" and no specific dollar rate per GiB is provided in the catalog excerpt.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 7,
+          "states_current_value": false,
+          "presents_retired_as_current": false,
+          "abstains": true,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_7b2f4b37dfb642e19d78c5f9d2c43f16",
+          "dsid_0f520152110e43ef8fb1fe0bfa0a2f44",
+          "dsid_71cfc8405caa45ec88a42a50ef9d5e0b",
+          "dsid_e6d5205f30c34a2dbb0f1c4cfc416e5f",
+          "dsid_afd1de868bed4462842bfe1f16f08c00",
+          "dsid_2707713184eb4c18b7913f941469b978",
+          "dsid_1dbf29391e33456488485273bb42303f",
+          "dsid_f0e675cb031a4f28a55b0c56e4c13b69",
+          "dsid_5055accef7204725ba113057da48063a",
+          "dsid_74fe7e5762fa4576bff416b65cb8a81f"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "UNKNOWN",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": true
+        },
+        "verdict": {
+          "satisfied_facts": 0,
+          "total_facts": 7,
+          "states_current_value": false,
+          "presents_retired_as_current": false,
+          "abstains": true,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_7b2f4b37dfb642e19d78c5f9d2c43f16",
+          "dsid_0f520152110e43ef8fb1fe0bfa0a2f44",
+          "dsid_71cfc8405caa45ec88a42a50ef9d5e0b",
+          "dsid_e6d5205f30c34a2dbb0f1c4cfc416e5f",
+          "dsid_afd1de868bed4462842bfe1f16f08c00",
+          "dsid_2707713184eb4c18b7913f941469b978",
+          "dsid_1dbf29391e33456488485273bb42303f",
+          "dsid_f0e675cb031a4f28a55b0c56e4c13b69",
+          "dsid_5055accef7204725ba113057da48063a",
+          "dsid_74fe7e5762fa4576bff416b65cb8a81f"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Per the canon claim graph, the current EXP-002 eu-west\u2192us-east egress_cost_rate is **$0.085 per GiB**, using GiB-based billing as the measurement basis. (The previously used value of $0.05 per 1k tokens, ~$180/hour at 1000 rps, has been superseded and is retired.)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 554.19,
+        "grounding_ms": 286.85
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0421",
+      "question": "Default TTL for the cross-account GPU warm-pool handoff handshake token?",
+      "claim_key": "cross_account_GPU_warm_pool.handshake_token_ttl",
+      "old_value": "180 seconds",
+      "new_value": "120 seconds",
+      "old_doc_id": "dsid_b8ab9778e36543159da49dba3ad9c76d",
+      "new_doc_id": "dsid_9f2e6aa7f6c14b1db1c6f922a1d4b4d7",
+      "graph_state": "CANON",
+      "graph_current_value": "120 seconds",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_b8ab9778e36543159da49dba3ad9c76d"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_9f2e6aa7f6c14b1db1c6f922a1d4b4d7",
+          "dsid_b8ab9778e36543159da49dba3ad9c76d",
+          "dsid_69f06c84b8654bc6b3577e4a3320a48d",
+          "dsid_50c7ffed7df94450ad975b3e51e241cb",
+          "dsid_c6ec4aba298f4d1dbabd55a35249dfb0",
+          "dsid_8c6725755f834295b022783b1ba64fae",
+          "dsid_8e9d8eff077e46a2b0e75d3e66f90f69",
+          "dsid_9b6eee23377b449fbcf40decdef7bad1",
+          "dsid_a7113ef4d5844223a4586ea4e5acf56e",
+          "dsid_b3adc31adaf2420fa06b148a4e02d176"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "There are two conflicting values in the runbooks:\n\n- **Document 1** (GPU Warm-Pool Cross-Account Handoff Runbook, 2025): default TTL is **120 seconds** (configurable), consistent with its example handshake call `ttl_s: 120`.\n- **Document 2** (Inter-account GPU Warm-Pool Handoff Protocol): states the token is \"valid for 3 minutes,\" consistent with its example handshake call `ttl_s: 180` (180 seconds).\n\nSo depending on which runbook version is authoritative, the default TTL is either **120 seconds** or **180 seconds (3 minutes)** \u2014 the documents disagree.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_9f2e6aa7f6c14b1db1c6f922a1d4b4d7",
+          "dsid_69f06c84b8654bc6b3577e4a3320a48d",
+          "dsid_50c7ffed7df94450ad975b3e51e241cb",
+          "dsid_c6ec4aba298f4d1dbabd55a35249dfb0",
+          "dsid_8c6725755f834295b022783b1ba64fae",
+          "dsid_8e9d8eff077e46a2b0e75d3e66f90f69",
+          "dsid_9b6eee23377b449fbcf40decdef7bad1",
+          "dsid_a7113ef4d5844223a4586ea4e5acf56e",
+          "dsid_b3adc31adaf2420fa06b148a4e02d176",
+          "dsid_574db9ceb8db445588666851a1422aea"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "Default TTL for the ephemeral handshake token is 120 seconds (configurable).",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_9f2e6aa7f6c14b1db1c6f922a1d4b4d7",
+          "dsid_69f06c84b8654bc6b3577e4a3320a48d",
+          "dsid_50c7ffed7df94450ad975b3e51e241cb",
+          "dsid_c6ec4aba298f4d1dbabd55a35249dfb0",
+          "dsid_8c6725755f834295b022783b1ba64fae",
+          "dsid_8e9d8eff077e46a2b0e75d3e66f90f69",
+          "dsid_9b6eee23377b449fbcf40decdef7bad1",
+          "dsid_a7113ef4d5844223a4586ea4e5acf56e",
+          "dsid_b3adc31adaf2420fa06b148a4e02d176",
+          "dsid_574db9ceb8db445588666851a1422aea"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "120 seconds.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 6,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 529.5,
+        "grounding_ms": 181.26
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0422",
+      "question": "How do audit log exports access records older than the retention cutoff (super-admin override vs legal hold)?",
+      "claim_key": "audit_log_exports.beyond_retention_access",
+      "old_value": "super-admin retention override",
+      "new_value": "explicit Legal Hold with legal_hold_id; override deprecated",
+      "old_doc_id": "dsid_9cde32cd0645459b80ec513df27d1eb6",
+      "new_doc_id": "dsid_8733ed2132dc4232b2797c1d9a167cb9",
+      "graph_state": "CANON",
+      "graph_current_value": "explicit Legal Hold with legal_hold_id; override deprecated",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_9cde32cd0645459b80ec513df27d1eb6"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_8733ed2132dc4232b2797c1d9a167cb9",
+          "dsid_9cde32cd0645459b80ec513df27d1eb6",
+          "dsid_23bb2fb712e14b26bc6a8c6ec1871fc0",
+          "dsid_cc4728cc46b24f608b510abd20edf5e3",
+          "dsid_62bf7e4042234bd4b9f17d42f9bdf724",
+          "dsid_a21f38d0d6ed46eb8a099e6f90a1a040",
+          "dsid_04bf2110eaf3453b9cfd692503da5e65",
+          "dsid_d17f4560982e421b9e26058747d3b8d1",
+          "dsid_419f9d6ab19541fd9801a28e44d86da1",
+          "dsid_c8279e9fca7a43549c0cc3cad88e3ddd"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": true,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the 2026-03 update in Document 1, the previous \"super-admin retention override\" approach has been deprecated. The new approach requires an explicit **Legal Hold**, represented by a `legal_hold_id`, and retrieval of records beyond the standard retention cutoff is only allowed for tenants with Legal Hold enabled. All uses of `legal_hold_id` are logged to the immutable audit stream with a ticket reference.\n\n(Note: Document 2 describes an earlier design using a \"super-admin override,\" but this was superseded by the Legal Hold mechanism described in Document 1.)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 6,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_8733ed2132dc4232b2797c1d9a167cb9",
+          "dsid_23bb2fb712e14b26bc6a8c6ec1871fc0",
+          "dsid_cc4728cc46b24f608b510abd20edf5e3",
+          "dsid_62bf7e4042234bd4b9f17d42f9bdf724",
+          "dsid_a21f38d0d6ed46eb8a099e6f90a1a040",
+          "dsid_04bf2110eaf3453b9cfd692503da5e65",
+          "dsid_d17f4560982e421b9e26058747d3b8d1",
+          "dsid_419f9d6ab19541fd9801a28e44d86da1",
+          "dsid_c8279e9fca7a43549c0cc3cad88e3ddd",
+          "dsid_6dc0069b87c5494abcb0455668f3f7af"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": false
+        },
+        "answer": "Per the 2026-03 update, the previous \"super-admin retention override\" is deprecated. Retrieval of records beyond standard retention now requires an explicit Legal Hold, represented by a **legal_hold_id**, and is only allowed for tenants with Legal Hold enabled. All uses of the legal_hold_id are logged to the immutable audit stream with a ticket reference.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 6,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_8733ed2132dc4232b2797c1d9a167cb9",
+          "dsid_23bb2fb712e14b26bc6a8c6ec1871fc0",
+          "dsid_cc4728cc46b24f608b510abd20edf5e3",
+          "dsid_62bf7e4042234bd4b9f17d42f9bdf724",
+          "dsid_a21f38d0d6ed46eb8a099e6f90a1a040",
+          "dsid_04bf2110eaf3453b9cfd692503da5e65",
+          "dsid_d17f4560982e421b9e26058747d3b8d1",
+          "dsid_419f9d6ab19541fd9801a28e44d86da1",
+          "dsid_c8279e9fca7a43549c0cc3cad88e3ddd",
+          "dsid_6dc0069b87c5494abcb0455668f3f7af"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": false
+        },
+        "answer": "Records older than the retention cutoff can no longer be accessed via the super-admin retention override, which has been deprecated. As of the 2026-03 update, retrieval beyond standard retention requires an explicit Legal Hold, represented by a `legal_hold_id`, and is only permitted for tenants with Legal Hold enabled. All uses of the `legal_hold_id` are logged to the immutable audit stream with a ticket reference.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 6,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 604.49,
+        "grounding_ms": 1089.97
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0423",
+      "question": "For the office keycard audit, how many months of access logs should we export?",
+      "claim_key": "office_keycard_audit.access_log_export_window_months",
+      "old_value": "18 months",
+      "new_value": "12 months (expand only if anomalies)",
+      "old_doc_id": "dsid_c5288dd4874345adb80f4a71c9a18773",
+      "new_doc_id": "dsid_03b2db544a6d4cf886fb9869058a05f2",
+      "graph_state": "CANON",
+      "graph_current_value": "12 months (expand only if anomalies)",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_c5288dd4874345adb80f4a71c9a18773"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_03b2db544a6d4cf886fb9869058a05f2",
+          "dsid_c5288dd4874345adb80f4a71c9a18773",
+          "dsid_6deab5cc6d9e4699bbc38c3ba4513c30",
+          "dsid_db4331e8cac14e7a846ae861d90576b6",
+          "dsid_85b59672948b4d08ad275016c8c1b82c",
+          "dsid_5bc9bbca6ca64dd5b977b1fda0c18cee",
+          "dsid_eaa2c29deae345a4a6fec9cd1842061d",
+          "dsid_9cd0be391b974aa8a9e78edec51255fe",
+          "dsid_5a126b450d524bf6bd824d8870d60dbe",
+          "dsid_f1a10cee5d284fa5a8de7c6809017b8a"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "12 months.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_03b2db544a6d4cf886fb9869058a05f2",
+          "dsid_6deab5cc6d9e4699bbc38c3ba4513c30",
+          "dsid_db4331e8cac14e7a846ae861d90576b6",
+          "dsid_85b59672948b4d08ad275016c8c1b82c",
+          "dsid_5bc9bbca6ca64dd5b977b1fda0c18cee",
+          "dsid_eaa2c29deae345a4a6fec9cd1842061d",
+          "dsid_9cd0be391b974aa8a9e78edec51255fe",
+          "dsid_5a126b450d524bf6bd824d8870d60dbe",
+          "dsid_f1a10cee5d284fa5a8de7c6809017b8a",
+          "dsid_9d63fe3937904cb6a42e315191d1eb0f"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "12 months",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_03b2db544a6d4cf886fb9869058a05f2",
+          "dsid_6deab5cc6d9e4699bbc38c3ba4513c30",
+          "dsid_db4331e8cac14e7a846ae861d90576b6",
+          "dsid_85b59672948b4d08ad275016c8c1b82c",
+          "dsid_5bc9bbca6ca64dd5b977b1fda0c18cee",
+          "dsid_eaa2c29deae345a4a6fec9cd1842061d",
+          "dsid_9cd0be391b974aa8a9e78edec51255fe",
+          "dsid_5a126b450d524bf6bd824d8870d60dbe",
+          "dsid_f1a10cee5d284fa5a8de7c6809017b8a",
+          "dsid_9d63fe3937904cb6a42e315191d1eb0f"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": true
+        },
+        "answer": "12 months.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 367.28,
+        "grounding_ms": 162.84
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0424",
+      "question": "For the Interactive Latency Canvas, what are the current prompt_len_bucket cutoffs (short/medium/long)?",
+      "claim_key": "Interactive Latency Canvas.prompt_len_bucket_cutoffs",
+      "old_value": "short <64, medium 64-512, long >512",
+      "new_value": "short <128, medium 128-1024, long >1024 tokens",
+      "old_doc_id": "dsid_f039509796f842cd84ba3bfb895c7132",
+      "new_doc_id": "dsid_7f2a6f2d2de34f94a5b6f3d5d0d1f6a2",
+      "graph_state": "CANON",
+      "graph_current_value": "short <128, medium 128-1024, long >1024 tokens",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_f039509796f842cd84ba3bfb895c7132"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_f039509796f842cd84ba3bfb895c7132",
+          "dsid_7f2a6f2d2de34f94a5b6f3d5d0d1f6a2",
+          "dsid_7ac4915792d84235a2417a62190fea66",
+          "dsid_2b0e85b89e5c46e98a1f530d4938e8a5",
+          "dsid_5b30655bfbad465c88fedc262f1ba41e",
+          "dsid_743654b07c204906bf497e2c35886051",
+          "dsid_f5771de2f9414660aa0a4601ac89635e",
+          "dsid_1758887c7ae6485280591abd638dfceb",
+          "dsid_65a7c7e207654aed94aa1becf2f700fb",
+          "dsid_e3b1fc10711c4837bd710b4e9cd6d142"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the updated (token-based) definitions in the Confluence design guide:\n\n- **short**: <128 tokens\n- **medium**: 128\u20131024 tokens\n- **long**: >1024 tokens\n\n(This supersedes the earlier character-based buckets\u2014short<64, medium 64\u2013512, long>512\u2014mentioned in the original Linear ticket.)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 10,
+          "total_facts": 10,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_7f2a6f2d2de34f94a5b6f3d5d0d1f6a2",
+          "dsid_7ac4915792d84235a2417a62190fea66",
+          "dsid_2b0e85b89e5c46e98a1f530d4938e8a5",
+          "dsid_5b30655bfbad465c88fedc262f1ba41e",
+          "dsid_743654b07c204906bf497e2c35886051",
+          "dsid_f5771de2f9414660aa0a4601ac89635e",
+          "dsid_1758887c7ae6485280591abd638dfceb",
+          "dsid_65a7c7e207654aed94aa1becf2f700fb",
+          "dsid_e3b1fc10711c4837bd710b4e9cd6d142",
+          "dsid_e5eafb9c853e415f88569e9e5a14a085"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on Document 1, the current token-based prompt length bucket cutoffs are:\n\n- **short**: `<128` tokens\n- **medium**: `128\u20131024` tokens\n- **long**: `>1024` tokens",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 10,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_7f2a6f2d2de34f94a5b6f3d5d0d1f6a2",
+          "dsid_7ac4915792d84235a2417a62190fea66",
+          "dsid_2b0e85b89e5c46e98a1f530d4938e8a5",
+          "dsid_5b30655bfbad465c88fedc262f1ba41e",
+          "dsid_743654b07c204906bf497e2c35886051",
+          "dsid_f5771de2f9414660aa0a4601ac89635e",
+          "dsid_1758887c7ae6485280591abd638dfceb",
+          "dsid_65a7c7e207654aed94aa1becf2f700fb",
+          "dsid_e3b1fc10711c4837bd710b4e9cd6d142",
+          "dsid_e5eafb9c853e415f88569e9e5a14a085"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "short <128, medium 128\u20131024, long >1024 tokens.",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 10,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 604.79,
+        "grounding_ms": 201.62
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0425",
+      "question": "In the Deterministic Playback Manifest v1, how is manifest signing/integrity represented (signature vs integrity fields)?",
+      "claim_key": "Deterministic Playback Manifest v1.integrity_representation",
+      "old_value": "optional embedded signature field",
+      "new_value": "optional integrity enum + integrity_ref URI, no embedded signature blob",
+      "old_doc_id": "dsid_834de01417d04878b4257f0f03ccbb88",
+      "new_doc_id": "dsid_2f9c99fc8ec74495b4b08c49a6083ba8",
+      "graph_state": "CANON",
+      "graph_current_value": "optional integrity enum + integrity_ref URI, no embedded signature blob",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_834de01417d04878b4257f0f03ccbb88"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_2f9c99fc8ec74495b4b08c49a6083ba8",
+          "dsid_4bc0e470f09d4e9285de8105c893bf07",
+          "dsid_9cc3f70be4364e2795fe5251f8b5142a",
+          "dsid_96ccda22c0374b34aaff4c2f5c7d1852",
+          "dsid_834de01417d04878b4257f0f03ccbb88",
+          "dsid_6e6c68e0f48244ae8fb0f0a91bcbe1ca",
+          "dsid_232691356bfb48f2812b9f309ca2256c",
+          "dsid_3aaf3b34598747809ecfd9177a7f4dc8",
+          "dsid_7ae63f8612094ad1aacb857e4e5bae7f",
+          "dsid_0005333b88ee493783d1c4e01c93cf8f"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "In the Deterministic Playback Manifest v1, integrity is represented via the `integrity` field (not a direct embedded `signature` blob as in an earlier draft). The `integrity` field is a compact string describing the integrity mechanism, with supported values:\n\n- `none`\n- `sha256-only` (checksums required; no signature)\n- `sigstore-oidc` (signature envelope stored separately; manifest contains only a reference)\n\nThis is paired with an optional `integrity_ref` field, a URI pointing to the signature/envelope material, used when `integrity` is not `none`. This design change\u2014moving from an embedded `signature` blob to `integrity` + `integrity_ref`\u2014was made specifically to avoid copying large signature envelopes directly into manifests/tickets.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 8,
+          "total_facts": 8,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_2f9c99fc8ec74495b4b08c49a6083ba8",
+          "dsid_4bc0e470f09d4e9285de8105c893bf07",
+          "dsid_9cc3f70be4364e2795fe5251f8b5142a",
+          "dsid_96ccda22c0374b34aaff4c2f5c7d1852",
+          "dsid_6e6c68e0f48244ae8fb0f0a91bcbe1ca",
+          "dsid_232691356bfb48f2812b9f309ca2256c",
+          "dsid_3aaf3b34598747809ecfd9177a7f4dc8",
+          "dsid_7ae63f8612094ad1aacb857e4e5bae7f",
+          "dsid_0005333b88ee493783d1c4e01c93cf8f",
+          "dsid_d7ad2c071d694ca49323fea5ce88c831"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "In v1, the manifest no longer embeds a direct `signature` blob. Instead, integrity is represented via two fields:\n\n- `integrity` (optional): a compact string describing the integrity mechanism, one of:\n  - `none`\n  - `sha256-only` (checksums required; no signature)\n  - `sigstore-oidc` (signature envelope stored separately; manifest contains a reference)\n- `integrity_ref` (optional): a URI pointing to the signature/envelope material, used when `integrity` is not `none`.\n\nThis change avoids copying large signature envelopes directly into the manifest (and into tickets), replacing the earlier draft's embedded `signature` blob with this reference-based approach.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 8,
+          "total_facts": 8,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_2f9c99fc8ec74495b4b08c49a6083ba8",
+          "dsid_4bc0e470f09d4e9285de8105c893bf07",
+          "dsid_9cc3f70be4364e2795fe5251f8b5142a",
+          "dsid_96ccda22c0374b34aaff4c2f5c7d1852",
+          "dsid_6e6c68e0f48244ae8fb0f0a91bcbe1ca",
+          "dsid_232691356bfb48f2812b9f309ca2256c",
+          "dsid_3aaf3b34598747809ecfd9177a7f4dc8",
+          "dsid_7ae63f8612094ad1aacb857e4e5bae7f",
+          "dsid_0005333b88ee493783d1c4e01c93cf8f",
+          "dsid_d7ad2c071d694ca49323fea5ce88c831"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "In Deterministic Playback Manifest v1, integrity is represented by an optional `integrity` field \u2014 a compact enum with values `none`, `sha256-only`, or `sigstore-oidc` \u2014 paired with an optional `integrity_ref` URI pointing to signature/envelope material when `integrity` is not `none`. There is no embedded signature blob in the manifest itself; the earlier design that included a direct embedded `signature` field has been superseded by this `integrity`/`integrity_ref` approach, specifically to avoid copying large signature envelopes into tickets.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 8,
+          "total_facts": 8,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 344.61,
+        "grounding_ms": 191.73
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0426",
+      "question": "What are the automated rollback trigger thresholds (safety sentinel, composite quality, business KPI) in the Optimize cohort-driven gates PRD?",
+      "claim_key": "Optimize cohort_driven_gates.rollback_thresholds",
+      "old_value": "safety >0.5% immediate; 50% traffic revert on >3% quality 10m; full rollback >5% KPI 5m",
+      "new_value": "safety >0.3% for 5m; cohort divert on >3% quality 10m; full rollback >4% KPI 10m",
+      "old_doc_id": "dsid_c90bd544f3b5437fba711492db31aeea",
+      "new_doc_id": "dsid_553e1651575a416dae6b92d019d2f9f4",
+      "graph_state": "CANON",
+      "graph_current_value": "safety >0.3% for 5m; cohort divert on >3% quality 10m; full rollback >4% KPI 10m",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_c90bd544f3b5437fba711492db31aeea"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_553e1651575a416dae6b92d019d2f9f4",
+          "dsid_c90bd544f3b5437fba711492db31aeea",
+          "dsid_d9983194a5e84d14833c19477339b220",
+          "dsid_63d32d910485469194533279fe28780f",
+          "dsid_e04b32362f084d388f54be4fdd18e35b",
+          "dsid_a1eec46d06554bbb9d47a75007ef8521",
+          "dsid_87ca51a14670481ca02327b5fc8b6ea5",
+          "dsid_f2ae5646c3b745e08bc89c5cda29d308",
+          "dsid_7bde53c18ca54b0bb30483e769c6a7c1",
+          "dsid_4184a153b18c4aa294788a3a1d3b954d"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the Confluence PRD (finalized/updated version), the automated rollback triggers are:\n\n- **Safety sentinel:** Immediate throttle if any safety sentinel shows >0.3% absolute regression sustained for 5 minutes\n- **Composite quality:** Automatic cohort-level divert to previous stable variant if composite quality score drops >3% sustained for 10 minutes in that cohort\n- **Business KPI:** Full rollback if business KPI regression >4% sustained for 10 minutes (updated from 5% for 5 minutes to reduce false negatives while avoiding brief KPI noise)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_553e1651575a416dae6b92d019d2f9f4",
+          "dsid_d9983194a5e84d14833c19477339b220",
+          "dsid_63d32d910485469194533279fe28780f",
+          "dsid_e04b32362f084d388f54be4fdd18e35b",
+          "dsid_a1eec46d06554bbb9d47a75007ef8521",
+          "dsid_87ca51a14670481ca02327b5fc8b6ea5",
+          "dsid_f2ae5646c3b745e08bc89c5cda29d308",
+          "dsid_7bde53c18ca54b0bb30483e769c6a7c1",
+          "dsid_4184a153b18c4aa294788a3a1d3b954d",
+          "dsid_bcc0d4b2368a4fee840b0191131a6abc"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "From Document 1 (Cohort-driven evaluation harness PRD):\n\n- **Safety sentinel**: Immediate throttle if any safety sentinel shows >0.3% absolute regression sustained for 5 minutes.\n- **Composite quality**: Automatic cohort-level divert to previous stable variant if composite quality score drops >3% sustained for 10 minutes in that cohort.\n- **Business KPI**: Full rollback if business KPI regression >4% sustained for 10 minutes (updated from 5% for 5 minutes to reduce false negatives while avoiding brief KPI noise).",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_553e1651575a416dae6b92d019d2f9f4",
+          "dsid_d9983194a5e84d14833c19477339b220",
+          "dsid_63d32d910485469194533279fe28780f",
+          "dsid_e04b32362f084d388f54be4fdd18e35b",
+          "dsid_a1eec46d06554bbb9d47a75007ef8521",
+          "dsid_87ca51a14670481ca02327b5fc8b6ea5",
+          "dsid_f2ae5646c3b745e08bc89c5cda29d308",
+          "dsid_7bde53c18ca54b0bb30483e769c6a7c1",
+          "dsid_4184a153b18c4aa294788a3a1d3b954d",
+          "dsid_bcc0d4b2368a4fee840b0191131a6abc"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the current (canonical) values in the Optimize cohort-driven evaluation harness PRD:\n\n- **Safety sentinel**: Immediate throttle if any safety sentinel shows >0.3% absolute regression sustained for 5 minutes\n- **Composite quality**: Automatic cohort-level divert to previous stable variant if composite quality score drops >3% sustained for 10 minutes in that cohort\n- **Business KPI**: Full rollback if business KPI regression >4% sustained for 10 minutes",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 1723.21,
+        "grounding_ms": 643.63
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0427",
+      "question": "ClearEdge 2027 pilot: final po_fingerprint format and weekly invoice delivery time?",
+      "claim_key": "ClearEdge 2027 pilot.po_fingerprint_and_invoice_delivery",
+      "old_value": "raw PO#|LINEUUID, Monday-morning delivery",
+      "new_value": "lowercase SHA-256 of PO_NUMBER|PO_LINE_UUID, Tuesdays by 07:00 PT",
+      "old_doc_id": "dsid_86f033ed92b84f3a8b381d09b0b95357",
+      "new_doc_id": "dsid_d93aed75845e4a0b8126a80d8a7a5a41",
+      "graph_state": "CANON",
+      "graph_current_value": "lowercase SHA-256 of PO_NUMBER|PO_LINE_UUID, Tuesdays by 07:00 PT",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [
+        "dsid_86f033ed92b84f3a8b381d09b0b95357"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_d93aed75845e4a0b8126a80d8a7a5a41",
+          "dsid_86f033ed92b84f3a8b381d09b0b95357",
+          "dsid_da3615a733c94755ad9f72e0ea3c6f43",
+          "dsid_bd29e7c58f0d4dcc9e666a420d0482fc",
+          "dsid_20429fa23c1744569124bd8b4ed9bdaf",
+          "dsid_cc4b7aaa6ade45cf892cdccdd41f5904",
+          "dsid_a57efbf94fa14d0583fc35220169ca49",
+          "dsid_cfad89f4f9964a43a4bcce338738586e",
+          "dsid_6f1903fb3f814f01853907cdeb5574c7",
+          "dsid_52197d13b9c2452a876d17b94b47ea4b"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Per the finalized Confluence documentation (dsid_d93aed75845e4a0b8126a80d8a7a5a41):\n\n- **po_fingerprint format:** SHA-256 hex digest (lowercase hex) of the input string `PO_NUMBER|PO_LINE_UUID`. (Not SHA-1, no raw/unhashed value, no whitespace.)\n- **Weekly invoice delivery time:** Tuesdays by 07:00 PT.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_d93aed75845e4a0b8126a80d8a7a5a41",
+          "dsid_da3615a733c94755ad9f72e0ea3c6f43",
+          "dsid_bd29e7c58f0d4dcc9e666a420d0482fc",
+          "dsid_20429fa23c1744569124bd8b4ed9bdaf",
+          "dsid_cc4b7aaa6ade45cf892cdccdd41f5904",
+          "dsid_a57efbf94fa14d0583fc35220169ca49",
+          "dsid_cfad89f4f9964a43a4bcce338738586e",
+          "dsid_6f1903fb3f814f01853907cdeb5574c7",
+          "dsid_52197d13b9c2452a876d17b94b47ea4b",
+          "dsid_60b2049485f4457eb04d045df4cfa088"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Per the finalized ClearEdge Health (2027) billing requirements:\n\n- **po_fingerprint format:** SHA-256 hex digest (lowercase hex) of the input string `PO_NUMBER|PO_LINE_UUID`. It must not be sent raw (unhashed), must not use SHA-1, and must contain no whitespace.\n- **Weekly invoice delivery time:** Tuesdays by 07:00 PT (covering the prior Monday 00:00:00 PT through Sunday 23:59:59 PT period), delivered via ClearEdge SFTP.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_d93aed75845e4a0b8126a80d8a7a5a41",
+          "dsid_da3615a733c94755ad9f72e0ea3c6f43",
+          "dsid_bd29e7c58f0d4dcc9e666a420d0482fc",
+          "dsid_20429fa23c1744569124bd8b4ed9bdaf",
+          "dsid_cc4b7aaa6ade45cf892cdccdd41f5904",
+          "dsid_a57efbf94fa14d0583fc35220169ca49",
+          "dsid_cfad89f4f9964a43a4bcce338738586e",
+          "dsid_6f1903fb3f814f01853907cdeb5574c7",
+          "dsid_52197d13b9c2452a876d17b94b47ea4b",
+          "dsid_60b2049485f4457eb04d045df4cfa088"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "The final po_fingerprint format is the lowercase SHA-256 hex digest of the string `PO_NUMBER|PO_LINE_UUID`, and the weekly invoice delivery time is Tuesdays by 07:00 PT.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 394.65,
+        "grounding_ms": 179.08
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0428",
+      "question": "What monthly token volume discount breakpoints apply for Hosted pricing in the enterprise playbook?",
+      "claim_key": "Hosted enterprise_playbook.monthly_token_volume_discount_breakpoints",
+      "old_value": "100k / 1M / 5M",
+      "new_value": "250k / 2M / 10M",
+      "old_doc_id": "dsid_1214ee9ab5e44de487c800f7a4771d7d",
+      "new_doc_id": "dsid_10559147d3014931898864f22c311e47",
+      "graph_state": "CANON",
+      "graph_current_value": "250k / 2M / 10M",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [],
+      "graph_pinned_doc_ids": [
+        "dsid_10559147d3014931898864f22c311e47"
+      ],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_81179004a5c54f9a9d313efe5239f118",
+          "dsid_7417c55973d44ccc882e1b3b4597da0b",
+          "dsid_d379cab355964b9180c4af135d76f173",
+          "dsid_4c066e69bc9345af85e9191a15b07fb0",
+          "dsid_40d216ed9e604613a096ccdce6634d96",
+          "dsid_c40e3052f8d142dbadbe34635482ca5d",
+          "dsid_c30b612872034a1c9cb505f1a0948da1",
+          "dsid_27c0d28b1bdc4409a171fb505bf93c1c",
+          "dsid_2b3cb1e7e11d4a0f9dcf54f55c9bcb63",
+          "dsid_1ad8dd5ea23c48f1ae287c6c465e1ff9"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": false,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Based on the sales playbook, the recommended standard volume breakpoints are **50M, 200M, and 1B tokens** (noted as example thresholds, with final bands to be produced by finance).",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 0,
+          "total_facts": 5,
+          "states_current_value": false,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_81179004a5c54f9a9d313efe5239f118",
+          "dsid_7417c55973d44ccc882e1b3b4597da0b",
+          "dsid_d379cab355964b9180c4af135d76f173",
+          "dsid_4c066e69bc9345af85e9191a15b07fb0",
+          "dsid_40d216ed9e604613a096ccdce6634d96",
+          "dsid_c40e3052f8d142dbadbe34635482ca5d",
+          "dsid_c30b612872034a1c9cb505f1a0948da1",
+          "dsid_27c0d28b1bdc4409a171fb505bf93c1c",
+          "dsid_2b3cb1e7e11d4a0f9dcf54f55c9bcb63",
+          "dsid_1ad8dd5ea23c48f1ae287c6c465e1ff9",
+          "dsid_10559147d3014931898864f22c311e47"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 11,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "According to the enterprise deal acceleration playbook, the updated discount guardrails for Hosted volume set predefined breakpoints at **250k, 2M, and 10M monthly tokens** (the older document's breakpoints of 100k/1M/5M are noted as outdated).",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": true,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 5,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_81179004a5c54f9a9d313efe5239f118",
+          "dsid_7417c55973d44ccc882e1b3b4597da0b",
+          "dsid_d379cab355964b9180c4af135d76f173",
+          "dsid_4c066e69bc9345af85e9191a15b07fb0",
+          "dsid_40d216ed9e604613a096ccdce6634d96",
+          "dsid_c40e3052f8d142dbadbe34635482ca5d",
+          "dsid_c30b612872034a1c9cb505f1a0948da1",
+          "dsid_27c0d28b1bdc4409a171fb505bf93c1c",
+          "dsid_2b3cb1e7e11d4a0f9dcf54f55c9bcb63",
+          "dsid_1ad8dd5ea23c48f1ae287c6c465e1ff9",
+          "dsid_10559147d3014931898864f22c311e47"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 11,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": true,
+          "current_value_in_context": true
+        },
+        "answer": "250k / 2M / 10M",
+        "answer_metrics": {
+          "states_current_value": true,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 1,
+          "total_facts": 5,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 422.72,
+        "grounding_ms": 162.33
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0429",
+      "question": "Do I need to set enable_tool_signal for tool-signal in the Responses v9 OpenAI-compat streaming bridge?",
+      "claim_key": "Responses_v9_OpenAI_compat_streaming_bridge.enable_tool_signal",
+      "old_value": "per-request enable_tool_signal flag, default true for hosted",
+      "new_value": "automatic when tool calls present; no public flag; private disable via openai_compat.tool_signal_enabled=false",
+      "old_doc_id": "dsid_96912c22b0b04024b573606105bd5ea0",
+      "new_doc_id": "dsid_8a085e12606b4ea79f43ee176cba2ccb",
+      "graph_state": "CANON",
+      "graph_current_value": "automatic when tool calls present; no public flag; private disable via openai_compat.tool_signal_enabled=false",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T2",
+      "dropped_doc_ids": [
+        "dsid_96912c22b0b04024b573606105bd5ea0"
+      ],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_8a085e12606b4ea79f43ee176cba2ccb",
+          "dsid_96912c22b0b04024b573606105bd5ea0",
+          "dsid_61a7f1a19ac444ed8ed02f4b11e8e3de",
+          "dsid_86ef5fa73b2f40d3a8ab01378805e707",
+          "dsid_d4643ca0b6234ec1916937466756d29f",
+          "dsid_a5fcc13bd1484ce6b91f2e249674dd1a",
+          "dsid_c6a6c5034dfd48f09044fb17b306f78d",
+          "dsid_2329246a87044fbdb7038867be790b33",
+          "dsid_c1501e447fe54c82bbdaf65535cc06f5",
+          "dsid_5eef5cf0f6d547d8bd3a998393bb6c9b"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": true,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "No. Tool-signal is automatically enabled when tool calls are present (i.e., when the model emits tool-call events or the request includes tools) \u2014 there is no per-request `enable_tool_signal` flag exposed on the public OpenAI-compatible surface. (Private deployments can instead disable it via server config: `openai_compat.tool_signal_enabled=false`.)",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 8,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_8a085e12606b4ea79f43ee176cba2ccb",
+          "dsid_61a7f1a19ac444ed8ed02f4b11e8e3de",
+          "dsid_86ef5fa73b2f40d3a8ab01378805e707",
+          "dsid_d4643ca0b6234ec1916937466756d29f",
+          "dsid_a5fcc13bd1484ce6b91f2e249674dd1a",
+          "dsid_c6a6c5034dfd48f09044fb17b306f78d",
+          "dsid_2329246a87044fbdb7038867be790b33",
+          "dsid_c1501e447fe54c82bbdaf65535cc06f5",
+          "dsid_5eef5cf0f6d547d8bd3a998393bb6c9b",
+          "dsid_bb0f3376f4974673a89bab0dfec76169"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "No. Based on the updated rollout notes for Responses v9, there is no per-request `enable_tool_signal` flag exposed on the public OpenAI-compatible surface. Tool-signal is automatically enabled whenever tool calls are present (i.e., when the model emits tool-call events or the request includes tools). Private deployments can instead disable it via the server config setting `openai_compat.tool_signal_enabled=false`.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 8,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_8a085e12606b4ea79f43ee176cba2ccb",
+          "dsid_61a7f1a19ac444ed8ed02f4b11e8e3de",
+          "dsid_86ef5fa73b2f40d3a8ab01378805e707",
+          "dsid_d4643ca0b6234ec1916937466756d29f",
+          "dsid_a5fcc13bd1484ce6b91f2e249674dd1a",
+          "dsid_c6a6c5034dfd48f09044fb17b306f78d",
+          "dsid_2329246a87044fbdb7038867be790b33",
+          "dsid_c1501e447fe54c82bbdaf65535cc06f5",
+          "dsid_5eef5cf0f6d547d8bd3a998393bb6c9b",
+          "dsid_bb0f3376f4974673a89bab0dfec76169"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "No. There is no public `enable_tool_signal` per-request flag on the Responses v9 OpenAI-compat streaming bridge. Tool-signal is now automatically enabled whenever tool calls are present (i.e., when the model emits tool-call events or the request includes tools). The only way to disable it is via a private server-side config, `openai_compat.tool_signal_enabled=false`, for private deployments.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 8,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 442.22,
+        "grounding_ms": 200.53
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    },
+    {
+      "question_id": "qst_0430",
+      "question": "Does the Hosted AWS Marketplace SKU support customer-managed KMS keys (BYOK)?",
+      "claim_key": "Hosted_AWS_Marketplace_SKU.customer_managed_KMS_BYOK",
+      "old_value": "Hosted cannot do BYOK; take Private",
+      "new_value": "BYOK add-on for enterprise tenants in select regions (2026 FAQ); Private still recommended when BYOK is hard requirement",
+      "old_doc_id": "dsid_3c9fe2220c204f13b878bd7d3a168f91",
+      "new_doc_id": "dsid_8f0b7a8c1dbb4df0b23f6c4e61c9f1a6",
+      "graph_state": "CANON",
+      "graph_current_value": "BYOK add-on for enterprise tenants in select regions (2026 FAQ); Private still recommended when BYOK is hard requirement",
+      "graph_transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "dropped_doc_ids": [],
+      "graph_pinned_doc_ids": [],
+      "baseline": {
+        "arm": "baseline",
+        "doc_ids": [
+          "dsid_916e33c0cd2141bbabdcc80ffccbf96b",
+          "dsid_aa204e8e06314ca085251b3c05d62e60",
+          "dsid_a90941b9ed154024b87d16025a1145f6",
+          "dsid_dbd8bbb8feea4ee49510d515afa38d4a",
+          "dsid_8f0b7a8c1dbb4df0b23f6c4e61c9f1a6",
+          "dsid_adfbb3d33c1e408c8e257aa9f6b1f5b9",
+          "dsid_85474c18cde244899530fcb777f93144",
+          "dsid_b43e4b022db5404bbe84b5884b1ce847",
+          "dsid_96f4f6c69643449cba746a7c5eedbf1e",
+          "dsid_b6da9e16c159421590c0df22d42dabab"
+        ],
+        "metrics": {
+          "arm": "baseline",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Yes \u2014 per the 2026 updated guidance, customer-managed KMS is available for enterprise Hosted tenants in select regions as an add-on (subject to feasibility review); if not available in the target region, the default falls back to provider-managed keys.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon_filtered": {
+        "arm": "canon_filtered",
+        "doc_ids": [
+          "dsid_916e33c0cd2141bbabdcc80ffccbf96b",
+          "dsid_aa204e8e06314ca085251b3c05d62e60",
+          "dsid_a90941b9ed154024b87d16025a1145f6",
+          "dsid_dbd8bbb8feea4ee49510d515afa38d4a",
+          "dsid_8f0b7a8c1dbb4df0b23f6c4e61c9f1a6",
+          "dsid_adfbb3d33c1e408c8e257aa9f6b1f5b9",
+          "dsid_85474c18cde244899530fcb777f93144",
+          "dsid_b43e4b022db5404bbe84b5884b1ce847",
+          "dsid_96f4f6c69643449cba746a7c5eedbf1e",
+          "dsid_b6da9e16c159421590c0df22d42dabab"
+        ],
+        "metrics": {
+          "arm": "canon_filtered",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Yes \u2014 per the AWS Marketplace procurement + security FAQ (2026 updated guidance): for **Hosted**, customer-managed KMS is available for enterprise tenants in select regions as an add-on, using per-tenant key configuration (subject to feasibility review). If not available in the target region, the default falls back to provider-managed keys.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 3,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "canon": {
+        "arm": "canon",
+        "doc_ids": [
+          "dsid_916e33c0cd2141bbabdcc80ffccbf96b",
+          "dsid_aa204e8e06314ca085251b3c05d62e60",
+          "dsid_a90941b9ed154024b87d16025a1145f6",
+          "dsid_dbd8bbb8feea4ee49510d515afa38d4a",
+          "dsid_8f0b7a8c1dbb4df0b23f6c4e61c9f1a6",
+          "dsid_adfbb3d33c1e408c8e257aa9f6b1f5b9",
+          "dsid_85474c18cde244899530fcb777f93144",
+          "dsid_b43e4b022db5404bbe84b5884b1ce847",
+          "dsid_96f4f6c69643449cba746a7c5eedbf1e",
+          "dsid_b6da9e16c159421590c0df22d42dabab"
+        ],
+        "metrics": {
+          "arm": "canon",
+          "context_docs": 10,
+          "current_gold_in_context": true,
+          "retired_gold_in_context": false,
+          "retired_value_in_context": false,
+          "current_value_in_context": false
+        },
+        "answer": "Yes \u2014 customer-managed KMS (BYOK) is available for Hosted enterprise tenants as an add-on in select regions, subject to feasibility review; if unavailable in the target region, the default is provider-managed keys. Private remains the recommended option when BYOK is a hard requirement.",
+        "answer_metrics": {
+          "states_current_value": false,
+          "states_retired_value": false,
+          "abstained": false
+        },
+        "verdict": {
+          "satisfied_facts": 4,
+          "total_facts": 7,
+          "states_current_value": true,
+          "presents_retired_as_current": false,
+          "abstains": false,
+          "judge_model": "claude-sonnet-5",
+          "unanimous": true
+        }
+      },
+      "historical_keeps_retired_gold": true,
+      "historical_drops_current_gold": true,
+      "timing": {
+        "retrieval_ms": 431.9,
+        "grounding_ms": 167.77
+      },
+      "hydra_query_names": [
+        "artifact_claims",
+        "all_claim_keys",
+        "entity_of_claim_key",
+        "claim_neighborhood",
+        "claim_events",
+        "supersession_chain",
+        "residue_reverse_traversal"
+      ]
+    }
+  ],
+  "abstentions": [
+    {
+      "question_id": "qst_0481",
+      "question": "For the hot-route capacity protection rollout in us-east, which specific enterprise accounts were on the initial allowlist, and what were the exact per-route-group budget values (RPS, estimated TPS, and concurrency) configured for each of those accounts?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0482",
+      "question": "What exact queue-depth threshold and prefill/decode interleaving-ratio cutoffs are currently configured in production to allow FP8 attention in **decode** on H100 hosted pools (i.e., the scheduler interaction guardrail mentioned in the FP8/INT8 kernel auto-selection heuristics)?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0483",
+      "question": "For the admin activity chronicle's daily Merkle-root anchoring, which public blockchain network do we anchor to and what smart contract address is used, and how should an auditor verify the anchor end-to-end?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0484",
+      "question": "What is the complete mapping of `billing_tag` \u2192 Finance GL code (and cost center owner) used for chargebacks in the Eval Budget Ledger, and where is that mapping source-of-truth maintained?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0485",
+      "question": "In the CSRL \"delayed_with_handover\" admission response, what is the exact queue token format (encoding + required fields) and what signing/validation mechanism is used to prevent cross-tenant or cross-region replay?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0486",
+      "question": "How do we compute and invoice the **per-request CO2e** for Hosted API usage (including the region-specific carbon intensity factors and any cache-hit adjustments), and where is that CO2e exposed in the customer Usage API/export schema?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0487",
+      "question": "When a streaming resume attempt fails with HTTP 409 (checkpoint mismatch), what is the full JSON schema of the server's error payload (including any `resume_details` fields), and how is the `kv_crc` value inside v2 resume tokens computed?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0488",
+      "question": "When we use the GPU firmware operator to do a BIOS/firmware rollout, what BIOS settings are included in Redwood's \"safe mode boot\" profile for A100/H100 nodes (e.g., Secure Boot, Above 4G decoding, Resizable BAR), and what are the default values for each?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0489",
+      "question": "In the `observability-pack` status page component registry, what Slack channel is listed as the ownership contact for the **Hosted API - Streaming (us-east)** component?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0490",
+      "question": "For enterprise private deployments, what numeric BGP community value(s) correspond to the \"redwood-shield\" policy, and what are the standard MED/local-preference values we set when failing over from Direct Connect/Interconnect to the VPN during an interconnect flap?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0491",
+      "question": "For the Adaptive Prefetch Hint Layer, what exact canonicalization rules and cryptographic signing algorithm are used to generate/verify the `signature` field in the `X-RW-Prefetch-Hint` header (including key rotation cadence and the endpoint/mechanism clients use to fetch verification keys)?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0492",
+      "question": "For the \"microburst insurance\" negotiated SLA bundles, what's the default burst surcharge charged when burst capacity units are consumed, and which GL account should that surcharge be posted to?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0493",
+      "question": "What are the exact Azure Marketplace metering dimension names and units we use for Hosted API (input tokens, output tokens, embeddings, rerank), and what rounding/aggregation policy do we apply when reporting usage to Azure?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0494",
+      "question": "In the runtime telemetry sampling/cost-aware profiling policy, what are the exact TEU (trace-equivalent-unit) weight multipliers for full-span traces vs kernel-level detailed traces vs payload captures, and where are those numeric constants defined in the sampling policy repo?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0495",
+      "question": "For the Remote-first Pilot, what are the exact preferred vendors and model SKUs for the standing desk converter loaners, and which of those vendors can ship to Canada with delivery in under 48 hours?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0496",
+      "question": "Does Incident Bot v2 support sending its incident context cards (deploy/config diff/saturation + pinned escalation context) to Microsoft Teams via an incoming webhook/Adaptive Cards, and if so what's the required payload schema and idempotency/retry behavior for updates?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0497",
+      "question": "When the Security Risk Committee reviews a high-risk control exception (e.g., risk rating above 7), what quorum is required for the vote to be valid, and how are tie votes resolved?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0498",
+      "question": "In the batching SLO tier benchmark methodology, what are the exact Redwood metering coefficients (e.g., USD per GPU-second and any per-token factors) used to compute the \"estimated $/1K generated tokens,\" and where are those coefficients sourced from?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0499",
+      "question": "For the `profiling.signals` Kafka topic used by trace-orch and fidelity-proxy, what are the current production settings (partition count and message retention time), and where can I find the approval/change record for the most recent update?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    },
+    {
+      "question_id": "qst_0500",
+      "question": "When a high-risk production change requires Change Advisory Board (CAB) approval, what quorum is required and what's the tie-break process if the CAB can't reach consensus-and who has final decision authority?",
+      "graph_state": "UNKNOWN",
+      "baseline_answer": "UNKNOWN",
+      "baseline_abstained": true,
+      "canon_answer": "UNKNOWN",
+      "canon_abstained": true,
+      "canon_docs": 10
+    }
+  ],
+  "partial_run": false,
+  "question_ids": {
+    "conflicting_info": [
+      "qst_0411",
+      "qst_0412",
+      "qst_0413",
+      "qst_0414",
+      "qst_0415",
+      "qst_0416",
+      "qst_0417",
+      "qst_0418",
+      "qst_0419",
+      "qst_0420",
+      "qst_0421",
+      "qst_0422",
+      "qst_0423",
+      "qst_0424",
+      "qst_0425",
+      "qst_0426",
+      "qst_0427",
+      "qst_0428",
+      "qst_0429",
+      "qst_0430"
+    ],
+    "info_not_found": [
+      "qst_0481",
+      "qst_0482",
+      "qst_0483",
+      "qst_0484",
+      "qst_0485",
+      "qst_0486",
+      "qst_0487",
+      "qst_0488",
+      "qst_0489",
+      "qst_0490",
+      "qst_0491",
+      "qst_0492",
+      "qst_0493",
+      "qst_0494",
+      "qst_0495",
+      "qst_0496",
+      "qst_0497",
+      "qst_0498",
+      "qst_0499",
+      "qst_0500"
+    ]
+  }
+}
