@@ -11,7 +11,7 @@
 ![Benchmark](https://img.shields.io/badge/benchmark-EnterpriseRAG--Bench-131315)
 ![Stack](https://img.shields.io/badge/Python%203.12%20·%20Next.js%2016%20·%20SQLite%20FTS5-1f1f23)
 
-### A temporal claim graph that keeps retired enterprise truth out of present-tense AI context — and proves, on the benchmark's own scorer, that the topology alone is what does it.
+### Canon performs a Temporal Cut: BM25 decides what is relevant, HydraDB decides what is still allowed to ground the answer.
 
 Most RAG failures are retrieval failures. The one that actually poisons enterprise AI is subtler:
 a superseded claim is still **semantically relevant**, so it keeps getting retrieved and quoted as
@@ -19,7 +19,7 @@ if it were current. Canon inserts a claim-history graph in **HydraDB OSS** betwe
 generation, so evidence that has been explicitly superseded stops reaching the model as
 present-tense context — while staying fully answerable as history.
 
-**[ The numbers ↗ ](#the-numbers)** &nbsp;·&nbsp; **[ Run it locally ↗ ](#run-it-locally)** &nbsp;·&nbsp; **[ How HydraDB decides ↗ ](#how-i-integrated-hydradb)**
+**[ Judge it in 90 seconds ↗ ](#judge-canon-in-90-seconds)** &nbsp;·&nbsp; **[ The numbers ↗ ](#the-numbers)** &nbsp;·&nbsp; **[ How HydraDB decides ↗ ](#how-i-integrated-hydradb)**
 
 </div>
 
@@ -41,6 +41,31 @@ Only the context topology changes.
 
 ---
 
+## Judge Canon in 90 seconds
+
+Three numbers, all reproducible from this repository:
+
+| | |
+|---|---|
+| **14/20 → 1/20** | superseded gold documents reaching present-tense context (deterministic, no model) |
+| **70.0% → 82.5%** | correctness on the benchmark's own scorer — with **no answer hint in the prompt** |
+| **20/20** | unanswerable questions answered `UNKNOWN`; historical questions recover the retired evidence 20/20 |
+
+```bash
+make hydra-up && uv sync
+make verify        # 7 live checks incl. a HydraDB restart mid-suite — all PASS
+make api && pnpm --dir apps/web dev
+open http://localhost:3000/cut    # the Temporal Cut, on one real conflict, live
+```
+
+`/cut` shows the same BM25 ranking twice: on the right, HydraDB removes the document that still
+asserts the retired value, backfills the next candidate from the same ranking, and the baseline's
+wrong answer sits next to Canon's correct one — same model, same prompt, same document count.
+Every number above is fingerprinted in `evidence/run_manifest.json` (git commit, HydraDB image
+digest, dataset revision, SHA-256 of every result file).
+
+---
+
 ## Table of contents
 
 - [The problem I set out to solve](#the-problem-i-set-out-to-solve)
@@ -50,6 +75,7 @@ Only the context topology changes.
 - [How I integrated HydraDB](#how-i-integrated-hydradb)
 - [Engineering decisions & the hard problems](#engineering-decisions--the-hard-problems)
 - [The numbers](#the-numbers)
+- [Use it as a component](#use-it-as-a-component)
 - [Identity resolution](#identity-resolution)
 - [The live console](#the-live-console)
 - [Honesty: limitations](#honesty-limitations)
@@ -88,7 +114,7 @@ A pipeline where the graph decides what the model is allowed to read:
 3. **Canonize** — resolve which value is current, in a fixed priority order where **explicit
    supersession language beats majority vote**. Eight documents repeating the old price lose to one
    later document that says the price changed.
-4. **Ground** — at question time, walk retrieved candidates back to their claims in HydraDB, label
+4. **Temporal Cut** — at question time, walk retrieved candidates back to their claims in HydraDB, label
    every document (`current_evidence`, `superseded_for_current_grounding`, `historical_evidence`,
    `contested_evidence`, `not_in_claim_graph`), replace superseded documents with the next
    candidates from the same ranking, and pin graph evidence the retriever missed.
@@ -280,12 +306,53 @@ Per-run files are in `eval/results/runs/`, the aggregate in `eval/results/summar
 `make export-answers` writes the official-format JSONL so anyone can re-score without trusting this
 repository.
 
+### The causal controls
+
+Two cheap attacks on our own result, both run:
+
+**Random filtering does not reproduce the effect.** A control arm removes the *same number* of
+documents Canon removes per question — chosen uniformly at random (seeded per question) — and
+backfills from the same ranking. Random removal hit the superseded document in only **1 of 20**
+conflicts, leaving it in context **13/20** versus Canon's **1/20** (`evidence/random_control.json`).
+Filtering as such is not the mechanism; *knowing which document to cut* is, and that knowledge
+lives in the graph.
+
+**The effect is stable across retrieval depth.** Sweeping `top_k` (`evidence/topk_sweep.json`):
+
+| top_k | superseded in context — baseline | — Canon | current gold — Canon |
+|---|---|---|---|
+| 5 | 13/20 | **1/20** | 20/20 |
+| 10 | 14/20 | **1/20** | 20/20 |
+| 20 | 15/20 | **1/20** | 20/20 |
+
+The wider the retrieval, the more retired truth leaks into the baseline. Canon stays at 1 — the
+contested claim, where dropping anything would be wrong.
+
 ### Data, stated exactly
 
 - **Indexed:** 511,958 of 511,962 documents (4 duplicate `doc_id`s) in 177 s → `evidence/corpus_index.json`.
 - **Deeply extracted:** the 20 conflict claim neighborhoods — 39 gold documents plus a corpus-wide
   residue scan per retired value → `evidence/seed.json`. Nothing else was claim-extracted, and
   nothing else is claimed.
+
+## Use it as a component
+
+Canon is not only a console — it exposes one clean contract. Put it between your retriever and
+your LLM:
+
+```bash
+curl -X POST localhost:8000/v1/ground -H 'Content-Type: application/json' -d '{
+  "question": "What monthly token volume discount breakpoints apply for Hosted pricing?",
+  "mode": "current"
+}'
+# → { "state": "CANON", "answer_value": "250k / 2M / 10M",
+#     "current_evidence": [...], "suppressed_evidence": [...],
+#     "historical_evidence": [...], "backfill_evidence": [...], "proof": [...] }
+```
+
+**It fails closed.** If HydraDB is unreachable, `/v1/ground` returns `503
+TEMPORAL_GRAPH_UNAVAILABLE` instead of silently degrading to plain retrieval — turn the graph off
+and Canon *loses the ability* to decide current context, which is the point.
 
 ## Identity resolution
 
