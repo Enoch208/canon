@@ -1,0 +1,165 @@
+{
+  "documents_scanned": 121390,
+  "source_types": [
+    "gmail"
+  ],
+  "bindings_found": 1933236,
+  "people": 177377,
+  "aliases": 251498,
+  "alias_states": {
+    "RESOLVED": 182249,
+    "PROBABLE": 48190,
+    "AMBIGUOUS": 21059
+  },
+  "aliases_written_to_hydradb": 0,
+  "alias_states_in_hydradb": {
+    "RESOLVED": 100,
+    "PROBABLE": 100,
+    "AMBIGUOUS": 3993
+  },
+  "written_alias_states": {},
+  "write_selection": "stratified: top aliases by supporting-binding count per state",
+  "candidate_edges_capped_at": 12,
+  "write_limit": 300,
+  "extraction_seconds": 47.8,
+  "ambiguous_examples": [
+    {
+      "alias": "a patel",
+      "alias_type": "display_name",
+      "candidates": [
+        "a patel@dataforge.com",
+        "a patel@logflow.com",
+        "a patel@opendataconsortium.org",
+        "a patel@smithlawllp.com",
+        "a patel@stratifylabs.com",
+        "lumenware ap@lumenware.com"
+      ],
+      "evidence_doc_id": "dsid_b9d84c8db7bc49a88598d7f266899cf1",
+      "evidence_span": "Cc: A. Patel <ap@lumenware.com>, support@lumenware.com"
+    },
+    {
+      "alias": "a singh",
+      "alias_type": "display_name",
+      "candidates": [
+        "a singh@brightbank.com",
+        "a singh@devopscollective.com",
+        "a singh@ecosupply.co.uk",
+        "a singh@medsafehealth.com",
+        "a singh@stratushealth.com",
+        "finbank procurement@finbank.com"
+      ],
+      "evidence_doc_id": "dsid_c6800abc7f484366b8bcaac68616e0eb",
+      "evidence_span": "To: Elena Ruiz <elena.ruiz@healthco.com>, A. Singh <procurement@finbank.com>"
+    },
+    {
+      "alias": "aakash rao",
+      "alias_type": "display_name",
+      "candidates": [
+        "aakash rao@bluequarry.ai",
+        "aakash rao@cloudwave.io",
+        "aakash rao@gmail.com"
+      ],
+      "evidence_doc_id": "dsid_b915f916a3d64588818c9ae37f612492",
+      "evidence_span": "Cc: Aakash Rao <aakash.rao@cloudwave.io>, Ben Carter <ben.carter@redwoodinference.com>"
+    },
+    {
+      "alias": "aaliyah thompson",
+      "alias_type": "display_name",
+      "candidates": [
+        "aaliyah thompson@nisunimbus.com",
+        "aaliyah thompson@stardata.ai"
+      ],
+      "evidence_doc_id": "dsid_58f7fa66c87a4a2398a34f49d4458af9",
+      "evidence_span": "To: Aaliyah Thompson <aaliyah@stardata.ai>, Ben Carter <ben.carter@redwood.com>, Jordan Blake <jordan.blake@redwood.com>"
+    },
+    {
+      "alias": "aamir khan",
+      "alias_type": "display_name",
+      "candidates": [
+        "aamir khan@cardiosense.com",
+        "aamir khan@fastcdn.io",
+        "aamir khan@healthworks.io",
+        "aamir khan@nebulahealth.com",
+        "aamir khan@seaforth.ai",
+        "aamir khan@straithealth.com"
+      ],
+      "evidence_doc_id": "dsid_28a256814f924eb78ea3c9c210bf32d2",
+      "evidence_span": "To: Aamir Khan <aamir.khan@nebulahealth.com>, Priya Shah <priya.shah@nebulahealth.com>"
+    },
+    {
+      "alias": "aanya rao",
+      "alias_type": "display_name",
+      "candidates": [
+        "aanya rao@clearsight.ai",
+        "aanya rao@lumosai.com",
+        "aanya rao@octave.health",
+        "aanya rao@pulseanalytics.com",
+        "aanya rao@synthwave.ai"
+      ],
+      "evidence_doc_id": "dsid_dada2ca184ac4d4286a12d33f43c23db",
+      "evidence_span": "['From: Aanya Rao <aanya@synthwave.ai>"
+    },
+    {
+      "alias": "aarav shah",
+      "alias_type": "display_name",
+      "candidates": [
+        "aarav shah@neonai.com",
+        "aarav shah@solariscorp.com"
+      ],
+      "evidence_doc_id": "dsid_1afb9970af034cc1bacf8740bc2fcdba",
+      "evidence_span": "To: Aarav Shah <aarav@neonai.com>"
+    },
+    {
+      "alias": "aarav sharma",
+      "alias_type": "display_name",
+      "candidates": [
+        "aarav sharma@gmail.com",
+        "aarav sharma@helio.ai"
+      ],
+      "evidence_doc_id": "dsid_f19320555137498ab884062abb24af4f",
+      "evidence_span": "[\"From: Aarav Sharma <aarav@helio.ai>"
+    },
+    {
+      "alias": "aaron bell",
+      "alias_type": "display_name",
+      "candidates": [
+        "aaron bell@acmehealth.com",
+        "aaron bell@auroramed.com",
+        "aaron bell@propulsion.com"
+      ],
+      "evidence_doc_id": "dsid_37d3bac0e1bb4186b2dc520ae65b509d",
+      "evidence_span": "Cc: Aaron Bell <aaron.bell@auroramed.com>, procurement@auroramed.com"
+    },
+    {
+      "alias": "aaron blake",
+      "alias_type": "display_name",
+      "candidates": [
+        "aaron blake@acme-retail.com",
+        "aaron blake@acmecorp.com",
+        "aaron blake@ardent.com",
+        "aaron blake@bluelumen.com",
+        "aaron blake@bluerock.vc",
+        "aaron blake@cardiahealth.com",
+        "aaron blake@clearsail.com",
+        "aaron blake@finedge.com",
+        "aaron blake@finlytics.com",
+        "aaron blake@greenleafhealth.com",
+        "aaron blake@greenline.com",
+        "aaron blake@greenline.tech",
+        "aaron blake@lumentech.com",
+        "aaron blake@medpointhealth.com",
+        "aaron blake@medsysprocure.com",
+        "aaron blake@meridianhealth.org",
+        "aaron blake@mesher.ai",
+        "aaron blake@nebulaanalytics.com",
+        "aaron blake@nimbusretail.com",
+        "aaron blake@northshorehealth.com",
+        "aaron blake@novapower.com",
+        "aaron blake@techforum.co",
+        "aaron blake@vetterhealth.com"
+      ],
+      "evidence_doc_id": "dsid_50c8ee711d684a60b6f9c2c9e78f5609",
+      "evidence_span": "Cc: Aaron Blake <aaron.blake@lumentech.com>"
+    }
+  ]
+}
