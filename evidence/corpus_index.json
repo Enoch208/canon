@@ -1,0 +1,9 @@
+{
+  "parquet": "/Users/enoch/.cache/huggingface/hub/datasets--onyx-dot-app--EnterpriseRAG-Bench/snapshots/69916e31c68aa5963c00248fd7f0bc12d04fd235/data/documents/test.parquet",
+  "indexed": 511958,
+  "skipped_duplicates": 4,
+  "seconds": 176.7,
+  "indexed_at": "2026-08-18T23:47:44.552974+00:00",
+  "limit": null,
+  "db": "/Users/enoch/Developer/personal/canon/data/corpus.sqlite"
+}
