@@ -106,6 +106,7 @@ export type AskResponse = {
   evidence: Evidence[]
   retired_evidence_filtered: number
   documents: GroundedDoc[]
+  backfill_doc_ids: string[]
   query_cards: QueryCard[]
   retrieval_ms: number
   grounding_ms: number
@@ -151,6 +152,34 @@ export type IdentityReport = {
   aliases: Alias[]
 }
 
+export type ArmVerdict = {
+  satisfied_facts: number
+  total_facts: number
+  states_current_value: boolean
+  presents_retired_as_current: boolean
+  abstains: boolean
+  judge_model: string
+  unanimous: boolean
+}
+
+export type ConflictArm = {
+  arm: string
+  doc_ids: string[]
+  answer: string | null
+  verdict: ArmVerdict | null
+}
+
+export type ConflictRun = {
+  question_id: string
+  question: string
+  old_value: string
+  new_value: string
+  dropped_doc_ids: string[]
+  baseline: ConflictArm
+  canon_filtered: ConflictArm
+  canon: ConflictArm
+}
+
 export type Results = {
   measured_at: string
   corpus_documents: number
@@ -159,6 +188,7 @@ export type Results = {
   not_run: string[]
   summary: Record<string, number>
   question_ids: Record<string, string[]>
+  conflicts: ConflictRun[]
 }
 
 async function get<T>(path: string): Promise<T> {
