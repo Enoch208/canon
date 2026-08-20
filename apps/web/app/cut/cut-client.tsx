@@ -66,8 +66,21 @@ export function CutClient({
     }
   }, [question])
 
+  const [showProof, setShowProof] = useState(false)
   const kept = response?.documents.filter((d) => d.kept) ?? []
   const backfill = response?.backfill_doc_ids ?? []
+  const cutDoc = response?.documents.find(
+    (d) => d.disposition === "superseded_for_current_grounding",
+  )
+  const retiredSpan =
+    cutDoc?.evidence_span ??
+    response?.evidence.find((row) => row.doc_id === cutDoc?.doc_id)?.evidence_span ??
+    null
+  const supersedingSpan = response?.evidence[0]?.evidence_span ?? null
+  const supersedingDocId = response?.evidence[0]?.doc_id ?? null
+  const supersessionQuery = response?.query_cards.find((card) =>
+    card.query_name.includes("event"),
+  )
 
   return (
     <div className="flex flex-col gap-10">
@@ -198,6 +211,73 @@ export function CutClient({
             {canonAnswer ?? "not generated"}
           </p>
         </div>
+      </section>
+
+      <section className="rounded-lg border border-line bg-surface">
+        <button
+          type="button"
+          onClick={() => setShowProof((open) => !open)}
+          className="flex w-full items-center justify-between px-6 py-5 text-left"
+        >
+          <span className="text-sm font-light text-ink">Why was this cut?</span>
+          <Icon
+            name={showProof ? "arrow-up-01" : "arrow-down-01"}
+            size={18}
+            className="text-faint"
+          />
+        </button>
+        {showProof ? (
+          <div className="grid gap-6 border-t border-line px-6 py-6 lg:grid-cols-2">
+            <div className="flex flex-col gap-5">
+              <div>
+                <p className="text-[10px] font-light tracking-[0.2em] text-retired uppercase">
+                  Retired evidence · {cutDoc?.doc_id ?? "none"}
+                </p>
+                <p className="pt-2 font-mono text-[11px] leading-relaxed text-muted">
+                  {retiredSpan ? `“${retiredSpan}”` : "—"}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] font-light tracking-[0.2em] text-accent uppercase">
+                  Superseding evidence · {supersedingDocId ?? "none"}
+                </p>
+                <p className="pt-2 font-mono text-[11px] leading-relaxed text-muted">
+                  {supersedingSpan ? `“${supersedingSpan}”` : "—"}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-5">
+              <div>
+                <p className="text-[10px] font-light tracking-[0.2em] text-faint uppercase">
+                  HydraDB path
+                </p>
+                <div className="pt-2 font-mono text-[11px] leading-relaxed text-muted">
+                  <p>ClaimKey {response?.claim_key ?? "—"}</p>
+                  <p className="pl-4 text-retired">└─ Proposition {oldValue} · retired</p>
+                  <p className="pl-4">
+                    └─ CanonEvent {response?.transition ?? "—"} ·{" "}
+                    {response?.temporal_quality ?? "—"}
+                  </p>
+                  <p className="pl-4 text-accent">└─ Proposition {newValue} · current</p>
+                </div>
+              </div>
+              <div>
+                <p className="text-[10px] font-light tracking-[0.2em] text-faint uppercase">
+                  Proof
+                </p>
+                <p className="pt-2 font-mono text-[11px] leading-relaxed text-muted">
+                  {response?.query_cards.length ?? 0} HydraDB queries ·{" "}
+                  {response?.grounding_ms.toFixed(0) ?? "–"} ms
+                </p>
+                <p className="pt-1 font-mono text-[10px] break-all text-faint">
+                  {supersessionQuery
+                    ? `${supersessionQuery.query_name} · ${supersessionQuery.query_id}`
+                    : ""}
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </section>
 
       <section className="flex flex-wrap items-center gap-6 rounded-lg border border-line bg-surface px-6 py-5">
