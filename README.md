@@ -29,15 +29,17 @@ present-tense context — while staying fully answerable as history.
 
 ## ▶ Demo
 
-The 2-minute demo film is linked in the hackathon submission. It walks one real conflict end to
-end: a Confluence page still publishing retired pricing breakpoints, the Google Drive document that
-explicitly supersedes it, the canon event HydraDB records between them, a live *Ask* where the same
-question answered in current mode returns `30%` and in historical mode returns `20%` — with the
-superseded document visibly filtered — and `make verify` passing seven live checks with a database
-restart in the middle.
+https://github.com/user-attachments/assets/fccf8d5f-eb14-4e97-bd56-7aea6e5377c6
+
+Every frame is the real console driving the real graph — no mockups, no after-effects screens. It
+walks one benchmark conflict end to end: a Confluence page still publishing retired pricing, the
+document that explicitly supersedes it, the canon event HydraDB records between them, a live *Ask*
+answering `30%` in current mode and `20%` in historical mode with the superseded document visibly
+filtered, the Temporal Cut removing that document from a ranking and backfilling the next
+candidate, and `make verify` passing seven live checks with a database restart in the middle.
 
 ```
-Same model. Same prompt. Same corpus.
+Same model. Same prompt. Same corpus. Same context budget.
 Only the context topology changes.
 ```
 
@@ -128,10 +130,12 @@ A pipeline where the graph decides what the model is allowed to read:
    every document (`current_evidence`, `superseded_for_current_grounding`, `historical_evidence`,
    `contested_evidence`, `not_in_claim_graph`), replace superseded documents with the next
    candidates from the same ranking, and pin graph evidence the retriever missed.
-5. **Answer** — the same model, prompt and document count as the baseline. Only the context
-   topology differs — that is the whole ablation.
+5. **Answer** — the same model, prompt and context budget as the baseline: every arm answers from
+   exactly 10 documents. Only the context topology differs — that is the whole ablation.
 6. **Prove** — every decision carries the supersession chain, exact spans, temporal quality
-   (`T1`/`T2`/`T3`) and the actual HydraDB queries with timings.
+   (`T1`/`T2`/`T3`) and the actual HydraDB queries with timings, returned as a **Temporal Context
+   Receipt**: the ranking that went in, the cut set with the reason for each cut, the context that
+   went out, a hash of it, and the query ids that decided it.
 
 Every current-state answer is exactly one of **`CANON`**, **`CONTESTED`**, **`UNKNOWN`**. Where the
 evidence does not establish a winner, Canon shows the fork instead of inventing one — the 20
@@ -244,7 +248,11 @@ actually depends on (`evidence/hydra_perf.json`):
 - **Document-count parity.** Early runs quietly handed Canon fewer documents than the baseline
   (dropped superseded docs left empty slots), which depressed its completeness scores. Every arm
   now sees the same number of documents — Canon backfills from the same BM25 ranking, never from
-  anywhere else, and never re-admits a superseded document.
+  anywhere else, and never re-admits a superseded document. The last hole in this closed late: when
+  the graph pinned a current document BM25 had missed, that pin used to create an eleventh slot on
+  two questions (202 vs 200 documents). It now evicts the lowest-ranked candidate instead, so the
+  parity is exact — 200 / 200 / 200 — and the headline numbers were re-measured after the fix
+  rather than assumed to hold.
 - **The judge-failure catch I'm most glad I made.** The official evaluator scored one arm at 7.5%
   correctness — while judging visibly correct answers wrong with *empty reasoning fields*. At
   `--parallelism 6` the judge's own API calls were being rate-limited, and the harness reports a
@@ -260,7 +268,7 @@ actually depends on (`evidence/hydra_perf.json`):
 - **Paid work is never lost.** The benchmark runner validates its output path *before* spending on
   API calls, records `answers_completed` and the verbatim error when a provider dies mid-run, and
   a `--limit` smoke run writes to `partial.json` — it can never overwrite the headline results.
-- **Hermetic quality gate.** 54 unit tests run in under a second with no database and no network;
+- **Hermetic quality gate.** 56 unit tests run in under a second with no database and no network;
   15 integration tests are marked `hydra` and skip with a reason when the graph is unreachable. CI
   boots the real HydraDB OSS image against MinIO and runs them for real.
 
@@ -454,7 +462,9 @@ real HydraDB vertices for graph traversal. `evidence/entities.json` records both
 
 ## The live console
 
-The web app leads with a truth dashboard, not a chat box — every number on it is a graph query, and
+Hosted at **[canon-bay.vercel.app](https://canon-bay.vercel.app)**, backed by a dedicated server
+running HydraDB OSS and the full corpus — every page is a live traversal, not a cached snapshot.
+The app leads with a truth dashboard, not a chat box; every number on it is a graph query, and
 zeros are shown as zeros.
 
 | Page | What it shows |
@@ -465,7 +475,8 @@ zeros are shown as zeros.
 | `/ask` | Ask in current or historical mode → state, value, why, evidence, retired context filtered, query cards |
 | `/residue` | Where retired values still survive in the corpus, by class, every row inspectable |
 | `/entities` | Alias → person resolution with the binding that proves each edge |
-| `/results` | The full benchmark: deterministic rows, official harness scores, three-arm answers |
+| `/cut` | The Temporal Cut on one real conflict: the same ranking twice, the retired sentence, the graph path that justifies the cut, and both answers side by side |
+| `/results` | The full benchmark: the 500-question safety envelope, deterministic rows, official harness scores, four-arm answers |
 
 ## Honesty: limitations
 
@@ -486,6 +497,11 @@ zeros are shown as zeros.
 - **Question→claim matching is lexical** (3+ shared terms, half the claim key's terms). Measured:
   20/20 conflicts resolve correctly, 0/20 unanswerables match anything; a looser rule falsely
   matched 4. Embedding-based matching would scale better and is not implemented.
+- **The mechanism decomposition is published deterministic-only.** Answers for the cut-only and
+  pin-only arms are generated and saved, but the official harness scoring is recorded as `not_run`
+  in `evidence/mechanism.json`: the API key ran out of credit mid-judging, and the harness records
+  a failed judge call as an incorrect answer, so those percentages would be an infrastructure
+  artifact rather than a measurement. The deterministic rows need no model and stand on their own.
 - **Identity links people, not claim authorship.** Aliases come from real bindings; the entities
   owning ClaimKeys are normalised from the claim key itself. Only 2 of 20 conflict gold documents
   contain a `Name <email>` binding, so wiring authors to claims honestly was out of reach on this
@@ -510,12 +526,16 @@ packages/
   graph/        canon_graph — HydraDB client, schema, ids, canonize, ingest, resolve, grounding, verify, perf
   retrieval/    canon_retrieval — SQLite FTS5 corpus store + BM25 candidate retrieval
   extraction/   canon_extraction — values, structured parsing, conflicts, residue sweep, identity, seed pipeline
-  evaluation/   canon_evaluation — answering boundary, context builder, metrics, three-arm runner, judging
+  evaluation/   canon_evaluation — answering boundary, context builder, metrics, arm runner, safety envelope, judging
 services/api/   canon_api — FastAPI over the packages, with cached expensive endpoints
 apps/web/       Next.js console — landing, truth dashboard, change, ask, residue, identities, results
-scripts/        thin CLIs: index, seed, entities, graph-stats, benchmark, judge, aggregate, export, perf, verify
-eval/           official question ids, results (latest + three runs + aggregate), official-format exports
-evidence/       verify, perf, index, seed, identity, official-eval JSON — everything a claim rests on
+scripts/        thin CLIs: index, seed, entities, graph-stats, benchmark, judge, aggregate, export,
+                perf, verify, plus the controls — topk_sweep, random_control, mechanism,
+                safety_envelope, second_model, run_manifest
+eval/           official question ids, results (latest + three runs + aggregate), official-format
+                exports and the per-question judge outputs for every arm
+evidence/       verify, perf, index, seed, identity, official-eval, topk sweep, random control,
+                mechanism, safety envelope, second model, run manifest — everything a claim rests on
 research/       conflict_inventory.json — the human-inspected 20 conflict pairs
 ```
 
@@ -533,8 +553,11 @@ make entities      # resolve people and aliases from the corpus into HydraDB
 make graph-stats   # record real node/edge counts into evidence/
 make benchmark     # three-arm run → eval/results/latest.json
 make judge         # grade saved answers against the dataset rubric
+make envelope      # deterministic sweep over all 500 questions → evidence/safety_envelope.json
+make mechanism     # cut-only vs pin-only decomposition → evidence/mechanism.json
+make manifest      # fingerprint every artifact a claim rests on → evidence/run_manifest.json
 make api           # FastAPI on :8000
-pnpm --dir apps/web dev   # console on :3000 — landing at /, dashboard at /truth
+pnpm --dir apps/web dev   # console on :3000 — landing at /, Temporal Cut at /cut
 ```
 
 `make verify` prints:
@@ -560,7 +583,7 @@ is recorded as `not_run`, never simulated.
 ## Tests
 
 ```bash
-uv run pytest -m "not hydra"   # 54 unit tests, no network, < 1 s
+uv run pytest -m "not hydra"   # 56 unit tests, no network, < 1 s
 uv run pytest -m hydra         # 15 integration tests against the live graph
 ```
 
