@@ -1,0 +1,74 @@
+[
+  {
+    "doc_id": "dsid_1214ee9ab5e44de487c800f7a4771d7d",
+    "source_type": "confluence",
+    "title": "Deal acceleration playbook and enterprise messaging + security FAQ",
+    "content": "rvices ($25k–$75k total TCV).\\n  - Mid-enterprise (Dedicated small commit): $20k–$60k/month committed for predictable throughput.\\n  - Large enterprise / Private: Multi-month onboarding + platform fee $200k+ and support retainer.\\n\\n- Discount guardrails:\\n  - Volume discounts: predefined breaks at 100k, 1M, and 5M monthly tokens for hosted volume.\\n  - Committed-term discounts: 10–30% off list for 12–36 month reserved Dedicated contracts.\\n  - Giveaways: implementation credits or extended trial (time boxed), not unlimited usage.\\n  - Escalation path for exceptions: require approvals from Sale\n...\n/month committed for predictable throughput.\\n  - Large enterprise / Private: Multi-month onboarding + platform fee $200k+ and support retainer.\\n\\n- Discount guardrails:\\n  - Volume discounts: predefined breaks at 100k, 1M, and 5M monthly tokens for hosted volume.\\n  - Committed-term discounts: 10–30% off list for 12–36 month reserved Dedicated contracts.\\n  - Giveaways: implementation credits or extended trial (time boxed), not unlimited usage.\\n  - Escalation path for exceptions: require approvals from Sales Ops and VP Sales for any > 35% discount or early termination concession.\\n\\nPitch d"
+  },
+  {
+    "doc_id": "dsid_10559147d3014931898864f22c311e47",
+    "source_type": "google_drive",
+    "title": "Enterprise deal acceleration playbook + security FAQ (working draft)",
+    "content": " $20k–$60k/month committed for predictable throughput.\n  - Large enterprise / Private: onboarding + platform fee $200k+ and support retainer.\n\n- Discount guardrails (UPDATED from Confluence):\n  - Volume discounts: predefined breaks at 250k, 2M, and 10M monthly tokens for hosted volume (old doc says 100k/1M/5M — that’s outdated).\n  - Committed-term discounts: 10–30% off list for 12–36 month reserved Dedicated contracts.\n  - Giveaways: implementation credits or extended trial (time boxed), not unlimited usage.\n  - Escalation path for exceptions (UPDATED): require approvals from Sales Ops + VP Sa\n...\n25k–$75k total TCV).\n  - Mid-enterprise (Dedicated small commit): $20k–$60k/month committed for predictable throughput.\n  - Large enterprise / Private: onboarding + platform fee $200k+ and support retainer.\n\n- Discount guardrails (UPDATED from Confluence):\n  - Volume discounts: predefined breaks at 250k, 2M, and 10M monthly tokens for hosted volume (old doc says 100k/1M/5M — that’s outdated).\n  - Committed-term discounts: 10–30% off list for 12–36 month reserved Dedicated contracts.\n  - Giveaways: implementation credits or extended trial (time boxed), not unlimited usage.\n  - Escalation path f\n...\n enterprise / Private: onboarding + platform fee $200k+ and support retainer.\n\n- Discount guardrails (UPDATED from Confluence):\n  - Volume discounts: predefined breaks at 250k, 2M, and 10M monthly tokens for hosted volume (old doc says 100k/1M/5M — that’s outdated).\n  - Committed-term discounts: 10–30% off list for 12–36 month reserved Dedicated contracts.\n  - Giveaways: implementation credits or extended trial (time boxed), not unlimited usage.\n  - Escalation path for exceptions (UPDATED): require approvals from Sales Ops + VP Sales for any discount > 30% OR any early termination concession.\n"
+  },
+  {
+    "doc_id": "dsid_5f3a672da4974781a5577b0f3d4993e9",
+    "source_type": "jira",
+    "title": "Sustained 429s during sliced ingest with priority class mismatch after dedicated pool migration",
+    "content": "en under heavy callback fanout. Need to instrument edge path to surface X-RateLimit headers even under backpressure.\n5) No evidence of dedicated pool GPU exhaustion; autoscaler metrics are stable.\n\nsuggested_next_steps:\n1) Short-term (apply during call): adjust per-route burst allocation to reserve 20% of interactive burst credits exclusively for priority=high routes on dp-132-usw.\n2) Short-term: recommend customer stagger flush windows and add randomized jitter to callback fanout.\n3) Medium-term: devs to backport fix to rate-limiter that prevents borrow from reading stale burst-pool state; ta\n...\n is: low-latency chat calls (priority=high) and large multi-part embedding uploads (priority=background). After the migration, background uploads are intermittently exhausting burst credits at the per-route layer and causing opaque 429s for high-priority short calls during peak windows.\n\nImpact:\n- ~30% of short chat requests returned 429 between 09:00-11:30 PDT on 2026-03-10 for Streamly AI.\n- Customer reports user-facing errors and retry amplification in their orchestrator.\n- Business impact: partial degradation of their real-time features during peak ingest windows.\n\nEnvironment:\n- Dedicated"
+  },
+  {
+    "doc_id": "dsid_8ffbd9fe82df457ca67d4fbc9ff1090c",
+    "source_type": "google_drive",
+    "title": "Sliced ingest 429s on dedicated pool after migration — priority class + burst pool debug notes (Streamly AI)",
+    "content": "\n- Reduce background upload concurrency (Streamly tested <= 6 workers) during peak interactive usage.\n\nConfig change (applied on 2026-03-12 call)\n- On dp-132-usw we reserved burst capacity explicitly for interactive routes.\n- Updated reservation target: reserve 30% (previous internal suggestion was 20%) of interactive burst credits exclusively for priority=high routes.\n- Also separated the route groups so callbacks cannot share the same per-route window as interactive endpoints.\n\nPatch status (updated)\n- Rate-limiter fix was originally tracked as “target 1.14.1”.\n- As of 2026-03-19: fix is in \n...\nI (dedicated tier)\n- Environment: prod us-west, dedicated pool dp-132-usw\n- Traffic mix:\n  - Interactive: short chat calls (priority=high)\n  - Background: multipart embedding uploads (priority=background/low) with signed URL chunk completion callbacks\n- Observed on 2026-03-10 ~09:00–11:30 PDT:\n  - ~30% of short chat requests returned 429 coincident with the scheduled bulk ingest flush\n  - Customer saw retry amplification and user-visible errors\n\nVersions / components\n- Dedicated pool: dp-132-usw\n- Ingest coordinator version (at time of incident): 2026.02.3\n- Rate-limiter version (at time of in"
+  },
+  {
+    "doc_id": "dsid_db1c1f64721b468dafb35c2e0080a8f8",
+    "source_type": "confluence",
+    "title": "Unified Capacity Transition PRD: SLO-aligned Consumption and Dedicated Migration",
+    "content": "Executive summary:\\n\\nThis document defines the product requirements, design constraints, rollout roadmap, pricing impacts, and release notes for the \"Unified Capacity Transition\" initiative. The initiative enables customers to move from legacy per-token consumption and ad-hoc reserved capacity models to an SLO-aligned consumption paradigm that unifies Dedicated reservations, hosted usage, and private deployments under a single migration playbook.\\n\\nGoals:\\n- Provide a predictable migration path for customers on Dedicated capacity and legacy token billing to SLO-aligned bundles.\\n- Maintain or improve customer latency SLOs (p50 <= 45ms for short sequences, p95 <= 250ms for chat workloads) during and after migration.\\n- Prevent revenue regressions and make pricing transparent to customers."
+  },
+  {
+    "doc_id": "dsid_113f5cc6931640c3b82adcc07142d829",
+    "source_type": "google_drive",
+    "title": "Unified Capacity Transition (Migration PRD) — SLO-aligned Consumption + Dedicated Migration (Drive draft)",
+    "content": "Context / why this doc exists (Drive draft):\n- The Confluence PRD (2027-06-18) is the \"formal\" version, but we’ve had multiple updates from SRE + Finance since then.\n- This Drive doc is meant to capture deltas, open questions, and the updated requirements we’ll implement for pilot.\n- Goal: keep scope identical (Unified Capacity Transition), but update key numbers + API naming we agreed on in the 2027-07-29 working session.\n\nExecutive summary:\n\nThis document defines the product requirements, design constraints, rollout roadmap, pricing impacts, and release notes for the \"Unified Capacity Transition\" initiative. The initiative enables customers to move from legacy per-token consumption and ad-hoc reserved capacity models to an SLO-aligned consumption paradigm that unifies Dedicated reservati"
+  },
+  {
+    "doc_id": "dsid_4e65166659394a90922be6a5c7b110a8",
+    "source_type": "confluence",
+    "title": "Operator fallback experiment matrix and cost penalty catalog",
+    "content": " experiment_id tag.\n\nCost penalty catalog (examples and formulae)\n-------------------------------------------\nCatalog rows: fallback_variant | per-token-diff | expected-throughput | hourly-cost-delta | rollback-cost-estimate | notes\nExample entries:\n- L70B -> L13B-int8 | +0.002 $/token (lower cost) | 2k tokens/s | -$14.4 / hour per 1000 rps | negligible | reduced quality on long-form completion\n- cross-region-eu->us | +$0.05 / 1k tokens (egress) | 1k tokens/s | +$180 / hour at 1000 rps | potential SLA credits | watch cold-start p95\n- cached_prefix_response | -$0.001 $/token (savings) | N/A | -$3.6 / hour per 1000 rps | risk of stale content | requires invalidation policy\n- quota-throttle-low | revenue-at-risk estimate (see calc) | depends on tenant mix | - | revenue-impact = average-MRR-pe"
+  },
+  {
+    "doc_id": "dsid_7b2f4b37dfb642e19d78c5f9d2c43f16",
+    "source_type": "google_drive",
+    "title": "Fallback experiment matrix + cost penalty catalog (working notes)",
+    "content": "Context / what changed since the Confluence version\n-----------------------------------------------\nThis is a working doc intended to supersede the older Confluence page for day-to-day ops.\n\nKey updates vs. Confluence (note to reviewers):\n- We standardized on p95 + error-rate for decision gates; p99 is still tracked but no longer the primary gate except for cross-region routing tests.\n- Cross-region routing cost model updated: egress is now tracked per \"GiB\" from the provider bill and attributed"
+  },
+  {
+    "doc_id": "dsid_c5288dd4874345adb80f4a71c9a18773",
+    "source_type": "linear",
+    "title": "misc-chores-office-inventory-and-keycard-cleanup",
+    "content": "description:\nBackground: Office moved desks last quarter; several untagged peripherals, old keycards, and leftover badge holders in storage. This ticket collects misc chores to reconcile inventory and tidy shared spaces.\n\nGoals:\n- Produce a concise inventory of unassigned equipment (monitors, keyboards, spare GPUs boxes, dongles)\n- Audit and deactivate lost/old keycards in the access system and return/reenroll active ones\n- Clean and label community storage shelves and mark disposal candidates\n\nAcceptance criteria:\n- CSV inventory uploaded to Drive with columns: item_id, type, location, status, owner_hint\n- Keycards deactivated or reassigned; list of card IDs with status documented\n- Disposal list handed to Facilities with approval note\n\nNotes / messy log:\n- Found box labeled \"quantization"
+  },
+  {
+    "doc_id": "dsid_03b2db544a6d4cf886fb9869058a05f2",
+    "source_type": "jira",
+    "title": "Office inventory + keycard audit + disposal request (storage shelves + access system cleanup)",
+    "content": "description:\nRequest type: Internal support / facilities + security coordination\n\nBackground\nOffice moved desks last quarter; storage now contains untagged peripherals, old keycards, and leftover badge holders. This ticket consolidates the remaining cleanup work so we can reconcile inventory, tidy shared spaces, and reduce risk from stray credentials.\n\nScope / Goals\n- Produce a concise inventory of unassigned equipment (monitors, keyboards, spare GPU boxes, dongles)\n- Audit and deactivate lost/old keycards in the access system and return/re-enroll active ones\n- Clean and label community storage shelves and identify disposal candidates for Facilities pickup\n\nUpdates vs earlier plan\n- Security requested we export access logs for the last 12 months (not 18) for the initial cross-check; they w"
+  },
+  {
+    "doc_id": "dsid_86f033ed92b84f3a8b381d09b0b95357",
+    "source_type": "gmail",
+    "title": "PO metadata requirements + weekly invoice lane / net terms negotiation",
+    "content": "['From: Susan Li <susan.li@clearedgehealth.com>\\nTo: Lukas Meyer <lukas.meyer@redwood.com>\\nCc: Ben Armitage <ben.armitage@clearedgehealth.com>\\nDate: Tue, 15 Jun 2027 09:14:00 -0700\\nSubject: PO fields + invoice rhythm question for Redwood pilot\\n\\nThanks Lukas — quick procurement note as we prepare the PO for the pilot:\\n\\n1) Our AP system requires a stable PO identifier in three places: the top-level PO number, the PO line UUID (we can generate), and an extra custom field called po_fingerprint for downstream mapping. Can Redwood include an explicit po_fingerprint in the invoice XML (see attached ClearEdge_PO_Template.xlsx)?\\n\\n2) We currently run weekly payment runs. Would Redwood accept a weekly invoice cadence for the pilot vs monthly? If so we need an invoice file per week and a matc"
+  },
+  {
+    "doc_id": "dsid_d93aed75845e4a0b8126a80d8a7a5a41",
+    "source_type": "confluence",
+    "title": "ClearEdge Health (2027) — Weekly invoicing, PO fingerprint, and net terms (RevRec/Billing)",
+    "content": "h1. Overview\nThis page documents the *finalized* billing + invoicing requirements for *ClearEdge Health* for the 2027 pilot, including weekly invoice cadence, PO identifier requirements (including *po_fingerprint*), and agreed payment terms.\n\nThis supersedes earlier guidance circulating in the June 2027 email thread; the key changes are called out in the *Change log*.\n\nh1. Scope\nApplies to:\n* Customer: ClearEdge Health\n* Deal/CRM: DEAL-8742\n* Region: US\n* Pilot duration: 12 weeks (unless amended)\n* Billing mode: hybrid lines (seat + metered consumption)\n\nh1. Final commercial terms (billing-impacting)\n* Consumption price (pilot): *$0.004365 / token-equivalent* (reflects *3% committed* pilot slab applied to metered line items).\n* Seat SKU (optional): *$175 / seat / month* (weekly invoices sh"
+  }
+]
