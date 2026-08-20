@@ -1,0 +1,1010 @@
+{
+  "started_at": "2026-08-19T07:34:42.778441+00:00",
+  "corpus_documents": 511958,
+  "claims": [
+    {
+      "question_id": "qst_0411",
+      "claim_key": "Streamly AI dedicated pool dp-132-usw.interactive_burst_credits_priority_high_reservation",
+      "state": "CANON",
+      "current_value": "30%",
+      "retired_values": [
+        "20%"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_8ffbd9fe82df457ca67d4fbc9ff1090c names 20% -> 30%; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0411",
+        "claim_key": "Streamly AI dedicated pool dp-132-usw.interactive_burst_credits_priority_high_reservation",
+        "retired_value": "20%",
+        "entity_anchors": [
+          "streamly",
+          "dp-132-usw"
+        ],
+        "predicate_anchors": [
+          "interactive",
+          "burst",
+          "credits",
+          "priority",
+          "high",
+          "reservation"
+        ],
+        "fts_query": "(\"20\" OR \"20\" OR \"20 percent\") AND (\"streamly\" OR \"dp 132 usw\") AND (\"interactive\" OR \"burst\" OR \"credits\" OR \"priority\" OR \"high\" OR \"reservation\")",
+        "fts_hits": 23,
+        "rejected_for_anchoring": 8,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 1,
+        "not_an_assertion": 0,
+        "recorded": [
+          {
+            "doc_id": "dsid_5f3a672da4974781a5577b0f3d4993e9",
+            "source_type": "jira",
+            "title": "Sustained 429s during sliced ingest with priority class mismatch after dedicated pool migration",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "suggested_next_steps: adjust per-route burst allocation to reserve 20% of interactive burst credits exclusively for priority=high routes on dp-132-usw."
+          }
+        ],
+        "candidates": [
+          {
+            "doc_id": "dsid_8ffbd9fe82df457ca67d4fbc9ff1090c",
+            "source_type": "google_drive",
+            "title": "Sliced ingest 429s on dedicated pool after migration \u2014 priority class + burst pool debug notes (Streamly AI)",
+            "matched_variant": "20%",
+            "entity_anchors_matched": [
+              "streamly",
+              "dp-132-usw"
+            ],
+            "predicate_anchors_in_line": [
+              "interactive",
+              "burst",
+              "credits",
+              "priority",
+              "high",
+              "reservation"
+            ],
+            "line_no": 59,
+            "line": "- Updated reservation target: reserve 30% (previous internal suggestion was 20%) of interactive burst credits exclusively for priority=high routes.",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "HISTORICAL_REFERENCE"
+          },
+          {
+            "doc_id": "dsid_5f3a672da4974781a5577b0f3d4993e9",
+            "source_type": "jira",
+            "title": "Sustained 429s during sliced ingest with priority class mismatch after dedicated pool migration",
+            "matched_variant": "20%",
+            "entity_anchors_matched": [
+              "streamly",
+              "dp-132-usw"
+            ],
+            "predicate_anchors_in_line": [
+              "interactive",
+              "burst",
+              "credits",
+              "priority",
+              "high"
+            ],
+            "line_no": 62,
+            "line": "1) Short-term (apply during call): adjust per-route burst allocation to reserve 20% of interactive burst credits exclusively for priority=high routes on dp-132-usw.",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "LEXICAL_RESTATEMENT"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "qst_0412",
+      "claim_key": "extraction.price_normalization_correctness_temp_0",
+      "state": "CANON",
+      "current_value": "~96%",
+      "retired_values": [
+        "~89%"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T2",
+      "why": "explicit supersession language in dsid_a2bf755670ad44e09b42c11e9d73e5d3 names ~89% -> ~96%; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0412",
+        "claim_key": "extraction.price_normalization_correctness_temp_0",
+        "retired_value": "~89%",
+        "entity_anchors": [
+          "extraction"
+        ],
+        "predicate_anchors": [
+          "price",
+          "normalization",
+          "correctness",
+          "temp"
+        ],
+        "fts_query": "(\"89\" OR \"89\" OR \"89\" OR \"89 percent\") AND (\"extraction\") AND (\"price\" OR \"normalization\" OR \"correctness\" OR \"temp\")",
+        "fts_hits": 25,
+        "rejected_for_anchoring": 1,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 1,
+        "not_an_assertion": 0,
+        "recorded": [
+          {
+            "doc_id": "dsid_89c0c31e220c4777b15c3c6ff0eff61d",
+            "source_type": "google_drive",
+            "title": "Prompt heuristics experiments scratchpad",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "Temp=0.0 + JSON constraint -> extraction normalized numbers 89% correct"
+          }
+        ],
+        "candidates": [
+          {
+            "doc_id": "dsid_a2bf755670ad44e09b42c11e9d73e5d3",
+            "source_type": "confluence",
+            "title": "Prompt heuristics: templates and failure cases (2026)",
+            "matched_variant": "~89%",
+            "entity_anchors_matched": [
+              "extraction"
+            ],
+            "predicate_anchors_in_line": [
+              "price",
+              "normalization",
+              "correctness",
+              "temp"
+            ],
+            "line_no": 152,
+            "line": "* Temp=0.0 + strict JSON + canonicalization rules: price normalization correctness ~96% (previously ~89% without canonicalization).",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "HISTORICAL_REFERENCE"
+          },
+          {
+            "doc_id": "dsid_89c0c31e220c4777b15c3c6ff0eff61d",
+            "source_type": "google_drive",
+            "title": "Prompt heuristics experiments scratchpad",
+            "matched_variant": "89%",
+            "entity_anchors_matched": [
+              "extraction"
+            ],
+            "predicate_anchors_in_line": [
+              "temp"
+            ],
+            "line_no": 75,
+            "line": "- Temp=0.0 + JSON constraint -> extraction normalized numbers 89% correct",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "LEXICAL_RESTATEMENT"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "qst_0413",
+      "claim_key": "STALE-ORPHAN test instances.termination_approver",
+      "state": "CONTESTED",
+      "current_value": null,
+      "retired_values": [],
+      "transition": "NONE",
+      "temporal_quality": "T3",
+      "why": "2 values conflict and neither explicit supersession language nor reliable ordering establishes which one won",
+      "residue": null
+    },
+    {
+      "question_id": "qst_0414",
+      "claim_key": "INC-9821.degraded_gpu_node_root_cause",
+      "state": "CANON",
+      "current_value": "intermittent driver/kernel launch stalls (corrected 2026-09-01)",
+      "retired_values": [
+        "GPU OOM / generic kernel failure"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_0c1f1c83e8d44d2fa3a9f6c7b2d7b9f1 names GPU OOM / generic kernel failure -> intermittent driver/kernel launch stalls (corrected 2026-09-01); corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0414",
+        "claim_key": "INC-9821.degraded_gpu_node_root_cause",
+        "retired_value": "GPU OOM / generic kernel failure",
+        "entity_anchors": [
+          "inc-9821"
+        ],
+        "predicate_anchors": [
+          "degraded",
+          "gpu",
+          "node",
+          "root",
+          "cause"
+        ],
+        "fts_query": "(\"GPU OOM generic kernel failure\" OR \"GPU OOM generic kernel failure\" OR \"GPU OOM generic kernel failure\" OR \"GPU OOM and generic kernel failure\" OR \"GPU OOM and generic kernel failure\") AND (\"inc 9821\") AND (\"degraded\" OR \"gpu\" OR \"node\" OR \"root\" OR \"cause\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0415",
+      "claim_key": "eval_runner.deterministic_true_enforcement",
+      "state": "CANON",
+      "current_value": "also top_p=1.0, num_beams=1, stable batch order",
+      "retired_values": [
+        "do_sample=false, temperature=0, top_k=1, explicit generator"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T2",
+      "why": "explicit supersession language in dsid_05841423a55e4c35abd276d9899b7134 names do_sample=false, temperature=0, top_k=1, explicit generator -> also top_p=1.0, num_beams=1, stable batch order; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0415",
+        "claim_key": "eval_runner.deterministic_true_enforcement",
+        "retired_value": "do_sample=false, temperature=0, top_k=1, explicit generator",
+        "entity_anchors": [],
+        "predicate_anchors": [
+          "deterministic",
+          "true",
+          "enforcement"
+        ],
+        "fts_query": "(\"do_sample false temperature 0 top_k 1 explicit generator\") AND (\"deterministic\" OR \"true\" OR \"enforcement\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0416",
+      "claim_key": "Copperfield Nimbus Dedicated.qps_and_peak_sessions",
+      "state": "CANON",
+      "current_value": "60 / 140 / 260 QPS, ~150 concurrent sessions (2026-03-12)",
+      "retired_values": [
+        "50 / 120 / 220 QPS, 120 concurrent sessions"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_3c3ab5813b264367877e0d02f652ca32 names 50 / 120 / 220 QPS, 120 concurrent sessions -> 60 / 140 / 260 QPS, ~150 concurrent sessions (2026-03-12); corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0416",
+        "claim_key": "Copperfield Nimbus Dedicated.qps_and_peak_sessions",
+        "retired_value": "50 / 120 / 220 QPS, 120 concurrent sessions",
+        "entity_anchors": [
+          "copperfield",
+          "nimbus"
+        ],
+        "predicate_anchors": [
+          "qps",
+          "peak",
+          "sessions"
+        ],
+        "fts_query": "(\"50 120 220 QPS 120 concurrent sessions\" OR \"50 120 220 QPS 120 concurrent sessions\" OR \"50 120 220 QPS 120 concurrent sessions\" OR \"50 120 and 220 QPS 120 concurrent sessions\" OR \"50 120 and 220 QPS 120 concurrent sessions\") AND (\"copperfield\" OR \"nimbus\") AND (\"qps\" OR \"peak\" OR \"sessions\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0417",
+      "claim_key": "Redwood Private on-prem.backup_manifest_signing",
+      "state": "CANON",
+      "current_value": "Sigstore/cosign offline key mode (Private Toolkit v1.8+); GPG still supported during migration",
+      "retired_values": [
+        "GPG signatures"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_10a589a5ee9048d9a33deb4156037171 names GPG signatures -> Sigstore/cosign offline key mode (Private Toolkit v1.8+); GPG still supported during migration; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0417",
+        "claim_key": "Redwood Private on-prem.backup_manifest_signing",
+        "retired_value": "GPG signatures",
+        "entity_anchors": [],
+        "predicate_anchors": [
+          "backup",
+          "manifest",
+          "signing"
+        ],
+        "fts_query": "(\"GPG signatures\") AND (\"backup\" OR \"manifest\" OR \"signing\")",
+        "fts_hits": 37,
+        "rejected_for_anchoring": 36,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 1,
+        "recorded": [
+          {
+            "doc_id": "dsid_aa97b7293f9f4f3c8180f645e4fe5911",
+            "source_type": "fireflies",
+            "title": "MedData Systems - on-prem backup/restore + audit log retention security review",
+            "residue_class": "NOT_AN_ASSERTION",
+            "source_field": null,
+            "evidence_span": "Nina Gomez: When you say sign, is that GPG?"
+          }
+        ],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0418",
+      "claim_key": "SLO_customer_impact_classifier.tier_score_ranges",
+      "state": "CANON",
+      "current_value": ">=85 / 70-84 / 35-69 / <35 (v2)",
+      "retired_values": [
+        ">=80 / 60-79 / 30-59 / <30"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_b837e1140d1a4c3d8efd2f42d9b6a799 names >=80 / 60-79 / 30-59 / <30 -> >=85 / 70-84 / 35-69 / <35 (v2); corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0418",
+        "claim_key": "SLO_customer_impact_classifier.tier_score_ranges",
+        "retired_value": ">=80 / 60-79 / 30-59 / <30",
+        "entity_anchors": [
+          "classifier"
+        ],
+        "predicate_anchors": [
+          "tier",
+          "score",
+          "ranges"
+        ],
+        "fts_query": "(\"80 60 79 30 59 30\" OR \"80 60 79 30 59 30\" OR \"80 60 79 30 59 30\" OR \"80 60 79 30 59 and 30\" OR \"80 60 79 30 59 and 30\") AND (\"classifier\") AND (\"tier\" OR \"score\" OR \"ranges\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 1,
+        "not_an_assertion": 0,
+        "recorded": [
+          {
+            "doc_id": "dsid_981f4a0281054f9aaaec7887156eebc4",
+            "source_type": "confluence",
+            "title": "SLO to Customer Impact Classifier and Remediation Workflow",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "Score >= 80 -> Tier 1; 60\u201379 -> Tier 2; 30\u201359 -> Tier 3; < 30 -> Tier 4."
+          }
+        ],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0419",
+      "claim_key": "Unified Capacity Transition.migration_start_endpoint",
+      "state": "CANON",
+      "current_value": "POST /v1/capacity/migrations/start (legacy alias temporary)",
+      "retired_values": [
+        "POST /v1/migration/start"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_113f5cc6931640c3b82adcc07142d829 names POST /v1/migration/start -> POST /v1/capacity/migrations/start (legacy alias temporary); corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0419",
+        "claim_key": "Unified Capacity Transition.migration_start_endpoint",
+        "retired_value": "POST /v1/migration/start",
+        "entity_anchors": [
+          "unified",
+          "transition"
+        ],
+        "predicate_anchors": [
+          "migration",
+          "start",
+          "endpoint"
+        ],
+        "fts_query": "(\"POST v1 migration start\" OR \"POST v1 migration start\" OR \"POST v1 migration start\" OR \"POST v1 migration start\" OR \"POST v1 migration and start\" OR \"POST v1 migration and start\") AND (\"unified\" OR \"transition\") AND (\"migration\" OR \"start\" OR \"endpoint\")",
+        "fts_hits": 1,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": [
+          {
+            "doc_id": "dsid_113f5cc6931640c3b82adcc07142d829",
+            "source_type": "google_drive",
+            "title": "Unified Capacity Transition (Migration PRD) \u2014 SLO-aligned Consumption + Dedicated Migration (Drive draft)",
+            "matched_variant": "POST /v1/migration/start",
+            "entity_anchors_matched": [
+              "unified",
+              "transition"
+            ],
+            "predicate_anchors_in_line": [
+              "migration",
+              "start"
+            ],
+            "line_no": 61,
+            "line": "- POST /v1/migration/start",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "LEXICAL_RESTATEMENT"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "qst_0420",
+      "claim_key": "EXP-002 eu-west_us-east.egress_cost_rate",
+      "state": "CANON",
+      "current_value": "+$0.085 per GiB, GiB-based billing",
+      "retired_values": [
+        "+$0.05 per 1k tokens (~$180/hour at 1000 rps)"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_7b2f4b37dfb642e19d78c5f9d2c43f16 names +$0.05 per 1k tokens (~$180/hour at 1000 rps) -> +$0.085 per GiB, GiB-based billing; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0420",
+        "claim_key": "EXP-002 eu-west_us-east.egress_cost_rate",
+        "retired_value": "+$0.05 per 1k tokens (~$180/hour at 1000 rps)",
+        "entity_anchors": [
+          "exp-002"
+        ],
+        "predicate_anchors": [
+          "egress",
+          "cost",
+          "rate"
+        ],
+        "fts_query": "(\"0 05 per 1k tokens 180 hour at 1000 rps\" OR \"0 05 per 1k tokens\") AND (\"exp 002\") AND (\"egress\" OR \"cost\" OR \"rate\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0421",
+      "claim_key": "cross_account_GPU_warm_pool.handshake_token_ttl",
+      "state": "CANON",
+      "current_value": "120 seconds",
+      "retired_values": [
+        "180 seconds"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_9f2e6aa7f6c14b1db1c6f922a1d4b4d7 names 180 seconds -> 120 seconds; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0421",
+        "claim_key": "cross_account_GPU_warm_pool.handshake_token_ttl",
+        "retired_value": "180 seconds",
+        "entity_anchors": [],
+        "predicate_anchors": [
+          "handshake",
+          "token",
+          "ttl"
+        ],
+        "fts_query": "(\"180 seconds\") AND (\"handshake\" OR \"token\" OR \"ttl\")",
+        "fts_hits": 34,
+        "rejected_for_anchoring": 27,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0422",
+      "claim_key": "audit_log_exports.beyond_retention_access",
+      "state": "CANON",
+      "current_value": "explicit Legal Hold with legal_hold_id; override deprecated",
+      "retired_values": [
+        "super-admin retention override"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_8733ed2132dc4232b2797c1d9a167cb9 names super-admin retention override -> explicit Legal Hold with legal_hold_id; override deprecated; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0422",
+        "claim_key": "audit_log_exports.beyond_retention_access",
+        "retired_value": "super-admin retention override",
+        "entity_anchors": [],
+        "predicate_anchors": [
+          "beyond",
+          "retention",
+          "access"
+        ],
+        "fts_query": "(\"super admin retention override\") AND (\"beyond\" OR \"retention\" OR \"access\")",
+        "fts_hits": 1,
+        "rejected_for_anchoring": 1,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0423",
+      "claim_key": "office_keycard_audit.access_log_export_window_months",
+      "state": "CANON",
+      "current_value": "12 months (expand only if anomalies)",
+      "retired_values": [
+        "18 months"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_03b2db544a6d4cf886fb9869058a05f2 names 18 months -> 12 months (expand only if anomalies); corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0423",
+        "claim_key": "office_keycard_audit.access_log_export_window_months",
+        "retired_value": "18 months",
+        "entity_anchors": [
+          "office",
+          "keycard"
+        ],
+        "predicate_anchors": [
+          "access",
+          "log",
+          "export",
+          "window",
+          "months"
+        ],
+        "fts_query": "(\"18 months\") AND (\"office\" OR \"keycard\") AND (\"access\" OR \"log\" OR \"export\" OR \"window\" OR \"months\")",
+        "fts_hits": 32,
+        "rejected_for_anchoring": 31,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 1,
+        "not_an_assertion": 0,
+        "recorded": [
+          {
+            "doc_id": "dsid_c5288dd4874345adb80f4a71c9a18773",
+            "source_type": "linear",
+            "title": "misc-chores-office-inventory-and-keycard-cleanup",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "2025-11-11 Omar Singh: Security suggested exporting access logs for the last 18 months."
+          }
+        ],
+        "candidates": [
+          {
+            "doc_id": "dsid_c5288dd4874345adb80f4a71c9a18773",
+            "source_type": "linear",
+            "title": "misc-chores-office-inventory-and-keycard-cleanup",
+            "matched_variant": "18 months",
+            "entity_anchors_matched": [
+              "office",
+              "keycard"
+            ],
+            "predicate_anchors_in_line": [
+              "access",
+              "log",
+              "export",
+              "months"
+            ],
+            "line_no": 29,
+            "line": "2025-11-11 - Omar Singh: Reached out to Security about keycard audit; they suggested exporting access logs for the last 18 months.",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "LEXICAL_RESTATEMENT"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "qst_0424",
+      "claim_key": "Interactive Latency Canvas.prompt_len_bucket_cutoffs",
+      "state": "CANON",
+      "current_value": "short <128, medium 128-1024, long >1024 tokens",
+      "retired_values": [
+        "short <64, medium 64-512, long >512"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_7f2a6f2d2de34f94a5b6f3d5d0d1f6a2 names short <64, medium 64-512, long >512 -> short <128, medium 128-1024, long >1024 tokens; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0424",
+        "claim_key": "Interactive Latency Canvas.prompt_len_bucket_cutoffs",
+        "retired_value": "short <64, medium 64-512, long >512",
+        "entity_anchors": [
+          "canvas"
+        ],
+        "predicate_anchors": [
+          "prompt",
+          "len",
+          "bucket",
+          "cutoffs"
+        ],
+        "fts_query": "(\"short 64 medium 64 512 long 512\") AND (\"canvas\") AND (\"prompt\" OR \"len\" OR \"bucket\" OR \"cutoffs\")",
+        "fts_hits": 1,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0425",
+      "claim_key": "Deterministic Playback Manifest v1.integrity_representation",
+      "state": "CANON",
+      "current_value": "optional integrity enum + integrity_ref URI, no embedded signature blob",
+      "retired_values": [
+        "optional embedded signature field"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_2f9c99fc8ec74495b4b08c49a6083ba8 names optional embedded signature field -> optional integrity enum + integrity_ref URI, no embedded signature blob; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0425",
+        "claim_key": "Deterministic Playback Manifest v1.integrity_representation",
+        "retired_value": "optional embedded signature field",
+        "entity_anchors": [
+          "playback"
+        ],
+        "predicate_anchors": [
+          "integrity",
+          "representation"
+        ],
+        "fts_query": "(\"optional embedded signature field\") AND (\"playback\") AND (\"integrity\" OR \"representation\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 1,
+        "not_an_assertion": 0,
+        "recorded": [
+          {
+            "doc_id": "dsid_834de01417d04878b4257f0f03ccbb88",
+            "source_type": "google_drive",
+            "title": "Deterministic Playback Manifest format (draft)",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "Validate: check manifest signature (if present)"
+          }
+        ],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0426",
+      "claim_key": "Optimize cohort_driven_gates.rollback_thresholds",
+      "state": "CANON",
+      "current_value": "safety >0.3% for 5m; cohort divert on >3% quality 10m; full rollback >4% KPI 10m",
+      "retired_values": [
+        "safety >0.5% immediate; 50% traffic revert on >3% quality 10m; full rollback >5% KPI 5m"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_553e1651575a416dae6b92d019d2f9f4 names safety >0.5% immediate; 50% traffic revert on >3% quality 10m; full rollback >5% KPI 5m -> safety >0.3% for 5m; cohort divert on >3% quality 10m; full rollback >4% KPI 10m; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0426",
+        "claim_key": "Optimize cohort_driven_gates.rollback_thresholds",
+        "retired_value": "safety >0.5% immediate; 50% traffic revert on >3% quality 10m; full rollback >5% KPI 5m",
+        "entity_anchors": [],
+        "predicate_anchors": [
+          "rollback",
+          "thresholds"
+        ],
+        "fts_query": "(\"safety 0 5 immediate 50 traffic revert on 3 quality 10m full rollback 5 KPI 5m\") AND (\"rollback\" OR \"thresholds\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0427",
+      "claim_key": "ClearEdge 2027 pilot.po_fingerprint_and_invoice_delivery",
+      "state": "CANON",
+      "current_value": "lowercase SHA-256 of PO_NUMBER|PO_LINE_UUID, Tuesdays by 07:00 PT",
+      "retired_values": [
+        "raw PO#|LINEUUID, Monday-morning delivery"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_d93aed75845e4a0b8126a80d8a7a5a41 names raw PO#|LINEUUID, Monday-morning delivery -> lowercase SHA-256 of PO_NUMBER|PO_LINE_UUID, Tuesdays by 07:00 PT; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0427",
+        "claim_key": "ClearEdge 2027 pilot.po_fingerprint_and_invoice_delivery",
+        "retired_value": "raw PO#|LINEUUID, Monday-morning delivery",
+        "entity_anchors": [
+          "clearedge"
+        ],
+        "predicate_anchors": [
+          "fingerprint",
+          "invoice",
+          "delivery"
+        ],
+        "fts_query": "(\"raw PO LINEUUID Monday morning delivery\") AND (\"clearedge\") AND (\"fingerprint\" OR \"invoice\" OR \"delivery\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0428",
+      "claim_key": "Hosted enterprise_playbook.monthly_token_volume_discount_breakpoints",
+      "state": "CANON",
+      "current_value": "250k / 2M / 10M",
+      "retired_values": [
+        "100k / 1M / 5M"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_10559147d3014931898864f22c311e47 names 100k / 1M / 5M -> 250k / 2M / 10M; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0428",
+        "claim_key": "Hosted enterprise_playbook.monthly_token_volume_discount_breakpoints",
+        "retired_value": "100k / 1M / 5M",
+        "entity_anchors": [],
+        "predicate_anchors": [
+          "monthly",
+          "token",
+          "volume",
+          "discount",
+          "breakpoints"
+        ],
+        "fts_query": "(\"100k 1M 5M\" OR \"100k 1M 5M\" OR \"100k 1M 5M\" OR \"100k 1M and 5M\" OR \"100k 1M and 5M\") AND (\"monthly\" OR \"token\" OR \"volume\" OR \"discount\" OR \"breakpoints\")",
+        "fts_hits": 10,
+        "rejected_for_anchoring": 5,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 3,
+        "not_an_assertion": 1,
+        "recorded": [
+          {
+            "doc_id": "dsid_1214ee9ab5e44de487c800f7a4771d7d",
+            "source_type": "confluence",
+            "title": "Deal acceleration playbook and enterprise messaging + security FAQ",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "Volume discounts: predefined breaks at 100k, 1M, and 5M monthly tokens for hosted volume."
+          },
+          {
+            "doc_id": "dsid_7f2d4f76c82140dbb07285a00f06644f",
+            "source_type": "gmail",
+            "title": "Scallion Health \u2014 pricing recap & invoice estimate",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "Next steps I propose: I will put together an invoice-style estimate (line-itemed) showing: unit cost scenarios at 100k / 1M / 5M monthly token volumes, recommended model/quantization options, and an expected monthly invoice range plus one-time setup fees. I will include a simple token-breakdown CSV so your engineers can sanity-check the volumes."
+          },
+          {
+            "doc_id": "dsid_86474759fa7b4699ab78cb1f2b357b43",
+            "source_type": "gmail",
+            "title": "Billing units & prompt-cache impact \u2014 anchoring on $/1M tokens",
+            "residue_class": "LEXICAL_RESTATEMENT",
+            "source_field": null,
+            "evidence_span": "- Your replies to the 5 items above -> I\u2019ll send a quick calculator and an estimate showing sample unit economics at 3 volume tiers (100k / 1M / 5M monthly tokens)."
+          },
+          {
+            "doc_id": "dsid_a728a23512ae4590a96ddf3536912389",
+            "source_type": "gmail",
+            "title": "Post-demo: FastHealth buying workflow & latency/cost guardrails",
+            "residue_class": "NOT_AN_ASSERTION",
+            "source_field": null,
+            "evidence_span": "- Cost: the $0.003/token equivalent is within range, but our finance team will need a predictable blended rate (inference + egress) for forecasting. Can you provide sample blended monthly scenarios for 100k, 1M, and 5M tokens?"
+          }
+        ],
+        "candidates": [
+          {
+            "doc_id": "dsid_86474759fa7b4699ab78cb1f2b357b43",
+            "source_type": "gmail",
+            "title": "Billing units & prompt-cache impact \u2014 anchoring on $/1M tokens",
+            "matched_variant": "100k / 1M / 5M",
+            "entity_anchors_matched": [],
+            "predicate_anchors_in_line": [
+              "monthly",
+              "token",
+              "volume"
+            ],
+            "line_no": 24,
+            "line": "- Your replies to the 5 items above -> I\u2019ll send a quick calculator and an estimate showing sample unit economics at 3 volume tiers (100k / 1M / 5M monthly tokens).",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "LEXICAL_RESTATEMENT"
+          },
+          {
+            "doc_id": "dsid_7f2d4f76c82140dbb07285a00f06644f",
+            "source_type": "gmail",
+            "title": "Scallion Health \u2014 pricing recap & invoice estimate",
+            "matched_variant": "100k / 1M / 5M",
+            "entity_anchors_matched": [],
+            "predicate_anchors_in_line": [
+              "monthly",
+              "token",
+              "volume"
+            ],
+            "line_no": 16,
+            "line": "Next steps I propose: I will put together an invoice-style estimate (line-itemed) showing: unit cost scenarios at 100k / 1M / 5M monthly token volumes, recommended model/quantization options, and an expected monthly invoice range plus one-time setup fees. I will include a simple token-breakdown CSV so your engineers can sanity-check the volumes.",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "LEXICAL_RESTATEMENT"
+          },
+          {
+            "doc_id": "dsid_10559147d3014931898864f22c311e47",
+            "source_type": "google_drive",
+            "title": "Enterprise deal acceleration playbook + security FAQ (working draft)",
+            "matched_variant": "100k/1M/5M",
+            "entity_anchors_matched": [],
+            "predicate_anchors_in_line": [
+              "monthly",
+              "token",
+              "volume",
+              "discount"
+            ],
+            "line_no": 97,
+            "line": "- Volume discounts: predefined breaks at 250k, 2M, and 10M monthly tokens for hosted volume (old doc says 100k/1M/5M \u2014 that\u2019s outdated).",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "HISTORICAL_REFERENCE"
+          },
+          {
+            "doc_id": "dsid_1214ee9ab5e44de487c800f7a4771d7d",
+            "source_type": "confluence",
+            "title": "Deal acceleration playbook and enterprise messaging + security FAQ",
+            "matched_variant": "100k, 1M, and 5M",
+            "entity_anchors_matched": [],
+            "predicate_anchors_in_line": [
+              "monthly",
+              "token",
+              "volume",
+              "discount"
+            ],
+            "line_no": 86,
+            "line": "- Volume discounts: predefined breaks at 100k, 1M, and 5M monthly tokens for hosted volume.",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "LEXICAL_RESTATEMENT"
+          },
+          {
+            "doc_id": "dsid_a728a23512ae4590a96ddf3536912389",
+            "source_type": "gmail",
+            "title": "Post-demo: FastHealth buying workflow & latency/cost guardrails",
+            "matched_variant": "100k, 1M, and 5M",
+            "entity_anchors_matched": [],
+            "predicate_anchors_in_line": [
+              "monthly",
+              "token"
+            ],
+            "line_no": 48,
+            "line": "- Cost: the $0.003/token equivalent is within range, but our finance team will need a predictable blended rate (inference + egress) for forecasting. Can you provide sample blended monthly scenarios for 100k, 1M, and 5M tokens?",
+            "field_name": null,
+            "structured": false,
+            "residue_class": "NOT_AN_ASSERTION"
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "qst_0429",
+      "claim_key": "Responses_v9_OpenAI_compat_streaming_bridge.enable_tool_signal",
+      "state": "CANON",
+      "current_value": "automatic when tool calls present; no public flag; private disable via openai_compat.tool_signal_enabled=false",
+      "retired_values": [
+        "per-request enable_tool_signal flag, default true for hosted"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T2",
+      "why": "explicit supersession language in dsid_8a085e12606b4ea79f43ee176cba2ccb names per-request enable_tool_signal flag, default true for hosted -> automatic when tool calls present; no public flag; private disable via openai_compat.tool_signal_enabled=false; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0429",
+        "claim_key": "Responses_v9_OpenAI_compat_streaming_bridge.enable_tool_signal",
+        "retired_value": "per-request enable_tool_signal flag, default true for hosted",
+        "entity_anchors": [
+          "openai"
+        ],
+        "predicate_anchors": [
+          "enable",
+          "tool",
+          "signal"
+        ],
+        "fts_query": "(\"per request enable_tool_signal flag default true for hosted\") AND (\"openai\") AND (\"enable\" OR \"tool\" OR \"signal\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    },
+    {
+      "question_id": "qst_0430",
+      "claim_key": "Hosted_AWS_Marketplace_SKU.customer_managed_KMS_BYOK",
+      "state": "CANON",
+      "current_value": "BYOK add-on for enterprise tenants in select regions (2026 FAQ); Private still recommended when BYOK is hard requirement",
+      "retired_values": [
+        "Hosted cannot do BYOK; take Private"
+      ],
+      "transition": "EXPLICIT_SUPERSESSION",
+      "temporal_quality": "T1",
+      "why": "explicit supersession language in dsid_8f0b7a8c1dbb4df0b23f6c4e61c9f1a6 names Hosted cannot do BYOK; take Private -> BYOK add-on for enterprise tenants in select regions (2026 FAQ); Private still recommended when BYOK is hard requirement; corroboration count was not consulted",
+      "residue": {
+        "question_id": "qst_0430",
+        "claim_key": "Hosted_AWS_Marketplace_SKU.customer_managed_KMS_BYOK",
+        "retired_value": "Hosted cannot do BYOK; take Private",
+        "entity_anchors": [],
+        "predicate_anchors": [
+          "customer",
+          "managed",
+          "kms",
+          "byok"
+        ],
+        "fts_query": "(\"Hosted cannot do BYOK take Private\") AND (\"customer\" OR \"managed\" OR \"kms\" OR \"byok\")",
+        "fts_hits": 0,
+        "rejected_for_anchoring": 0,
+        "verified_structured": 0,
+        "derived_free_text": 0,
+        "historical_reference": 0,
+        "rejected_reference": 0,
+        "lexical_restatement": 0,
+        "not_an_assertion": 0,
+        "recorded": [],
+        "candidates": []
+      }
+    }
+  ],
+  "nodes_created": 203,
+  "edges_created": 203,
+  "skipped_existing": 1,
+  "verified_structured_residue_total": 0,
+  "derived_free_text_residue_total": 0,
+  "not_an_assertion_total": 2,
+  "lexical_restatement_total": 8,
+  "historical_reference_total": 0,
+  "rejected_reference_total": 0
+}
