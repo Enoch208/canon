@@ -1,0 +1,60 @@
+services:
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: canon
+      MINIO_ROOT_PASSWORD: canon-local-secret
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./hydradb-data/minio:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  minio-bucket:
+    image: minio/mc:latest
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set canon http://minio:9000 canon canon-local-secret &&
+      mc mb --ignore-existing canon/hydradb
+      "
+
+  hydradb:
+    image: ghcr.io/hydra-db/hydradb:latest
+    user: "${UID}:${GID}"
+    depends_on:
+      minio-bucket:
+        condition: service_completed_successfully
+    ports:
+      - "7687:7687"
+      - "8443:8443"
+      - "9090:9090"
+    volumes:
+      - ./hydradb-data:/data
+    environment:
+      CLOUD_PROVIDER: aws
+      AWS_BUCKET_NAME: hydradb
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_ENDPOINT: http://minio:9000
+      AWS_ALLOW_HTTP: "true"
+      AWS_ACCESS_KEY_ID: canon
+      AWS_SECRET_ACCESS_KEY: canon-local-secret
+      GRAPH_NAMESPACE: default
+      GRAPH_ID: default
+      GRAPH_CELL_ID: cell-0
+      GRAPH_CELLS: cell-0
+      GRAPH_NODE_ID: node-0
+      GRAPH_BOLT_NODE_ADDRESSES: node-0=127.0.0.1:7687
+      GRAPH_ADVERTISED_BOLT_ADDR: 127.0.0.1:7687
+      GRAPH_DATA_CACHE_DIR: /data/cache
+      GRAPH_AUTH_TOKEN_FILE: /data/auth-token
+      GRAPH_ALLOW_PLAINTEXT: "true"
+      RUST_MIN_STACK: "33554432"
