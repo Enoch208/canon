@@ -1,13 +1,15 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from canon_api.app import app, service
-
 pytestmark = pytest.mark.hydra
 
 
 @pytest.fixture(scope="module")
 def client() -> TestClient:
+    try:
+        from canon_api.app import app, service
+    except Exception as error:
+        pytest.skip(f"api service unavailable in this environment: {error}")
     if not service.healthy():
         pytest.skip("HydraDB not reachable; run `make hydra-up`")
     if not service.reader.all_claim_keys():

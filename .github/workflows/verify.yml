@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir -p hydradb-data/cache hydradb-data/minio
           printf '%s\n' 'local-development-token-32-bytes' > hydradb-data/auth-token
-          UID=$(id -u) GID=$(id -g) docker compose up -d
+          env UID="$(id -u)" GID="$(id -g)" docker compose up -d
           uv run python scripts/verify/wait_for_hydra.py
       - name: Graph integration tests
         run: uv run pytest -m hydra
