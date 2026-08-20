@@ -43,12 +43,13 @@ Only the context topology changes.
 
 ## Judge Canon in 90 seconds
 
-Three numbers, all reproducible from this repository:
+Four numbers, all reproducible from this repository:
 
 | | |
 |---|---|
 | **14/20 → 1/20** | superseded gold documents reaching present-tense context (deterministic, no model) |
-| **70.0% → 82.5%** | correctness on the benchmark's own scorer — with **no answer hint in the prompt** |
+| **70.0% → 82.5%** | correctness on the benchmark's own scorer — with **no answer hint in the prompt**, while random removal of the same number of documents scores exactly the baseline 70.0% |
+| **471/480 · 0 harmed** | across all 500 benchmark questions, non-conflict contexts stay byte-identical except nine interventions that each trace to a proven supersession chain — and no expected document is ever removed outside the conflicts |
 | **20/20** | unanswerable questions answered `UNKNOWN`; historical questions recover the retired evidence 20/20 |
 
 ```bash
