@@ -1,0 +1,296 @@
+{
+  "measured_at": "2026-08-20T21:40:55.462190+00:00",
+  "answer_model": "claude-sonnet-5",
+  "design": "Decomposition of the Temporal Cut. cut_only removes documents proven superseded and backfills from the same ranking but never pins graph evidence; pin_only leaves every retrieved document in place and only adds current evidence the retriever missed, evicting the lowest rank. Same 20 questions, same 10-document budget, same model and prompt as every other arm.",
+  "questions": 20,
+  "summary": {
+    "mechanism_cut_only": {
+      "retired_gold_doc_in_context": 1,
+      "current_gold_doc_in_context": 18,
+      "context_documents": 200
+    },
+    "mechanism_pin_only": {
+      "retired_gold_doc_in_context": 14,
+      "current_gold_doc_in_context": 20,
+      "context_documents": 200
+    }
+  },
+  "per_question": [
+    {
+      "question_id": "qst_0411",
+      "dropped": [
+        "dsid_5f3a672da4974781a5577b0f3d4993e9"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0412",
+      "dropped": [
+        "dsid_89c0c31e220c4777b15c3c6ff0eff61d"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0413",
+      "dropped": [],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": true,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0414",
+      "dropped": [],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": false,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0415",
+      "dropped": [],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": false,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0416",
+      "dropped": [
+        "dsid_8ca703d991844bd195b4b8fdc16040fd"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0417",
+      "dropped": [],
+      "pinned": [
+        "dsid_10a589a5ee9048d9a33deb4156037171"
+      ],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": false,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": false,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0418",
+      "dropped": [],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": false,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0419",
+      "dropped": [
+        "dsid_db1c1f64721b468dafb35c2e0080a8f8"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0420",
+      "dropped": [
+        "dsid_4e65166659394a90922be6a5c7b110a8"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0421",
+      "dropped": [
+        "dsid_b8ab9778e36543159da49dba3ad9c76d"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0422",
+      "dropped": [
+        "dsid_9cde32cd0645459b80ec513df27d1eb6"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0423",
+      "dropped": [
+        "dsid_c5288dd4874345adb80f4a71c9a18773"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0424",
+      "dropped": [
+        "dsid_f039509796f842cd84ba3bfb895c7132"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0425",
+      "dropped": [
+        "dsid_834de01417d04878b4257f0f03ccbb88"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0426",
+      "dropped": [
+        "dsid_c90bd544f3b5437fba711492db31aeea"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0427",
+      "dropped": [
+        "dsid_86f033ed92b84f3a8b381d09b0b95357"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0428",
+      "dropped": [],
+      "pinned": [
+        "dsid_10559147d3014931898864f22c311e47"
+      ],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": false,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": false,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0429",
+      "dropped": [
+        "dsid_96912c22b0b04024b573606105bd5ea0"
+      ],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": true,
+      "mechanism_pin_only_current_gold_in_context": true
+    },
+    {
+      "question_id": "qst_0430",
+      "dropped": [],
+      "pinned": [],
+      "mechanism_cut_only_docs": 10,
+      "mechanism_cut_only_retired_gold_in_context": false,
+      "mechanism_cut_only_current_gold_in_context": true,
+      "mechanism_pin_only_docs": 10,
+      "mechanism_pin_only_retired_gold_in_context": false,
+      "mechanism_pin_only_current_gold_in_context": true
+    }
+  ],
+  "official_scores": {
+    "status": "not_run",
+    "reason": "Answers for both arms generated and saved (eval/official/mechanism_*.jsonl, 0 empty). Official harness scoring not run: the Anthropic key ran out of credit mid-judging and the harness records a failed judge call as correct=False, so the partial percentages (40.0 and 0.0, with 8 and 20 empty reasoning fields) are infrastructure artifacts, not measurements. They are deliberately not published. Re-run: metrics_based_eval --parallelism 1 on each mechanism jsonl."
+  },
+  "deterministic_decomposition": {
+    "note": "No model in the loop. Counts over the 20 official conflicting_info questions.",
+    "baseline": {
+      "retired_gold_doc_in_context": 14,
+      "current_gold_doc_in_context": 18
+    },
+    "cut_only": {
+      "retired_gold_doc_in_context": 1,
+      "current_gold_doc_in_context": 18,
+      "context_documents": 200
+    },
+    "pin_only": {
+      "retired_gold_doc_in_context": 14,
+      "current_gold_doc_in_context": 20,
+      "context_documents": 200
+    },
+    "full_temporal_cut": {
+      "retired_gold_doc_in_context": 1,
+      "current_gold_doc_in_context": 20
+    }
+  },
+  "amended_at": "2026-08-20T22:20:00.084709+00:00"
+}
