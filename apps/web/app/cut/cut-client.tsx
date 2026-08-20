@@ -91,7 +91,7 @@ export function CutClient({
       </div>
 
       <section className="grid gap-4 lg:grid-cols-[1fr_auto_1fr]">
-        <div className="rounded-lg border border-line bg-surface p-6">
+        <div className="min-w-0 rounded-lg border border-line bg-surface p-6">
           <p className="text-[10px] font-light tracking-[0.2em] text-faint uppercase">
             BM25 · relevant
           </p>
@@ -106,7 +106,7 @@ export function CutClient({
                   }`}
                 >
                   <span className="w-5 font-mono text-faint">{doc.rank}</span>
-                  <span className={`flex-1 truncate ${dropped ? "text-retired line-through decoration-retired/50" : "text-muted"}`}>
+                  <span className={`min-w-0 flex-1 truncate ${dropped ? "text-retired line-through decoration-retired/50" : "text-muted"}`}>
                     {doc.title || doc.doc_id}
                   </span>
                   <span className={`rounded border px-2 py-0.5 font-mono text-[10px] ${DISPOSITION_STYLE[doc.disposition] ?? "border-line text-faint"}`}>
@@ -127,7 +127,7 @@ export function CutClient({
           </span>
         </div>
 
-        <div className="rounded-lg border border-line bg-surface p-6">
+        <div className="min-w-0 rounded-lg border border-line bg-surface p-6">
           <p className="text-[10px] font-light tracking-[0.2em] text-faint uppercase">
             HydraDB · {mode === "current" ? "currently valid" : "historically valid"}
           </p>
@@ -138,7 +138,7 @@ export function CutClient({
                 className="flex items-center gap-3 rounded-md border border-line px-4 py-2.5 text-xs font-light"
               >
                 <span className="w-5 font-mono text-faint">{doc.rank}</span>
-                <span className="flex-1 truncate text-muted">{doc.title || doc.doc_id}</span>
+                <span className="min-w-0 flex-1 truncate text-muted">{doc.title || doc.doc_id}</span>
                 <span className={`rounded border px-2 py-0.5 font-mono text-[10px] ${DISPOSITION_STYLE[doc.disposition] ?? "border-line text-faint"}`}>
                   {DISPOSITION_LABEL[doc.disposition] ?? doc.disposition}
                 </span>
@@ -151,7 +151,7 @@ export function CutClient({
                     className="flex items-center gap-3 rounded-md border border-accent/40 bg-accent/[0.05] px-4 py-2.5 text-xs font-light"
                   >
                     <span className="w-5 font-mono text-accent">+</span>
-                    <span className="flex-1 truncate font-mono text-muted">{docId}</span>
+                    <span className="min-w-0 flex-1 truncate font-mono text-muted">{docId}</span>
                     <span className="rounded border border-accent/40 px-2 py-0.5 font-mono text-[10px] text-accent">
                       backfilled
                     </span>
