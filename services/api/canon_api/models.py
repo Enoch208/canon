@@ -178,6 +178,21 @@ class AskResponse(BaseModel):
     evidence: list[EvidenceModel]
     retired_evidence_filtered: int
     documents: list[GroundedDocModel]
+    backfill_doc_ids: list[str]
     query_cards: list[QueryCardModel]
+    retrieval_ms: float
+    grounding_ms: float
+
+
+class GroundResponse(BaseModel):
+    state: TruthState
+    mode: GroundingMode
+    answer_value: str | None
+    why: str
+    current_evidence: list[str]
+    suppressed_evidence: list[str]
+    historical_evidence: list[str]
+    backfill_evidence: list[str]
+    proof: list[QueryCardModel]
     retrieval_ms: float
     grounding_ms: float

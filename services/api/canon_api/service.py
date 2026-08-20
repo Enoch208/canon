@@ -20,6 +20,7 @@ from canon_api.models import (
     TruthChangeModel,
 )
 from canon_api.stats import GraphStats, load_graph_stats
+from canon_evaluation.runner import BACKFILL_RESERVE
 from canon_extraction.conflicts import ConflictInventory, load_inventory, split_claim_key
 from canon_graph.grounding import Grounding, GroundingMode, ground
 from canon_graph.hydra import HydraClient
@@ -325,8 +326,10 @@ class CanonService:
 
     def ask(self, question: str, mode: GroundingMode, top_k: int) -> AskResponse:
         started = time.perf_counter()
-        hits = self.store.search(question, k=top_k)
+        deep = self.store.search(question, k=top_k + BACKFILL_RESERVE)
         retrieval_ms = (time.perf_counter() - started) * 1000
+        hits = deep[:top_k]
+        reserve = deep[top_k:]
         ranks = {hit.doc_id: hit.rank for hit in hits}
         started = time.perf_counter()
         grounding = ground(
@@ -338,8 +341,10 @@ class CanonService:
         )
         grounding_ms = (time.perf_counter() - started) * 1000
         self.reader.take_cards()
+        dropped = set(grounding.dropped_doc_ids)
+        backfill = [hit.doc_id for hit in reserve if hit.doc_id not in dropped][: len(dropped)]
         return _ask_response(
-            question, mode, grounding, ranks, self.store, retrieval_ms, grounding_ms
+            question, mode, grounding, ranks, self.store, retrieval_ms, grounding_ms, backfill
         )
 
 
@@ -391,6 +396,7 @@ def _ask_response(
     store: CorpusStore,
     retrieval_ms: float,
     grounding_ms: float,
+    backfill: list[str],
 ) -> AskResponse:
     primary = grounding.primary
     kept = set(grounding.kept_doc_ids)
@@ -433,6 +439,7 @@ def _ask_response(
         question=question,
         mode=mode,
         state=grounding.state,
+        backfill_doc_ids=backfill,
         answer_value=answer_value,
         why=why,
         claim_key=primary.claim_key.key if primary else None,

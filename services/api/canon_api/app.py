@@ -11,6 +11,7 @@ from canon_api.models import (
     AskResponse,
     ConflictSummaryModel,
     DashboardModel,
+    GroundResponse,
     IdentityReportModel,
     OfficialEvalModel,
     ResidueReportModel,
@@ -91,6 +92,40 @@ def ask(request: AskRequest) -> AskResponse:
     return service.ask(request.question, request.mode, request.top_k)
 
 
+@app.post("/v1/ground")
+def ground_endpoint(request: AskRequest) -> GroundResponse:
+    if not service.healthy():
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "state": "TEMPORAL_GRAPH_UNAVAILABLE",
+                "reason": (
+                    "HydraDB is unreachable, so Canon cannot decide which evidence is "
+                    "currently valid. Refusing to ground rather than silently degrading "
+                    "to plain retrieval."
+                ),
+            },
+        )
+    ask = service.ask(request.question, request.mode, request.top_k)
+    return GroundResponse(
+        state=ask.state,
+        mode=ask.mode,
+        answer_value=ask.answer_value,
+        why=ask.why,
+        current_evidence=[d.doc_id for d in ask.documents if d.disposition == "current_evidence"],
+        suppressed_evidence=[
+            d.doc_id for d in ask.documents if d.disposition == "superseded_for_current_grounding"
+        ],
+        historical_evidence=[
+            d.doc_id for d in ask.documents if d.disposition == "historical_evidence"
+        ],
+        backfill_evidence=ask.backfill_doc_ids,
+        proof=ask.query_cards,
+        retrieval_ms=ask.retrieval_ms,
+        grounding_ms=ask.grounding_ms,
+    )
+
+
 @app.get("/official")
 def official() -> OfficialEvalModel:
     payload = service.official_eval()
@@ -112,4 +147,23 @@ def results() -> dict[str, object]:
         "not_run": payload["not_run"],
         "summary": payload["summary"],
         "question_ids": payload["question_ids"],
+        "conflicts": [
+            {
+                "question_id": conflict["question_id"],
+                "question": conflict["question"],
+                "old_value": conflict["old_value"],
+                "new_value": conflict["new_value"],
+                "dropped_doc_ids": conflict["dropped_doc_ids"],
+                **{
+                    arm: {
+                        "arm": conflict[arm]["arm"],
+                        "doc_ids": conflict[arm]["doc_ids"],
+                        "answer": conflict[arm]["answer"],
+                        "verdict": conflict[arm].get("verdict"),
+                    }
+                    for arm in ("baseline", "canon_filtered", "canon")
+                },
+            }
+            for conflict in payload["conflicts"]
+        ],
     }
