@@ -1,0 +1,250 @@
+{
+  "measured_at": "2026-08-20T09:19:23.520259+00:00",
+  "design": "Remove the same number of documents Canon removes per question, chosen uniformly at random (seeded by question id), backfill from the same ranking. Same model, same prompt, same document count as every other arm.",
+  "answer_model": "claude-sonnet-5",
+  "questions": 40,
+  "conflict_questions_where_random_hit_superseded": 1,
+  "conflict_questions_superseded_in_context": 13,
+  "per_question": [
+    {
+      "question_id": "qst_0411",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0412",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0413",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0414",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0415",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0416",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0417",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0418",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0419",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0420",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0421",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0422",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0423",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0424",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0425",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0426",
+      "removals": 1,
+      "random_removed_superseded": true,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0427",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0428",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0429",
+      "removals": 1,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": true
+    },
+    {
+      "question_id": "qst_0430",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0481",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0482",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0483",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0484",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0485",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0486",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0487",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0488",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0489",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0490",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0491",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0492",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0493",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0494",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0495",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0496",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0497",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0498",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0499",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    },
+    {
+      "question_id": "qst_0500",
+      "removals": 0,
+      "random_removed_superseded": false,
+      "superseded_in_final_context": false
+    }
+  ]
+}
