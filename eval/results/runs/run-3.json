@@ -41,12 +41,12 @@
     "baseline_judged_states_current_value": 14,
     "baseline_judged_presents_retired_as_current": 2,
     "baseline_judged_abstains": 3,
-    "canon_filtered_judged_rubric_facts_satisfied": 68,
+    "canon_filtered_judged_rubric_facts_satisfied": 70,
     "canon_filtered_judged_rubric_facts_total": 138,
     "canon_filtered_judged_states_current_value": 17,
     "canon_filtered_judged_presents_retired_as_current": 1,
     "canon_filtered_judged_abstains": 2,
-    "canon_judged_rubric_facts_satisfied": 73,
+    "canon_judged_rubric_facts_satisfied": 70,
     "canon_judged_rubric_facts_total": 138,
     "canon_judged_states_current_value": 19,
     "canon_judged_presents_retired_as_current": 0,
@@ -987,18 +987,17 @@
           "dsid_03f1298545124383b72c6e176b123c80",
           "dsid_55984260cebc414888bc5db6eaf8bb70",
           "dsid_9e4cffba14a0427798fdcc224b2bc7bf",
-          "dsid_d7b17e7add704a548a022b942ebd3d37",
           "dsid_10a589a5ee9048d9a33deb4156037171"
         ],
         "metrics": {
           "arm": "canon_filtered",
-          "context_docs": 11,
+          "context_docs": 10,
           "current_gold_in_context": true,
           "retired_gold_in_context": false,
           "retired_value_in_context": true,
           "current_value_in_context": false
         },
-        "answer": "As of Private Toolkit v1.8+, backup manifests can be signed using **Sigstore/cosign (offline key mode)**, with older deployments still supporting **GPG signatures** for both during a migration/transition period.",
+        "answer": "Redwood Private on-prem backup manifests are recommended to be signed using **Sigstore/cosign (offline key mode)** as of Private Toolkit v1.8+, with older deployments still supporting **GPG signatures** during the migration period (both are supported).",
         "answer_metrics": {
           "states_current_value": false,
           "states_retired_value": true,
@@ -1026,25 +1025,24 @@
           "dsid_03f1298545124383b72c6e176b123c80",
           "dsid_55984260cebc414888bc5db6eaf8bb70",
           "dsid_9e4cffba14a0427798fdcc224b2bc7bf",
-          "dsid_d7b17e7add704a548a022b942ebd3d37",
           "dsid_10a589a5ee9048d9a33deb4156037171"
         ],
         "metrics": {
           "arm": "canon",
-          "context_docs": 11,
+          "context_docs": 10,
           "current_gold_in_context": true,
           "retired_gold_in_context": false,
           "retired_value_in_context": true,
           "current_value_in_context": false
         },
-        "answer": "Redwood Private on-prem recommends **Sigstore/cosign in offline key mode** (as of Private Toolkit v1.8+) for signing backup manifests. GPG signatures are still supported during the migration period for older deployments.",
+        "answer": "Redwood Private on-prem recommends **Sigstore/cosign in offline key mode** for signing backup manifests (current as of Private Toolkit v1.8+). GPG signatures are still supported during the migration period for older deployments.",
         "answer_metrics": {
           "states_current_value": false,
           "states_retired_value": true,
           "abstained": false
         },
         "verdict": {
-          "satisfied_facts": 5,
+          "satisfied_facts": 4,
           "total_facts": 6,
           "states_current_value": true,
           "presents_retired_as_current": false,
@@ -2593,25 +2591,24 @@
           "dsid_c30b612872034a1c9cb505f1a0948da1",
           "dsid_27c0d28b1bdc4409a171fb505bf93c1c",
           "dsid_2b3cb1e7e11d4a0f9dcf54f55c9bcb63",
-          "dsid_1ad8dd5ea23c48f1ae287c6c465e1ff9",
           "dsid_10559147d3014931898864f22c311e47"
         ],
         "metrics": {
           "arm": "canon_filtered",
-          "context_docs": 11,
+          "context_docs": 10,
           "current_gold_in_context": true,
           "retired_gold_in_context": false,
           "retired_value_in_context": true,
           "current_value_in_context": true
         },
-        "answer": "The Hosted volume discount breakpoints in the enterprise playbook (updated version) are 250k, 2M, and 10M monthly tokens.",
+        "answer": "The Hosted volume discount breakpoints in the enterprise playbook are 250k, 2M, and 10M monthly tokens (noted as updated from an outdated Confluence doc that had listed 100k/1M/5M).",
         "answer_metrics": {
           "states_current_value": true,
-          "states_retired_value": false,
+          "states_retired_value": true,
           "abstained": false
         },
         "verdict": {
-          "satisfied_facts": 1,
+          "satisfied_facts": 3,
           "total_facts": 5,
           "states_current_value": true,
           "presents_retired_as_current": false,
@@ -2632,25 +2629,24 @@
           "dsid_c30b612872034a1c9cb505f1a0948da1",
           "dsid_27c0d28b1bdc4409a171fb505bf93c1c",
           "dsid_2b3cb1e7e11d4a0f9dcf54f55c9bcb63",
-          "dsid_1ad8dd5ea23c48f1ae287c6c465e1ff9",
           "dsid_10559147d3014931898864f22c311e47"
         ],
         "metrics": {
           "arm": "canon",
-          "context_docs": 11,
+          "context_docs": 10,
           "current_gold_in_context": true,
           "retired_gold_in_context": false,
           "retired_value_in_context": true,
           "current_value_in_context": true
         },
-        "answer": "The current monthly token volume discount breakpoints for Hosted pricing in the enterprise playbook are **250k / 2M / 10M** monthly tokens.",
+        "answer": "250k / 2M / 10M",
         "answer_metrics": {
           "states_current_value": true,
           "states_retired_value": false,
           "abstained": false
         },
         "verdict": {
-          "satisfied_facts": 3,
+          "satisfied_facts": 1,
           "total_facts": 5,
           "states_current_value": true,
           "presents_retired_as_current": false,
@@ -3213,6 +3209,14 @@
       "qst_0498",
       "qst_0499",
       "qst_0500"
+    ]
+  },
+  "amended": {
+    "at": "2026-08-20T11:42:48.459211+00:00",
+    "reason": "context budget parity: pinned graph evidence now evicts the lowest-ranked document instead of adding an 11th slot; canon arms for qst_0417 and qst_0428 re-answered and re-judged, baseline untouched",
+    "question_ids": [
+      "qst_0417",
+      "qst_0428"
     ]
   }
 }

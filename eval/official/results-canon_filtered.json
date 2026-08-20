@@ -8,7 +8,7 @@
     "average_completeness_pct": 69.89,
     "combined_correctness_completeness_score": 65.82,
     "average_recall_pct": 52.5,
-    "average_invalid_extra_docs": 9.1
+    "average_invalid_extra_docs": 9.0
   },
   "question_type_stats": {
     "conflicting_info": {
@@ -17,7 +17,7 @@
       "average_completeness_pct": 79.79,
       "combined_correctness_completeness_score": 76.64,
       "average_recall_pct": 52.5,
-      "average_invalid_extra_docs": 9.1
+      "average_invalid_extra_docs": 9.0
     },
     "info_not_found": {
       "count": 20,
@@ -94,10 +94,10 @@
       "corrected": false,
       "question_type": "conflicting_info",
       "answer_correct": true,
-      "correctness_reasoning": "The candidate answer conveys the same information as the gold answer, including the recommendation for Sigstore/cosign (offline key mode) as of Private Toolkit v1.8+, continued support for GPG signatures in older deployments, and compatibility during migration.",
+      "correctness_reasoning": "The candidate answer conveys the same core information as the gold answer, including Sigstore/cosign (offline key mode) as of v1.8+, GPG support for older deployments, and migration compatibility, with only minor stylistic differences.",
       "completeness_pct": 66.67,
       "document_recall_pct": 50.0,
-      "invalid_extra_docs": 10
+      "invalid_extra_docs": 9
     },
     {
       "question_id": "qst_0418",
@@ -204,10 +204,10 @@
       "corrected": false,
       "question_type": "conflicting_info",
       "answer_correct": true,
-      "correctness_reasoning": "The candidate answer correctly identifies the updated breakpoints of 250k, 2M, and 10M monthly tokens and notes the older 100k/1M/5M breakpoints as outdated, aligning with the gold answer's core information.",
+      "correctness_reasoning": "The candidate answer provides the same breakpoints (250k, 2M, and 10M monthly tokens) and correctly notes the outdated prior version (100k/1M/5M), fully aligning with the gold answer.",
       "completeness_pct": 100.0,
       "document_recall_pct": 50.0,
-      "invalid_extra_docs": 10
+      "invalid_extra_docs": 9
     },
     {
       "question_id": "qst_0429",

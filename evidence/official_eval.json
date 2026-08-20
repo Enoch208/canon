@@ -1,4 +1,6 @@
 {
+  "amended": "context budget parity: canon arms re-answered and re-judged for qst_0417/qst_0428 (pinned evidence now evicts lowest rank); all arms 200 context documents",
+  "amended_at": "2026-08-20T11:45:55.899612+00:00",
   "arms": {
     "baseline": {
       "by_question_type": {
@@ -30,11 +32,11 @@
           "total": 20
         }
       },
-      "combined_score": 59.44,
-      "completeness_pct": 77.5,
+      "combined_score": 59.85,
+      "completeness_pct": 77.92,
       "correctness_pct": 77.5,
       "document_recall_pct": 52.5,
-      "invalid_extra_docs": 9.1,
+      "invalid_extra_docs": 9.0,
       "label": "Canon",
       "questions_scored": 40
     },
@@ -53,7 +55,7 @@
       "completeness_pct": 69.89,
       "correctness_pct": 82.5,
       "document_recall_pct": 52.5,
-      "invalid_extra_docs": 9.1,
+      "invalid_extra_docs": 9.0,
       "label": "Canon, no note",
       "questions_scored": 40
     },

@@ -60,7 +60,7 @@ open http://localhost:3000/cut    # the Temporal Cut, on one real conflict, live
 
 `/cut` shows the same BM25 ranking twice: on the right, HydraDB removes the document that still
 asserts the retired value, backfills the next candidate from the same ranking, and the baseline's
-wrong answer sits next to Canon's correct one — same model, same prompt, same document count.
+wrong answer sits next to Canon's correct one — same model, same prompt, same context budget.
 Every number above is fingerprinted in `evidence/run_manifest.json` (git commit, HydraDB image
 digest, dataset revision, SHA-256 of every result file).
 
@@ -257,7 +257,10 @@ actually depends on (`evidence/hydra_perf.json`):
 Dataset: [`onyx-dot-app/EnterpriseRAG-Bench`](https://huggingface.co/datasets/onyx-dot-app/EnterpriseRAG-Bench) —
 all 20 official `conflicting_info` questions and all 20 official `info_not_found` questions.
 Baseline and Canon share the same corpus, the same BM25 candidate retrieval, the same `top_k = 10`,
-and the same document count per question.
+and exactly the same context budget: every arm answers every question from exactly 10 documents.
+When the graph removes a superseded document, the next candidate from the same ranking backfills
+the slot; when it pins a current document BM25 missed, the lowest-ranked candidate is evicted to
+make room. The context never grows and never shrinks — only its composition changes.
 
 ### Deterministic (no model in the loop)
 
@@ -280,8 +283,8 @@ judge `claude-sonnet-4-6`) — their harness, their judge, their gold answers:
 | Metric | baseline | random filter | canon_filtered *(no note)* | canon |
 | --- | --- | --- | --- | --- |
 | **Correctness** | 70.0% | 70.0% | **82.5%** | 77.5% |
-| Completeness | 69.8% | 72.1% | 69.9% | **77.5%** |
-| Combined (corr × comp) | 56.84 | 56.26 | **65.82** | 59.44 |
+| Completeness | 69.8% | 72.1% | 69.9% | **77.9%** |
+| Combined (corr × comp) | 56.84 | 56.26 | **65.82** | 59.85 |
 | Document recall | 80.0% | 72.5% | 52.5% | 52.5% |
 
 **The middle column carries no claim-graph note** — nothing tells the model which value is current —
@@ -299,7 +302,7 @@ observed range across three end-to-end runs:
 | --- | --- | --- | --- |
 | Answer states the current value | 14.7 / 20 *(14–15)* | 17.7 / 20 *(17–18)* | **19 / 20 *(19–19)*** |
 | Answer presents the retired value as current | 1.3 / 20 | 0.7 / 20 | **0.3 / 20** |
-| Context documents | 200 | 202 | 202 |
+| Context documents | 200 | 200 | 200 |
 
 Canon returned 19/20 in **all three runs with zero variance**; both other arms moved between runs.
 Per-run files are in `eval/results/runs/`, the aggregate in `eval/results/summary.json`, and

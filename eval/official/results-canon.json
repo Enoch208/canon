@@ -5,19 +5,19 @@
     "skipped_rows": 0,
     "num_corrected_questions": 0,
     "average_correctness_pct": 77.5,
-    "average_completeness_pct": 77.5,
-    "combined_correctness_completeness_score": 59.44,
+    "average_completeness_pct": 77.92,
+    "combined_correctness_completeness_score": 59.85,
     "average_recall_pct": 52.5,
-    "average_invalid_extra_docs": 9.1
+    "average_invalid_extra_docs": 9.0
   },
   "question_type_stats": {
     "conflicting_info": {
       "count": 20,
       "average_correctness_pct": 90.0,
-      "average_completeness_pct": 85.0,
-      "combined_correctness_completeness_score": 78.87,
+      "average_completeness_pct": 85.83,
+      "combined_correctness_completeness_score": 79.71,
       "average_recall_pct": 52.5,
-      "average_invalid_extra_docs": 9.1
+      "average_invalid_extra_docs": 9.0
     },
     "info_not_found": {
       "count": 20,
@@ -94,10 +94,10 @@
       "corrected": false,
       "question_type": "conflicting_info",
       "answer_correct": true,
-      "correctness_reasoning": "The candidate answer conveys the same core information as the gold answer: Sigstore/cosign in offline key mode for Private Toolkit v1.8+, with GPG signatures still supported during migration.",
-      "completeness_pct": 66.67,
+      "correctness_reasoning": "The candidate answer matches the gold answer exactly, covering Sigstore/cosign offline key mode as of v1.8+ and GPG support during migration.",
+      "completeness_pct": 83.33,
       "document_recall_pct": 50.0,
-      "invalid_extra_docs": 10
+      "invalid_extra_docs": 9
     },
     {
       "question_id": "qst_0418",
@@ -204,10 +204,10 @@
       "corrected": false,
       "question_type": "conflicting_info",
       "answer_correct": true,
-      "correctness_reasoning": "The candidate answer correctly identifies the three monthly token volume discount breakpoints (250k, 2M, 10M) that match the gold answer, addressing the core of the query.",
+      "correctness_reasoning": "The candidate answer correctly identifies the three breakpoints (250k, 2M, 10M monthly tokens) that directly answer the query, matching the core information in the gold answer.",
       "completeness_pct": 100.0,
       "document_recall_pct": 50.0,
-      "invalid_extra_docs": 10
+      "invalid_extra_docs": 9
     },
     {
       "question_id": "qst_0429",
