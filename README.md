@@ -345,6 +345,25 @@ the graph is for.
 The wider the retrieval, the more retired truth leaks into the baseline. Canon stays at 1 — the
 contested claim, where dropping anything would be wrong.
 
+**Which half of the cut does the work?** The Temporal Cut does two things: it removes documents
+proven superseded, and it pins current evidence the retriever missed. Running each half alone,
+same 20 questions and same 10-document budget (`make mechanism` → `evidence/mechanism.json`):
+
+| Arm | superseded doc in context | current gold in context | context docs |
+|---|---|---|---|
+| Baseline | 14/20 | 18/20 | 200 |
+| Cut only | **1/20** | 18/20 | 200 |
+| Pin only | 14/20 | **20/20** | 200 |
+| Full Temporal Cut | **1/20** | **20/20** | 200 |
+
+The two halves are cleanly separable: suppression is what stops retired evidence reaching the
+model, pinning is what recovers the current evidence BM25 ranked out. Only both together give a
+context that is simultaneously clean and complete. *(These rows are deterministic — no model. The
+answer-level scores for the two half-arms are generated but not judged: the API key ran out of
+credit mid-judging, and a failed judge call is recorded by the harness as an incorrect answer, so
+publishing those percentages would be publishing an infrastructure artifact. `evidence/mechanism.json`
+records this as `not_run`.)*
+
 **The effect is not model-specific.** The same 20 conflict questions, same contexts, answered by
 a much weaker model (`claude-haiku-4-5`) and scored by the same official harness: baseline
 **75.0%** → Temporal Cut **80.0%** (`evidence/second_model.json`). A stronger model and a weaker
