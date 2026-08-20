@@ -184,15 +184,28 @@ class AskResponse(BaseModel):
     grounding_ms: float
 
 
+class CutReasonModel(BaseModel):
+    doc_id: str
+    claim_key: str | None
+    transition: Transition | None
+    temporal_quality: TemporalQuality | None
+    evidence_span: str | None
+
+
 class GroundResponse(BaseModel):
     state: TruthState
     mode: GroundingMode
     answer_value: str | None
     why: str
+    input_ranking: list[str]
     current_evidence: list[str]
     suppressed_evidence: list[str]
     historical_evidence: list[str]
     backfill_evidence: list[str]
+    cut: list[CutReasonModel]
+    final_context: list[str]
+    context_sha256: str
+    hydra_query_ids: list[str]
     proof: list[QueryCardModel]
     retrieval_ms: float
     grounding_ms: float

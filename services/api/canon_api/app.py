@@ -1,3 +1,4 @@
+import hashlib
 import json
 import threading
 from contextlib import asynccontextmanager
@@ -10,6 +11,7 @@ from canon_api.models import (
     AskRequest,
     AskResponse,
     ConflictSummaryModel,
+    CutReasonModel,
     DashboardModel,
     GroundResponse,
     IdentityReportModel,
@@ -107,19 +109,37 @@ def ground_endpoint(request: AskRequest) -> GroundResponse:
             },
         )
     ask = service.ask(request.question, request.mode, request.top_k)
+    ranked = sorted((d for d in ask.documents if d.rank is not None), key=lambda d: d.rank)
+    suppressed = [
+        d.doc_id for d in ask.documents if d.disposition == "superseded_for_current_grounding"
+    ]
+    spans = {row.doc_id: row.evidence_span for row in ask.evidence}
+    final_context = [d.doc_id for d in ask.documents if d.kept] + ask.backfill_doc_ids
     return GroundResponse(
         state=ask.state,
         mode=ask.mode,
         answer_value=ask.answer_value,
         why=ask.why,
+        input_ranking=[d.doc_id for d in ranked],
         current_evidence=[d.doc_id for d in ask.documents if d.disposition == "current_evidence"],
-        suppressed_evidence=[
-            d.doc_id for d in ask.documents if d.disposition == "superseded_for_current_grounding"
-        ],
+        suppressed_evidence=suppressed,
         historical_evidence=[
             d.doc_id for d in ask.documents if d.disposition == "historical_evidence"
         ],
         backfill_evidence=ask.backfill_doc_ids,
+        cut=[
+            CutReasonModel(
+                doc_id=doc_id,
+                claim_key=ask.claim_key,
+                transition=ask.transition,
+                temporal_quality=ask.temporal_quality,
+                evidence_span=spans.get(doc_id),
+            )
+            for doc_id in suppressed
+        ],
+        final_context=final_context,
+        context_sha256=hashlib.sha256("\n".join(final_context).encode()).hexdigest(),
+        hydra_query_ids=[card.query_id for card in ask.query_cards],
         proof=ask.query_cards,
         retrieval_ms=ask.retrieval_ms,
         grounding_ms=ask.grounding_ms,
