@@ -1,29 +1,124 @@
-# Canon
+<div align="center">
 
-**Temporal grounding for enterprise AI.**
+<img src="assets/cover.jpg" alt="Canon — old truth shouldn't become new context" width="100%" />
 
-Enterprise RAG systems retrieve evidence that was correct when it was written but has since been
-superseded. Canon resolves claim history in HydraDB before an answer is grounded, preserving
-historical evidence while preventing retired claims from masquerading as current truth.
+&nbsp;
+
+[![CI](https://github.com/Enoch208/canon/actions/workflows/verify.yml/badge.svg)](https://github.com/Enoch208/canon/actions/workflows/verify.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Tests](https://img.shields.io/badge/tests-69%20passing-10b981)
+![Database](https://img.shields.io/badge/database-HydraDB%20OSS-7dd3a0)
+![Benchmark](https://img.shields.io/badge/benchmark-EnterpriseRAG--Bench-131315)
+![Stack](https://img.shields.io/badge/Python%203.12%20·%20Next.js%2016%20·%20SQLite%20FTS5-1f1f23)
+
+### A temporal claim graph that keeps retired enterprise truth out of present-tense AI context — and proves, on the benchmark's own scorer, that the topology alone is what does it.
+
+Most RAG failures are retrieval failures. The one that actually poisons enterprise AI is subtler:
+a superseded claim is still **semantically relevant**, so it keeps getting retrieved and quoted as
+if it were current. Canon inserts a claim-history graph in **HydraDB OSS** between retrieval and
+generation, so evidence that has been explicitly superseded stops reaching the model as
+present-tense context — while staying fully answerable as history.
+
+**[ The numbers ↗ ](#the-numbers)** &nbsp;·&nbsp; **[ Run it locally ↗ ](#run-it-locally)** &nbsp;·&nbsp; **[ How HydraDB decides ↗ ](#how-i-integrated-hydradb)**
+
+</div>
+
+---
+
+## ▶ Demo
+
+The 2-minute demo film is linked in the hackathon submission. It walks one real conflict end to
+end: a Confluence page still publishing retired pricing breakpoints, the Google Drive document that
+explicitly supersedes it, the canon event HydraDB records between them, a live *Ask* where the same
+question answered in current mode returns `30%` and in historical mode returns `20%` — with the
+superseded document visibly filtered — and `make verify` passing seven live checks with a database
+restart in the middle.
 
 ```
 Same model. Same prompt. Same corpus.
 Only the context topology changes.
 ```
 
-## What it does
+---
 
-- **Temporal grounding** — decides which retrieved evidence is valid for the time a question is
-  asking about, and labels the rest `superseded_for_current_grounding`.
-- **Proof** — every decision carries the supersession chain, the exact evidence spans, the
-  temporal-quality class, and the HydraDB queries that produced it.
-- **Residue-aware retrieval** — reverse-traverses a retired proposition to every document still
-  carrying it, and keeps those documents out of present-tense context. This is the differentiator
-  the numbers below measure.
-- **Honest states** — every current-state answer is exactly one of `CANON`, `CONTESTED`, `UNKNOWN`.
-  Canon never invents a winner when the evidence does not establish one.
+## Table of contents
 
-## Graph model
+- [The problem I set out to solve](#the-problem-i-set-out-to-solve)
+- [What I built](#what-i-built)
+- [Architecture](#architecture)
+- [The resolution loop, step by step](#the-resolution-loop-step-by-step)
+- [How I integrated HydraDB](#how-i-integrated-hydradb)
+- [Engineering decisions & the hard problems](#engineering-decisions--the-hard-problems)
+- [The numbers](#the-numbers)
+- [Identity resolution](#identity-resolution)
+- [The live console](#the-live-console)
+- [Honesty: limitations](#honesty-limitations)
+- [Tech stack](#tech-stack)
+- [Project layout](#project-layout)
+- [Run it locally](#run-it-locally)
+- [Tests](#tests)
+- [Attribution](#attribution)
+
+---
+
+## The problem I set out to solve
+
+Enterprise knowledge is not a bag of facts — it is a collection of **time-bound assertions**. A
+launch date is correct on Monday, superseded on Wednesday, historically valid on Friday, and
+dangerous if retrieved as current context a month later.
+
+Traditional retrieval optimizes for relevance, which creates a temporal failure mode: **the most
+semantically relevant evidence may no longer be the correct evidence.** In EnterpriseRAG-Bench's
+official conflict questions, plain BM25 puts the superseded gold document into the present-tense
+context in **14 of 20 cases** — and it usually ranks *above* other candidates, because the retired
+claim was written by the same people, about the same system, in the same words.
+
+So I treated *"this document used to be true"* as a first-class state, sitting right next to
+relevance. Every design decision below exists to make retired truth **visible as history and
+unreachable as present**.
+
+## What I built
+
+A pipeline where the graph decides what the model is allowed to read:
+
+1. **Index** — all 511,958 unique benchmark documents into SQLite FTS5. Cheap retrieval globally.
+2. **Extract** — the 20 official conflict claim neighborhoods, deeply: exact evidence spans,
+   structured-field detection, stance markers, plus a corpus-wide residue scan per retired value.
+   Deep reasoning locally.
+3. **Canonize** — resolve which value is current, in a fixed priority order where **explicit
+   supersession language beats majority vote**. Eight documents repeating the old price lose to one
+   later document that says the price changed.
+4. **Ground** — at question time, walk retrieved candidates back to their claims in HydraDB, label
+   every document (`current_evidence`, `superseded_for_current_grounding`, `historical_evidence`,
+   `contested_evidence`, `not_in_claim_graph`), replace superseded documents with the next
+   candidates from the same ranking, and pin graph evidence the retriever missed.
+5. **Answer** — the same model, prompt and document count as the baseline. Only the context
+   topology differs — that is the whole ablation.
+6. **Prove** — every decision carries the supersession chain, exact spans, temporal quality
+   (`T1`/`T2`/`T3`) and the actual HydraDB queries with timings.
+
+Every current-state answer is exactly one of **`CANON`**, **`CONTESTED`**, **`UNKNOWN`**. Where the
+evidence does not establish a winner, Canon shows the fork instead of inventing one — the 20
+official `info_not_found` questions resolve to `UNKNOWN` 20/20, and one conflict stays `CONTESTED`
+because neither timestamps nor language order it.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    Q[Question] --> R[BM25 candidates<br/>SQLite FTS5]
+    R --> G[Claim lookup<br/>HydraDB]
+    G --> S{State?}
+    S -- CANON --> F[Filter superseded docs<br/>backfill from same ranking]
+    S -- CONTESTED --> K[Keep both sides<br/>labelled]
+    S -- UNKNOWN --> U[Answer UNKNOWN]
+    F --> P[Pin graph evidence<br/>the retriever missed]
+    P --> C[Temporally valid context]
+    K --> C
+    C --> M[Same model,<br/>same prompt]
+```
+
+The graph distinguishes a mention from a truth:
 
 ```
 Entity ──HAS_CLAIM──▶ ClaimKey ──HAS_VALUE──▶ Proposition ◀──ASSERTS── Assertion ──IN_ARTIFACT──▶ Artifact
@@ -32,19 +127,40 @@ Entity ──HAS_CLAIM──▶ ClaimKey ──HAS_VALUE──▶ Proposition �
                                               CanonEvent ──SUPERSEDES──▶ CanonEvent
 ```
 
-- **Entity** — a real-world thing. **ClaimKey** — one mutable property of it.
-- **Proposition** — one possible value. **Assertion** — one artifact asserting that value, with the
-  exact span, stance, source field, and whether the value sat in a typed field.
-- **CanonEvent** — the event that selects a value as current and may supersede a prior event.
+| Object | Role |
+|---|---|
+| `Entity` | A real-world thing. |
+| `ClaimKey` | One mutable property of it — `(Hosted enterprise_playbook, monthly_token_volume_discount_breakpoints)`. |
+| `Proposition` | One possible value. Ten artifacts asserting it still make **one** proposition node. |
+| `Assertion` | One artifact asserting that value — exact span, stance, source field, structured-or-prose, discovery (`conflict_pair` vs `corpus_scan`). |
+| `CanonEvent` | The event that selects a value as current and may `SUPERSEDES` a prior event. History is never overwritten. |
 
-Document text lives in a SQLite FTS5 index. The truth topology — what supersedes what, and which
-evidence may ground a present-tense answer — lives entirely in HydraDB, which runs against an
-S3-compatible object store (MinIO in `docker-compose.yml`) because its lease and manifest paths
-need conditional writes that a plain local filesystem backend does not implement.
+Document text lives in SQLite FTS5. The truth topology — what supersedes what, and which evidence
+may ground a present-tense answer — lives entirely in HydraDB, which runs against an S3-compatible
+object store (MinIO in `docker-compose.yml`) because its writer-lease and manifest paths need
+conditional writes a plain local filesystem does not implement.
 
-## Why HydraDB
+## The resolution loop, step by step
 
-Three operations decide the answer, not the presentation:
+Canonization runs in a fixed priority order, and the order is load-bearing:
+
+1. **Explicit supersession** — `"moved from X to Y"`, `"old doc says X — that's outdated"`. The
+   strongest signal, and the only one allowed to beat corroboration.
+2. **Reliable temporal ordering** — only at `T1`, where metadata and semantics agree.
+3. **Corroboration** — a tie-break only. **Majority vote never overrides proven supersession** —
+   this is enforced by a unit test (8 artifacts at `$0.08` vs one explicit update to `$0.06` must
+   resolve to `$0.06`) and re-proven live on every `make verify`.
+4. **No signal** — `CONTESTED` at `T3`. Never manufacture an ordering.
+
+At question time, `ground()` maps the question to a claim by lexical overlap (measured: 20/20
+conflict questions hit the right claim, 0/20 `info_not_found` questions hit any claim), resolves it
+through the graph, labels every retrieved document, filters-and-backfills, and returns the state,
+the evidence, and the query cards.
+
+## How I integrated HydraDB
+
+HydraDB OSS speaks an OpenCypher subset over HTTP. I probed the subset empirically before building
+on it, and three traversals decide every answer:
 
 | Operation | Cypher |
 | --- | --- |
@@ -52,162 +168,230 @@ Three operations decide the answer, not the presentation:
 | Supersession lineage | `MATCH (ev:CanonEvent {id: $id})-[:SUPERSEDES*1..10]->(old)-[:SELECTS]->(p) RETURN p.value` |
 | Residue reverse traversal | `MATCH (p:Proposition {id: $id})<-[:ASSERTS]-(a:Assertion)-[:IN_ARTIFACT]->(d:Artifact) RETURN a.evidence_span, d.doc_id` |
 
-Removing HydraDB removes the answer, not a visualization: the retired/current split, the ordering,
-and the filtering all come out of those traversals.
+Removing HydraDB removes the answer, not a visualization: the retired/current split, the ordering
+and the filtering all come out of those traversals. Integration facts I learned the hard way and
+built around:
 
-## Results
+- **Write idempotency keys derive from the request's `query_id`** — and the server's default
+  counter restarts at 1 on every process restart, so post-restart writes silently deduplicate
+  against results stored by an earlier process. My client sends a globally unique `query_id` on
+  every request; `make verify` restarts the database mid-suite to prove writes survive it.
+- **`MERGE` doesn't exist and `MATCH` on an unknown id returns a phantom row of nulls** — so the
+  writer is idempotent by checking a real property (`n.kind`) before every create, and re-ingest
+  creates exactly 0 new nodes.
+- **Unanchored edge scans exceed the 30 s query timeout** once a benchmark subgraph is loaded —
+  every product query starts from a vertex id or a namespace predicate, and graph statistics are
+  measured once into `evidence/graph_stats.json` instead of being counted per request.
+- **Deletes are asymmetric** — edges tear down at thousands per second, vertices at ~1/s, so the
+  perf harness deletes edges first and records what it leaves.
 
-Dataset: [`onyx-dot-app/EnterpriseRAG-Bench`](https://huggingface.co/datasets/onyx-dot-app/EnterpriseRAG-Bench).
-All 20 official `conflicting_info` questions. Baseline and Canon share the same corpus, the same
-BM25 candidate retrieval and the same `top_k = 10`.
-
-| Metric | BM25 baseline | Canon |
-| --- | --- | --- |
-| Superseded document present in present-tense context | 14 / 20 | **1 / 20** |
-| Current gold document present in context | 18 / 20 | **20 / 20** |
-| Historical question recovers the retired evidence | — | **20 / 20** |
-
-On all 20 official `info_not_found` questions the claim graph returns `UNKNOWN` — 20 / 20. No
-question that the corpus cannot answer resolves to a claim.
-
-### Answers
-
-Same answering model (`claude-sonnet-5`), same system prompt, same template. Three arms isolate the
-two things Canon does. **Every arm sees the same number of documents** — when Canon drops a
-superseded document it backfills the slot from the next candidate in the same BM25 ranking, so no
-arm argues with less evidence than another.
-
-| Arm | What it gets |
-| --- | --- |
-| `baseline` | BM25 top-k, unchanged |
-| `canon_filtered` | superseded documents replaced, **no claim-graph note** |
-| `canon` | the same context **plus** the graph's stated current/retired values |
-
-Graded against each question's official `answer_facts` by `claude-sonnet-5`, three passes per answer
-with a majority verdict, so these rows are **model-judged**. The whole benchmark was run three times
-end to end; the table reports the mean with the observed range:
-
-| Metric | baseline | canon_filtered | canon |
-| --- | --- | --- | --- |
-| Superseded document in context *(deterministic)* | 14 / 20 | **1 / 20** | **1 / 20** |
-| Answer states the current value | 14.7 / 20 *(14–15)* | 17.7 / 20 *(17–18)* | **19 / 20 *(19–19)*** |
-| Answer presents the retired value as current | 1.3 / 20 *(1–2)* | 0.7 / 20 *(0–1)* | **0.3 / 20 *(0–1)*** |
-| Answer abstains | 2.3 / 20 *(2–3)* | 2 / 20 | 0.7 / 20 *(0–1)* |
-| Context documents | 200 | 202 | 202 |
-
-Two things to read here.
-
-**Context topology alone does most of the work.** `canon_filtered` receives no claim-graph note —
-nothing tells it which value is current — and it still moves 14.7 to 17.7. Stating the graph's
-conclusion adds the last 1.3. The result is not an artefact of handing the model the answer.
-
-**Canon returned 19/20 in all three runs, with no variance.** The baseline and the no-note arm both
-moved between runs; the full Canon arm did not. Per-run files are in `eval/results/runs/` and the
-aggregate in `eval/results/summary.json`, so a judge can re-run `make benchmark` and compare.
-
-## Official benchmark harness
-
-The benchmark ships its own scorer, and Canon's answers are exported in its format so a judge can
-score them without trusting anything in this repository:
-
-```bash
-make export-answers      # writes eval/official/{baseline,canon_filtered,canon}.jsonl
-```
-
-Each line is `{"question_id", "answer", "document_ids"}`. To score them, clone
-[EnterpriseRAG-Bench](https://github.com/onyx-dot-app/EnterpriseRAG-Bench), install its
-requirements, and run its evaluator against the exported file:
-
-```bash
-export LLM_PROVIDER=anthropic LLM_API_KEY=... LLM_MODEL_NAME=claude-sonnet-4-6
-python -m src.scripts.answer_evaluation.metrics_based_eval \
-    --answers-file answer_evaluation/canon.jsonl --no-correction
-```
-
-`--no-correction` scores against the original gold set without letting the harness rewrite gold
-answers, so all three arms are judged against identical references.
-
-## Systems measurements
-
-`make perf` loads a labelled benchmark subgraph and measures the traversals Canon actually depends
-on. Latest run in `evidence/hydra_perf.json`:
+`make perf` loads a labelled 10,011-vertex / 29,760-edge subgraph and measures the traversals Canon
+actually depends on (`evidence/hydra_perf.json`):
 
 | Measurement | Value |
 | --- | --- |
-| Graph loaded | 10,011 vertices / 29,760 edges |
-| Write throughput | 5,119 edges/s (5.8 s total) |
-| Reverse traversal (`Proposition <-ASSERTS-`, fan-in 41) | p50 2.2 ms / p95 2.9 ms |
+| Write throughput | 5,119 edges/s |
+| Reverse traversal (fan-in 41) | p50 2.2 ms / p95 2.9 ms |
 | Variable-depth lineage (`SUPERSEDES*1..10`) | p50 3.3 ms / p95 4.5 ms |
 | Two-hop neighborhood (123 rows) | p50 15.0 ms / p95 17.7 ms |
-| Namespace-scoped label count | p50 8.1 ms |
 | Edge teardown | 3,174 edges/s |
 
-Every product query starts from a vertex id or a namespace predicate. An unanchored
-`MATCH ()-[:REL]->()` count exceeds the 30 s query timeout once the benchmark subgraph is loaded —
-Canon never issues one, and the evidence file says so.
+## Engineering decisions & the hard problems
 
-Deleting a vertex costs far more than deleting its edges on this engine, so `make perf` tears down
-the benchmark edges and leaves the id-only vertices behind (`--delete-nodes` removes them too).
-Those vertices carry no label, kind, or namespace, so no product query can reach them; the evidence
-file records how many were left.
+- **Structured-state-or-nothing.** The graph returns states and typed records, never prose. That
+  single decision is what makes an honest `UNKNOWN` possible — and it is why 20/20 unanswerable
+  questions come back `UNKNOWN` instead of plausible hallucinations.
+- **The three-arm ablation is the real differentiator.** Canon's context used to carry a one-line
+  note stating the graph's conclusion — an obvious objection: *"you told the model the answer."*
+  So I added `canon_filtered`: identical filtered context, **no note**. It carries most of the gain
+  on the official scorer, which turns the objection into the headline.
+- **Document-count parity.** Early runs quietly handed Canon fewer documents than the baseline
+  (dropped superseded docs left empty slots), which depressed its completeness scores. Every arm
+  now sees the same number of documents — Canon backfills from the same BM25 ranking, never from
+  anywhere else, and never re-admits a superseded document.
+- **The judge-failure catch I'm most glad I made.** The official evaluator scored one arm at 7.5%
+  correctness — while judging visibly correct answers wrong with *empty reasoning fields*. At
+  `--parallelism 6` the judge's own API calls were being rate-limited, and the harness reports a
+  failed judge call as `correct=False` rather than as an error. 36 of 40 verdicts were empty. At
+  parallelism 2 the same answers score 77.5%. I nearly published a catastrophically wrong number
+  that was really an infrastructure artifact.
+- **The 1024-row truncation catch.** Person and Alias counts both read exactly 1,024 — suspicious
+  in the way only powers of two are. The count was implemented by counting returned rows, and the
+  server caps result sets at 1024. Real values: 35,703 and 4,193. Every count in the product now
+  uses a server-side `count(*)`.
+- **Paid work is never lost.** The benchmark runner validates its output path *before* spending on
+  API calls, records `answers_completed` and the verbatim error when a provider dies mid-run, and
+  a `--limit` smoke run writes to `partial.json` — it can never overwrite the headline results.
+- **Hermetic quality gate.** 54 unit tests run in under a second with no database and no network;
+  15 integration tests are marked `hydra` and skip with a reason when the graph is unreachable. CI
+  boots the real HydraDB OSS image against MinIO and runs them for real.
 
-## Data
+## The numbers
 
-- **Indexed:** 511,958 of 511,962 EnterpriseRAG-Bench documents into SQLite FTS5 in 177 s (4
-  duplicate `doc_id`s skipped). Recorded in `evidence/corpus_index.json`.
+Dataset: [`onyx-dot-app/EnterpriseRAG-Bench`](https://huggingface.co/datasets/onyx-dot-app/EnterpriseRAG-Bench) —
+all 20 official `conflicting_info` questions and all 20 official `info_not_found` questions.
+Baseline and Canon share the same corpus, the same BM25 candidate retrieval, the same `top_k = 10`,
+and the same document count per question.
+
+### Deterministic (no model in the loop)
+
+| Metric | BM25 baseline | Canon |
+| --- | --- | --- |
+| Superseded document in present-tense context | 14 / 20 | **1 / 20** |
+| Current gold document in context | 18 / 20 | **20 / 20** |
+| Historical question recovers the retired evidence | — | **20 / 20** |
+| `info_not_found` resolves to `UNKNOWN` | — | **20 / 20** |
+
+The one remaining case is the contested claim — no supersession is established, so nothing is
+dropped. That is correct behavior, not a miss.
+
+### Official benchmark scorer
+
+Scored by the benchmark's own evaluator
+([`metrics_based_eval`](https://github.com/onyx-dot-app/EnterpriseRAG-Bench), `--no-correction`,
+judge `claude-sonnet-4-6`) — their harness, their judge, their gold answers:
+
+| Metric | baseline | canon_filtered *(no note)* | canon |
+| --- | --- | --- | --- |
+| **Correctness** | 70.0% | **82.5%** | 77.5% |
+| Completeness | 69.8% | 69.9% | **77.5%** |
+| Combined (corr × comp) | 56.84 | **65.82** | 59.44 |
+| Document recall | 80.0% | 52.5% | 52.5% |
+
+**The middle column carries no claim-graph note** — nothing tells the model which value is current —
+and it still moves correctness from 70.0% to 82.5%. Context topology alone does the work. Document
+recall falls by construction: the harness counts *both* conflicting gold documents as expected, and
+Canon removes the superseded one on purpose. That trade — recall for correctness — is the product.
+
+### Answer-level, three full runs
+
+Same answering model (`claude-sonnet-5`), same prompt, graded against each question's official
+`answer_facts` (three judge passes, majority verdict — these rows are model-judged). Mean with
+observed range across three end-to-end runs:
+
+| Metric | baseline | canon_filtered | canon |
+| --- | --- | --- | --- |
+| Answer states the current value | 14.7 / 20 *(14–15)* | 17.7 / 20 *(17–18)* | **19 / 20 *(19–19)*** |
+| Answer presents the retired value as current | 1.3 / 20 | 0.7 / 20 | **0.3 / 20** |
+| Context documents | 200 | 202 | 202 |
+
+Canon returned 19/20 in **all three runs with zero variance**; both other arms moved between runs.
+Per-run files are in `eval/results/runs/`, the aggregate in `eval/results/summary.json`, and
+`make export-answers` writes the official-format JSONL so anyone can re-score without trusting this
+repository.
+
+### Data, stated exactly
+
+- **Indexed:** 511,958 of 511,962 documents (4 duplicate `doc_id`s) in 177 s → `evidence/corpus_index.json`.
 - **Deeply extracted:** the 20 conflict claim neighborhoods — 39 gold documents plus a corpus-wide
-  residue scan per retired value. Recorded in `evidence/seed.json`.
-- Cheap retrieval globally, deep reasoning locally. Nothing else in the corpus was claim-extracted,
-  and nothing else is claimed.
+  residue scan per retired value → `evidence/seed.json`. Nothing else was claim-extracted, and
+  nothing else is claimed.
 
-## Entity resolution
+## Identity resolution
 
-Track 1 is an ontology track, so identity has to be real rather than asserted. Canon resolves people
-from explicit `Name <email>` bindings in the corpus — no model judgment, no invented edges:
+Track 1 is an ontology track, so identity has to be real rather than asserted. Canon resolves
+people from explicit `Name <email>` bindings that appear verbatim in the corpus — no model
+judgment, no invented edges:
 
 ```
-121,390 gmail documents scanned · 1,933,236 bindings · 177,377 people · 251,498 aliases   (48s)
-RESOLVED 182,249     PROBABLE 48,190     AMBIGUOUS 21,059
+121,390 gmail documents scanned · 1,933,236 bindings · 177,377 people · 251,498 aliases   (48 s)
+RESOLVED 182,249 · PROBABLE 48,190 · AMBIGUOUS 21,059
 ```
 
 | State | Meaning |
-| --- | --- |
+|---|---|
 | `RESOLVED` | An email bound to exactly one person by an explicit `Name <email>` line |
-| `PROBABLE` | A name spelling or email local part mapping to exactly one person, inferred from the bindings |
-| `AMBIGUOUS` | The alias maps to several people — usually the same name at different organisations |
+| `PROBABLE` | A name spelling or email local part mapping to exactly one person, inferred from bindings |
+| `AMBIGUOUS` | The alias maps to several people — kept as a visible fork, **never merged** |
 
-`Grace O'Connor`, `Grace Oconnor` and `AM Grace O'Connor` collapse onto one person.
-`Alyssa Chen` exists at `cascadefg.com`, `zenovahealth.com` and `techharbor.com`, so that alias stays
-**AMBIGUOUS and is never merged** — the graph shows the fork instead of guessing. The graph
-materialises a stratified sample of aliases rather than all 251,498; `evidence/entities.json` records
-both the corpus totals and what was written.
+`Grace O'Connor`, `Grace Oconnor` and `AM Grace O'Connor` collapse onto one person. `Alyssa Chen`
+exists at three different companies, so that alias stays ambiguous — the graph shows the fork
+instead of guessing. `evidence/entities.json` records both the corpus totals and the stratified
+sample materialised into HydraDB.
 
-## Environment
+## The live console
 
-Copy `.env.example` to `.env` and fill in what you need. The file is gitignored.
+The web app leads with a truth dashboard, not a chat box — every number on it is a graph query, and
+zeros are shown as zeros.
 
-Only `ANTHROPIC_API_KEY` costs anything, and only two steps use it: the answer arm of
-`make benchmark` and `make judge`. Everything else — indexing, seeding, graph resolution, leakage,
-residue, identity, `make verify` — runs with no key at all, and any step that needs one it does not
-have is written to the results file as `not_run` rather than skipped silently.
+| Page | What it shows |
+|---|---|
+| `/` | The landing page, built from live API data — real evidence spans in the hero |
+| `/truth` | 20 claim keys: 19 canon transitions, 1 contested, filtering and recovery counts |
+| `/change/[id]` | One truth change: retired vs current values, exact spans, residue, canon events, and the HydraDB query cards with timings |
+| `/ask` | Ask in current or historical mode → state, value, why, evidence, retired context filtered, query cards |
+| `/residue` | Where retired values still survive in the corpus, by class, every row inspectable |
+| `/entities` | Alias → person resolution with the binding that proves each edge |
+| `/results` | The full benchmark: deterministic rows, official harness scores, three-arm answers |
 
-## Reproduce
+## Honesty: limitations
+
+- **Verified structured residue is 0 on this corpus.** No document asserts a retired value inside a
+  typed `field: value` line of a structured source; retired values live in prose. The count is
+  reported as 0 rather than relaxed. What is reported instead: 8 `LEXICAL_RESTATEMENT`s (retired
+  value verbatim, no historical/rejected marker on the line, stance unproven), each inspectable in
+  `eval/residue_bench.jsonl`.
+- **Verified resurrection is 0.** The dataset has no metadata timestamps, so no reassertion can be
+  ordered against a supersession time. Claiming resurrection would require an ordering the data
+  does not support.
+- **Temporal quality is inherited from the human-inspected conflict inventory**
+  (`research/conflict_inventory.json`) — 16 `T1`, 3 `T2`, 1 `T3`. `T2` claims resolve only by
+  explicit language, never by timestamp.
+- **Answer rows are model-judged; everything else is deterministic** and labelled as such. A
+  deterministic string match was tried and rejected — it cannot tell `short: <128` from
+  `short <128`. No headline residue or graph number depends on model judgment.
+- **Question→claim matching is lexical** (3+ shared terms, half the claim key's terms). Measured:
+  20/20 conflicts resolve correctly, 0/20 unanswerables match anything; a looser rule falsely
+  matched 4. Embedding-based matching would scale better and is not implemented.
+- **Identity links people, not claim authorship.** Aliases come from real bindings; the entities
+  owning ClaimKeys are normalised from the claim key itself. Only 2 of 20 conflict gold documents
+  contain a `Name <email>` binding, so wiring authors to claims honestly was out of reach on this
+  corpus.
+- Candidate retrieval is lexical BM25. Semantic retrieval would change recall, not the temporal
+  argument.
+
+## Tech stack
+
+- **Backend:** Python 3.12, `uv` workspace (one package per responsibility, downward-only imports),
+  Pydantic v2, FastAPI, SQLite FTS5, `pytest`, `ruff`.
+- **Graph:** HydraDB OSS over HTTP (OpenCypher subset), MinIO as the S3-compatible store, via
+  `docker compose`.
+- **Frontend:** Next.js 16, React 19, Tailwind CSS v4, Hugeicons.
+- **Models:** `claude-sonnet-5` / `claude-haiku-4-5` via the Anthropic API behind a single
+  interface; any non-`claude-*` model id routes to an OpenAI-compatible local endpoint instead.
+
+## Project layout
+
+```
+packages/
+  graph/        canon_graph — HydraDB client, schema, ids, canonize, ingest, resolve, grounding, verify, perf
+  retrieval/    canon_retrieval — SQLite FTS5 corpus store + BM25 candidate retrieval
+  extraction/   canon_extraction — values, structured parsing, conflicts, residue sweep, identity, seed pipeline
+  evaluation/   canon_evaluation — answering boundary, context builder, metrics, three-arm runner, judging
+services/api/   canon_api — FastAPI over the packages, with cached expensive endpoints
+apps/web/       Next.js console — landing, truth dashboard, change, ask, residue, identities, results
+scripts/        thin CLIs: index, seed, entities, graph-stats, benchmark, judge, aggregate, export, perf, verify
+eval/           official question ids, results (latest + three runs + aggregate), official-format exports
+evidence/       verify, perf, index, seed, identity, official-eval JSON — everything a claim rests on
+research/       conflict_inventory.json — the human-inspected 20 conflict pairs
+```
+
+## Run it locally
+
+**Prerequisites:** Docker, `uv`, Node 20+, `pnpm`.
 
 ```bash
 make hydra-up      # MinIO + HydraDB OSS: :8443 HTTP, :7687 Bolt, :9090 metrics
 uv sync
-make verify        # write/read, persistence across restart, supersession,
-                   # majority-vs-supersession, residue traversal, UNKNOWN, CONTESTED
-make index         # SQLite FTS5 over the EnterpriseRAG-Bench documents parquet (~3 min, ~4 GB)
+make verify        # 7 live checks, incl. a database restart mid-suite
+make index         # SQLite FTS5 over the benchmark parquet (~3 min, ~4 GB)
 make seed          # extract the 20 conflict claims + residue scan into HydraDB
 make entities      # resolve people and aliases from the corpus into HydraDB
-make graph-stats   # records real node/edge counts into evidence/graph_stats.json
-make benchmark     # writes eval/results/latest.json
-make judge         # grades saved answers against the dataset rubric
-make aggregate     # mean and range across eval/results/runs/*.json
-make perf          # HydraDB viability + latency measurements → evidence/hydra_perf.json
+make graph-stats   # record real node/edge counts into evidence/
+make benchmark     # three-arm run → eval/results/latest.json
+make judge         # grade saved answers against the dataset rubric
 make api           # FastAPI on :8000
-pnpm --dir apps/web dev   # UI on :3000 — landing at /, dashboard at /truth
+pnpm --dir apps/web dev   # console on :3000 — landing at /, dashboard at /truth
 ```
 
 `make verify` prints:
@@ -223,47 +407,25 @@ CONTESTED ............... PASS
 ```
 
 The majority-adversarial check is the load-bearing one: 8 artifacts asserting `$0.08` against a
-single later document that says the price changed from `$0.08` to `$0.06`. Canon must return
-`$0.06`. Majority vote never overrides proven supersession.
+single later document saying the price changed to `$0.06`. Canon must return `$0.06` — majority
+vote never overrides proven supersession.
 
-## Limitations
+Environment: copy `.env.example` to `.env`. Only `ANTHROPIC_API_KEY` costs anything, and only the
+answer arm and judging use it — everything else runs with no key, and any step missing a dependency
+is recorded as `not_run`, never simulated.
 
-- **Verified structured residue is 0 on this corpus, and residue-aware retrieval is what carries
-  the differentiator instead.** No EnterpriseRAG-Bench document asserts a
-  retired value inside a typed `field: value` line of a structured source; the retired values live in
-  prose. The count is reported as 0 rather than relaxed into something weaker. What Canon does report
-  is `LEXICAL_RESTATEMENT`: the retired value appears verbatim and the containing line carries no
-  historical or rejected marker. Stance is not proven. 8 restatements are recorded — 6 in the
-  superseded source document itself, 2 elsewhere in the corpus — and every one is inspectable in
-  `eval/residue_bench.jsonl`.
-- **Verified resurrection is 0.** The dataset exposes only `doc_id`, `source_type`, `title` and
-  `content` — there is no metadata timestamp, so no reassertion can be ordered against a supersession
-  time. Claiming resurrection here would require an ordering the data does not support.
-- **Temporal quality is inherited from the dataset inventory**, not derived from metadata: 16 claims
-  resolve at `T1`, 3 at `T2`, and the contested one at `T3`. `T2` claims are resolved only by
-  explicit supersession language, never by timestamp.
-- **The answer rows are model-judged, the rest are deterministic.** Answer accuracy is graded by
-  `claude-haiku-4-5` against the dataset's own `answer_facts`, and every row is labelled as such.
-  A deterministic string match was tried first and rejected: it cannot tell `short: <128` from
-  `short <128`, and it scores an answer that begins `UNKNOWN` as stating a value it merely explains.
-  No headline residue or graph number depends on model judgment.
-- **The Canon context includes a one-line claim-graph note** stating the current and retired values.
-  That is the product — the graph's conclusion reaching the model — but it means the answer rows
-  measure filtering *plus* assertion, not filtering alone. Isolating the two would need a third arm
-  with the filtered context and no note.
-- **Extraction of the conflict claims** starts from `research/conflict_inventory.json`, a
-  human-inspected inventory of the 20 official conflict pairs. The spans, values and documents in it
-  are real benchmark content; the claim keys are hand-normalized.
-- **Entity resolution covers people, not the claim subjects.** Aliases are resolved from real
-  `Name <email>` bindings in the corpus; the entities that own ClaimKeys are still derived by
-  normalising the claim key itself. Linking a claim's author to a resolved person is not wired up.
-- **A question reaches a claim by lexical overlap** with the claim key: at least 3 shared terms and
-  at least half the claim key's terms. Measured on all 40 evaluated questions, that resolves 20/20
-  conflict questions to the right claim and 0/20 `info_not_found` questions to any claim; a looser
-  rule (2 shared terms) falsely matched 4 of them. Embedding-based claim matching would scale
-  better and is not implemented.
-- Candidate retrieval is lexical BM25. Semantic retrieval would change recall, not the temporal
-  argument.
+## Tests
+
+```bash
+uv run pytest -m "not hydra"   # 54 unit tests, no network, < 1 s
+uv run pytest -m hydra         # 15 integration tests against the live graph
+```
+
+The suite covers canonization ordering (including the 8-vs-1 adversarial case), id determinism,
+structured-field and stance parsing, value variants, residue classification, grounding document
+dispositions, metric math, the judge plumbing, partial-run protection, and full write→restart→read
+round trips against a real HydraDB. CI boots the actual HydraDB OSS image with MinIO and runs all
+of it on every push.
 
 ## Attribution
 
@@ -274,13 +436,12 @@ published `ghcr.io/hydra-db/hydradb` image with MinIO as the S3-compatible backe
 
 **Datasets** — [EnterpriseRAG-Bench](https://huggingface.co/datasets/onyx-dot-app/EnterpriseRAG-Bench)
 by Onyx: 511,962 documents and 500 questions. Documents, questions, gold answers and the
-per-question `answer_facts` rubric all come from that dataset and are unmodified. The
-[benchmark repository](https://github.com/onyx-dot-app/EnterpriseRAG-Bench) also publishes an
-answer-evaluation harness.
+per-question `answer_facts` rubric come from that dataset, unmodified. Its
+[repository](https://github.com/onyx-dot-app/EnterpriseRAG-Bench) also publishes the
+answer-evaluation harness used for the official scores above.
 
-**Python** — `pyarrow` (Apache-2.0) to read the documents parquet, `huggingface_hub` (Apache-2.0)
-to fetch it, `fastapi` + `uvicorn` (MIT/BSD-3) for the service, `anthropic` (MIT) for the answer and
-judge models, `python-dotenv` (BSD-3), `pytest` and `ruff` (MIT) for the quality gate. SQLite FTS5
+**Python** — `pyarrow` (Apache-2.0), `huggingface_hub` (Apache-2.0), `fastapi` + `uvicorn`
+(MIT/BSD-3), `anthropic` (MIT), `python-dotenv` (BSD-3), `pytest` and `ruff` (MIT). SQLite FTS5
 ships with Python.
 
 **Web** — `next` (MIT), `react` (MIT), `tailwindcss` (MIT), `@iconify/react` with the
