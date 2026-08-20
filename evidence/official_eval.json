@@ -1,0 +1,69 @@
+{
+  "arms": {
+    "baseline": {
+      "by_question_type": {
+        "conflicting_info": {
+          "correct": 15,
+          "total": 20
+        },
+        "info_not_found": {
+          "correct": 13,
+          "total": 20
+        }
+      },
+      "combined_score": 56.84,
+      "completeness_pct": 69.81,
+      "correctness_pct": 70.0,
+      "document_recall_pct": 80.0,
+      "invalid_extra_docs": 8.45,
+      "label": "BM25 baseline",
+      "questions_scored": 40
+    },
+    "canon": {
+      "by_question_type": {
+        "conflicting_info": {
+          "correct": 18,
+          "total": 20
+        },
+        "info_not_found": {
+          "correct": 13,
+          "total": 20
+        }
+      },
+      "combined_score": 59.44,
+      "completeness_pct": 77.5,
+      "correctness_pct": 77.5,
+      "document_recall_pct": 52.5,
+      "invalid_extra_docs": 9.1,
+      "label": "Canon",
+      "questions_scored": 40
+    },
+    "canon_filtered": {
+      "by_question_type": {
+        "conflicting_info": {
+          "correct": 18,
+          "total": 20
+        },
+        "info_not_found": {
+          "correct": 15,
+          "total": 20
+        }
+      },
+      "combined_score": 65.82,
+      "completeness_pct": 69.89,
+      "correctness_pct": 82.5,
+      "document_recall_pct": 52.5,
+      "invalid_extra_docs": 9.1,
+      "label": "Canon, no note",
+      "questions_scored": 40
+    }
+  },
+  "harness": "EnterpriseRAG-Bench answer_evaluation (metrics_based_eval, --no-correction)",
+  "harness_repo": "https://github.com/onyx-dot-app/EnterpriseRAG-Bench",
+  "judge_model": "claude-sonnet-4-6",
+  "measured_at": "2026-08-20T00:26:05.467145+00:00",
+  "question_sets": [
+    "conflicting_info",
+    "info_not_found"
+  ]
+}
