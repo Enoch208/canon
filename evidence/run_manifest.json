@@ -24,15 +24,15 @@
     "evidence/hydra_perf.json": "05a01c962b0f4ff27a3d3f6d0eec611d39da5fbf36b1450202a886421be6e2cd",
     "evidence/official_eval.json": "75e646be3d95b2e14124f726078c440f164d9f8f39ef03f57a20dde8be6417de",
     "evidence/random_control.json": "bc53b06d2e5eec490b21849e7b62cd2c407ba044358a01fbd3029eb7a6165fba",
-    "evidence/safety_envelope.json": "afdfaf9b5e19ac9ab6712f122b4731ddf33c257aa248e1db074c7a367a351428",
+    "evidence/safety_envelope.json": "3a505ecfda1be80258ca7f2779159ff1b7a1ab5da2326a5ed3df3d4c72dd9884",
     "evidence/second_model.json": "9a1c5045ea1fc75ca4a27d71f51e5eb639ee4a89c3627c6499098900eb936056",
     "evidence/seed.json": "a66fd766b670db4601fbf5bb5a96087d4b78d22d43cd03586a0da65422e35910",
     "evidence/topk_sweep.json": "1424c81e931a63da024ee2fd09440a2f13c04997079485fac3ddec9fe25222ee",
     "evidence/verify.json": "3a0aeb484db34fe6ec17b2dd85cef23be5e8ef26cec77b5f84aac796933fa6fe",
     "research/conflict_inventory.json": "25079e0793ebc687d08aa755f6905237970f903fb17887e7c39c43bc223e9135"
   },
-  "generated_at": "2026-08-20T12:38:09.385649+00:00",
-  "git_commit": "376bda041ad19f3c5cbd52784492a627ab6ea35f",
+  "generated_at": "2026-08-20T23:08:52.161324+00:00",
+  "git_commit": "98793ea0a942c04d7e25b566c637dcad15023e5a",
   "hydradb_image": "ghcr.io/hydra-db/hydradb@sha256:db78309a233be54662db29744047e985a39b51c45a270d1a1f47c31a62cdb709",
   "models": {
     "answer": "claude-sonnet-5",
