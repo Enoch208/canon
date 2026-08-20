@@ -13,6 +13,7 @@ from canon_api.models import (
     ConflictSummaryModel,
     CutReasonModel,
     DashboardModel,
+    EnvelopeModel,
     GroundResponse,
     IdentityReportModel,
     OfficialEvalModel,
@@ -145,6 +146,14 @@ def ground_endpoint(request: AskRequest) -> GroundResponse:
         retrieval_ms=ask.retrieval_ms,
         grounding_ms=ask.grounding_ms,
     )
+
+
+@app.get("/envelope")
+def envelope() -> EnvelopeModel:
+    payload = service.safety_envelope()
+    if payload is None:
+        raise HTTPException(status_code=404, detail="safety envelope not run")
+    return payload
 
 
 @app.get("/official")

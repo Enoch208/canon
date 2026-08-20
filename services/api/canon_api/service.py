@@ -10,6 +10,7 @@ from canon_api.models import (
     CanonEventModel,
     ConflictSummaryModel,
     DashboardModel,
+    EnvelopeModel,
     EvidenceModel,
     GroundedDocModel,
     IdentityReportModel,
@@ -255,6 +256,14 @@ class CanonService:
         if not path.exists():
             return None
         return OfficialEvalModel.model_validate_json(path.read_text())
+
+    def safety_envelope(self) -> EnvelopeModel | None:
+        path = self.root / "evidence" / "safety_envelope.json"
+        if not path.exists():
+            return None
+        payload = json.loads(path.read_text())["summary"]
+        fields = EnvelopeModel.model_fields
+        return EnvelopeModel(**{k: v for k, v in payload.items() if k in fields})
 
     def residue_report(self) -> ResidueReportModel:
         return self._residue_cache.get(self._build_residue_report)

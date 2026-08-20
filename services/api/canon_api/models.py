@@ -161,6 +161,20 @@ class GroundedDocModel(BaseModel):
     evidence_span: str | None = None
 
 
+class EnvelopeModel(BaseModel):
+    questions: int
+    known_conflict_questions: int
+    known_conflict_interventions: int
+    other_questions: int
+    other_questions_context_changed: int
+    other_questions_context_unchanged: int
+    other_questions_expected_doc_dropped: int
+    documents_dropped_total: int
+    documents_pinned_total: int
+    other_documents_dropped: int
+    other_documents_pinned: int
+
+
 class AskRequest(BaseModel):
     question: str
     mode: GroundingMode = GroundingMode.CURRENT

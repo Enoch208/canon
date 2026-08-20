@@ -44,6 +44,8 @@ class EnvelopeReport:
             "other_harmed_question_ids": sorted(r.question_id for r in other_harmed),
             "documents_dropped_total": sum(len(r.dropped_doc_ids) for r in self.rows),
             "documents_pinned_total": sum(len(r.pinned_doc_ids) for r in self.rows),
+            "other_documents_dropped": sum(len(r.dropped_doc_ids) for r in other),
+            "other_documents_pinned": sum(len(r.pinned_doc_ids) for r in other),
             "by_question_type": self._by_type(),
         }
 

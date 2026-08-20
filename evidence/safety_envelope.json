@@ -1,5 +1,5 @@
 {
-  "measured_at": "2026-08-20T12:00:02.875916+00:00",
+  "measured_at": "2026-08-20T22:41:39.524528+00:00",
   "design": "Deterministic grounding sweep over every benchmark question: BM25 top-10, then the HydraDB temporal grounding layer. No model in the loop. Measures where Canon intervenes (drops or pins) and whether any expected document is ever dropped on a question outside the known supersession conflicts.",
   "top_k": 10,
   "summary": {
@@ -24,6 +24,8 @@
     "other_harmed_question_ids": [],
     "documents_dropped_total": 14,
     "documents_pinned_total": 10,
+    "other_documents_dropped": 1,
+    "other_documents_pinned": 8,
     "by_question_type": {
       "basic": {
         "questions": 175,
@@ -125,7 +127,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 67.14
+      "grounding_ms": 112.15
     },
     {
       "question_id": "qst_0002",
@@ -136,7 +138,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.54
+      "grounding_ms": 62.45
     },
     {
       "question_id": "qst_0003",
@@ -147,7 +149,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.99
+      "grounding_ms": 74.55
     },
     {
       "question_id": "qst_0004",
@@ -158,7 +160,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.64
+      "grounding_ms": 58.2
     },
     {
       "question_id": "qst_0005",
@@ -169,7 +171,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.83
+      "grounding_ms": 76.76
     },
     {
       "question_id": "qst_0006",
@@ -180,7 +182,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.48
+      "grounding_ms": 61.34
     },
     {
       "question_id": "qst_0007",
@@ -191,7 +193,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.98
+      "grounding_ms": 185.74
     },
     {
       "question_id": "qst_0008",
@@ -202,7 +204,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.28
+      "grounding_ms": 69.99
     },
     {
       "question_id": "qst_0009",
@@ -213,7 +215,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.73
+      "grounding_ms": 63.07
     },
     {
       "question_id": "qst_0010",
@@ -224,7 +226,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.99
+      "grounding_ms": 55.92
     },
     {
       "question_id": "qst_0011",
@@ -235,7 +237,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.17
+      "grounding_ms": 116.88
     },
     {
       "question_id": "qst_0012",
@@ -246,7 +248,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.51
+      "grounding_ms": 74.2
     },
     {
       "question_id": "qst_0013",
@@ -257,7 +259,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.51
+      "grounding_ms": 77.59
     },
     {
       "question_id": "qst_0014",
@@ -268,7 +270,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.55
+      "grounding_ms": 94.25
     },
     {
       "question_id": "qst_0015",
@@ -279,7 +281,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.6
+      "grounding_ms": 69.21
     },
     {
       "question_id": "qst_0016",
@@ -290,7 +292,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.74
+      "grounding_ms": 77.36
     },
     {
       "question_id": "qst_0017",
@@ -301,7 +303,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.95
+      "grounding_ms": 60.09
     },
     {
       "question_id": "qst_0018",
@@ -312,7 +314,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.87
+      "grounding_ms": 69.17
     },
     {
       "question_id": "qst_0019",
@@ -323,7 +325,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.33
+      "grounding_ms": 71.93
     },
     {
       "question_id": "qst_0020",
@@ -334,7 +336,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.34
+      "grounding_ms": 59.86
     },
     {
       "question_id": "qst_0021",
@@ -345,7 +347,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.39
+      "grounding_ms": 61.42
     },
     {
       "question_id": "qst_0022",
@@ -356,7 +358,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.02
+      "grounding_ms": 69.17
     },
     {
       "question_id": "qst_0023",
@@ -367,7 +369,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 57.51
+      "grounding_ms": 72.14
     },
     {
       "question_id": "qst_0024",
@@ -378,7 +380,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.81
+      "grounding_ms": 96.08
     },
     {
       "question_id": "qst_0025",
@@ -389,7 +391,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.07
+      "grounding_ms": 88.81
     },
     {
       "question_id": "qst_0026",
@@ -400,7 +402,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.22
+      "grounding_ms": 73.76
     },
     {
       "question_id": "qst_0027",
@@ -411,7 +413,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 54.98
+      "grounding_ms": 128.98
     },
     {
       "question_id": "qst_0028",
@@ -422,7 +424,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.37
+      "grounding_ms": 63.3
     },
     {
       "question_id": "qst_0029",
@@ -433,7 +435,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.59
+      "grounding_ms": 68.63
     },
     {
       "question_id": "qst_0030",
@@ -444,7 +446,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 107.33
+      "grounding_ms": 175.07
     },
     {
       "question_id": "qst_0031",
@@ -455,7 +457,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.67
+      "grounding_ms": 66.47
     },
     {
       "question_id": "qst_0032",
@@ -466,7 +468,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.96
+      "grounding_ms": 537.58
     },
     {
       "question_id": "qst_0033",
@@ -479,7 +481,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 83.16
+      "grounding_ms": 234.94
     },
     {
       "question_id": "qst_0034",
@@ -490,7 +492,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.24
+      "grounding_ms": 66.51
     },
     {
       "question_id": "qst_0035",
@@ -501,7 +503,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.56
+      "grounding_ms": 60.86
     },
     {
       "question_id": "qst_0036",
@@ -512,7 +514,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.14
+      "grounding_ms": 77.44
     },
     {
       "question_id": "qst_0037",
@@ -523,7 +525,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.59
+      "grounding_ms": 66.73
     },
     {
       "question_id": "qst_0038",
@@ -534,7 +536,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.51
+      "grounding_ms": 54.53
     },
     {
       "question_id": "qst_0039",
@@ -545,7 +547,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.14
+      "grounding_ms": 65.61
     },
     {
       "question_id": "qst_0040",
@@ -556,7 +558,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 54.39
+      "grounding_ms": 89.94
     },
     {
       "question_id": "qst_0041",
@@ -567,7 +569,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.7
+      "grounding_ms": 81.69
     },
     {
       "question_id": "qst_0042",
@@ -578,7 +580,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.81
+      "grounding_ms": 75.48
     },
     {
       "question_id": "qst_0043",
@@ -589,7 +591,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.03
+      "grounding_ms": 241.04
     },
     {
       "question_id": "qst_0044",
@@ -600,7 +602,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 53.51
+      "grounding_ms": 77.53
     },
     {
       "question_id": "qst_0045",
@@ -611,7 +613,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.47
+      "grounding_ms": 66.79
     },
     {
       "question_id": "qst_0046",
@@ -622,7 +624,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.87
+      "grounding_ms": 60.52
     },
     {
       "question_id": "qst_0047",
@@ -633,7 +635,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.15
+      "grounding_ms": 59.52
     },
     {
       "question_id": "qst_0048",
@@ -644,7 +646,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.75
+      "grounding_ms": 71.19
     },
     {
       "question_id": "qst_0049",
@@ -655,7 +657,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.62
+      "grounding_ms": 60.08
     },
     {
       "question_id": "qst_0050",
@@ -666,7 +668,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.51
+      "grounding_ms": 62.0
     },
     {
       "question_id": "qst_0051",
@@ -677,7 +679,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.57
+      "grounding_ms": 66.05
     },
     {
       "question_id": "qst_0052",
@@ -688,7 +690,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.19
+      "grounding_ms": 64.58
     },
     {
       "question_id": "qst_0053",
@@ -699,7 +701,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.31
+      "grounding_ms": 55.84
     },
     {
       "question_id": "qst_0054",
@@ -710,7 +712,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.65
+      "grounding_ms": 60.91
     },
     {
       "question_id": "qst_0055",
@@ -723,7 +725,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 94.68
+      "grounding_ms": 140.82
     },
     {
       "question_id": "qst_0056",
@@ -734,7 +736,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 536.56
+      "grounding_ms": 60.99
     },
     {
       "question_id": "qst_0057",
@@ -745,7 +747,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 60.01
+      "grounding_ms": 56.13
     },
     {
       "question_id": "qst_0058",
@@ -756,7 +758,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.08
+      "grounding_ms": 65.49
     },
     {
       "question_id": "qst_0059",
@@ -767,7 +769,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.24
+      "grounding_ms": 65.51
     },
     {
       "question_id": "qst_0060",
@@ -778,7 +780,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.74
+      "grounding_ms": 59.71
     },
     {
       "question_id": "qst_0061",
@@ -789,7 +791,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.18
+      "grounding_ms": 60.6
     },
     {
       "question_id": "qst_0062",
@@ -800,7 +802,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.35
+      "grounding_ms": 65.53
     },
     {
       "question_id": "qst_0063",
@@ -811,7 +813,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.63
+      "grounding_ms": 69.56
     },
     {
       "question_id": "qst_0064",
@@ -822,7 +824,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.31
+      "grounding_ms": 54.85
     },
     {
       "question_id": "qst_0065",
@@ -833,7 +835,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.9
+      "grounding_ms": 52.63
     },
     {
       "question_id": "qst_0066",
@@ -844,7 +846,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.84
+      "grounding_ms": 58.9
     },
     {
       "question_id": "qst_0067",
@@ -855,7 +857,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 70.65
+      "grounding_ms": 62.46
     },
     {
       "question_id": "qst_0068",
@@ -866,7 +868,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.66
+      "grounding_ms": 57.04
     },
     {
       "question_id": "qst_0069",
@@ -877,7 +879,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.77
+      "grounding_ms": 62.01
     },
     {
       "question_id": "qst_0070",
@@ -888,7 +890,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.53
+      "grounding_ms": 72.09
     },
     {
       "question_id": "qst_0071",
@@ -899,7 +901,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 48.68
+      "grounding_ms": 75.08
     },
     {
       "question_id": "qst_0072",
@@ -910,7 +912,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.25
+      "grounding_ms": 65.31
     },
     {
       "question_id": "qst_0073",
@@ -921,7 +923,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.88
+      "grounding_ms": 62.94
     },
     {
       "question_id": "qst_0074",
@@ -932,7 +934,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.69
+      "grounding_ms": 59.63
     },
     {
       "question_id": "qst_0075",
@@ -943,7 +945,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.74
+      "grounding_ms": 63.3
     },
     {
       "question_id": "qst_0076",
@@ -954,7 +956,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.63
+      "grounding_ms": 55.31
     },
     {
       "question_id": "qst_0077",
@@ -965,7 +967,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.96
+      "grounding_ms": 64.17
     },
     {
       "question_id": "qst_0078",
@@ -976,7 +978,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.76
+      "grounding_ms": 75.12
     },
     {
       "question_id": "qst_0079",
@@ -987,7 +989,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.63
+      "grounding_ms": 64.05
     },
     {
       "question_id": "qst_0080",
@@ -998,7 +1000,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.25
+      "grounding_ms": 93.13
     },
     {
       "question_id": "qst_0081",
@@ -1009,7 +1011,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.55
+      "grounding_ms": 86.0
     },
     {
       "question_id": "qst_0082",
@@ -1020,7 +1022,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.84
+      "grounding_ms": 59.53
     },
     {
       "question_id": "qst_0083",
@@ -1031,7 +1033,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.8
+      "grounding_ms": 58.4
     },
     {
       "question_id": "qst_0084",
@@ -1042,7 +1044,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.51
+      "grounding_ms": 66.53
     },
     {
       "question_id": "qst_0085",
@@ -1053,7 +1055,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.71
+      "grounding_ms": 80.76
     },
     {
       "question_id": "qst_0086",
@@ -1064,7 +1066,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.31
+      "grounding_ms": 56.58
     },
     {
       "question_id": "qst_0087",
@@ -1075,7 +1077,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.95
+      "grounding_ms": 57.85
     },
     {
       "question_id": "qst_0088",
@@ -1086,7 +1088,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.74
+      "grounding_ms": 56.53
     },
     {
       "question_id": "qst_0089",
@@ -1097,7 +1099,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.78
+      "grounding_ms": 66.39
     },
     {
       "question_id": "qst_0090",
@@ -1108,7 +1110,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.71
+      "grounding_ms": 71.73
     },
     {
       "question_id": "qst_0091",
@@ -1119,7 +1121,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 50.69
+      "grounding_ms": 65.1
     },
     {
       "question_id": "qst_0092",
@@ -1130,7 +1132,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.94
+      "grounding_ms": 89.37
     },
     {
       "question_id": "qst_0093",
@@ -1141,7 +1143,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.77
+      "grounding_ms": 52.47
     },
     {
       "question_id": "qst_0094",
@@ -1152,7 +1154,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.09
+      "grounding_ms": 68.08
     },
     {
       "question_id": "qst_0095",
@@ -1163,7 +1165,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.31
+      "grounding_ms": 64.64
     },
     {
       "question_id": "qst_0096",
@@ -1174,7 +1176,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.44
+      "grounding_ms": 59.11
     },
     {
       "question_id": "qst_0097",
@@ -1185,7 +1187,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 132.28
+      "grounding_ms": 145.28
     },
     {
       "question_id": "qst_0098",
@@ -1196,7 +1198,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.17
+      "grounding_ms": 65.25
     },
     {
       "question_id": "qst_0099",
@@ -1207,7 +1209,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.08
+      "grounding_ms": 61.78
     },
     {
       "question_id": "qst_0100",
@@ -1218,7 +1220,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.23
+      "grounding_ms": 69.43
     },
     {
       "question_id": "qst_0101",
@@ -1229,7 +1231,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.25
+      "grounding_ms": 61.51
     },
     {
       "question_id": "qst_0102",
@@ -1240,7 +1242,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.12
+      "grounding_ms": 58.79
     },
     {
       "question_id": "qst_0103",
@@ -1251,7 +1253,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.99
+      "grounding_ms": 68.51
     },
     {
       "question_id": "qst_0104",
@@ -1262,7 +1264,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.08
+      "grounding_ms": 60.09
     },
     {
       "question_id": "qst_0105",
@@ -1273,7 +1275,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.32
+      "grounding_ms": 66.43
     },
     {
       "question_id": "qst_0106",
@@ -1284,7 +1286,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.46
+      "grounding_ms": 69.34
     },
     {
       "question_id": "qst_0107",
@@ -1295,7 +1297,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.22
+      "grounding_ms": 52.65
     },
     {
       "question_id": "qst_0108",
@@ -1306,7 +1308,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.52
+      "grounding_ms": 70.89
     },
     {
       "question_id": "qst_0109",
@@ -1317,7 +1319,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.41
+      "grounding_ms": 60.24
     },
     {
       "question_id": "qst_0110",
@@ -1328,7 +1330,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.05
+      "grounding_ms": 63.04
     },
     {
       "question_id": "qst_0111",
@@ -1339,7 +1341,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.21
+      "grounding_ms": 69.78
     },
     {
       "question_id": "qst_0112",
@@ -1350,7 +1352,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 51.2
+      "grounding_ms": 62.71
     },
     {
       "question_id": "qst_0113",
@@ -1361,7 +1363,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.69
+      "grounding_ms": 140.25
     },
     {
       "question_id": "qst_0114",
@@ -1372,7 +1374,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.37
+      "grounding_ms": 59.81
     },
     {
       "question_id": "qst_0115",
@@ -1383,7 +1385,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.64
+      "grounding_ms": 63.41
     },
     {
       "question_id": "qst_0116",
@@ -1394,7 +1396,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 28.11
+      "grounding_ms": 54.39
     },
     {
       "question_id": "qst_0117",
@@ -1405,7 +1407,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 53.46
+      "grounding_ms": 65.25
     },
     {
       "question_id": "qst_0118",
@@ -1416,7 +1418,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.73
+      "grounding_ms": 57.85
     },
     {
       "question_id": "qst_0119",
@@ -1427,7 +1429,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.7
+      "grounding_ms": 82.06
     },
     {
       "question_id": "qst_0120",
@@ -1438,7 +1440,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.8
+      "grounding_ms": 62.12
     },
     {
       "question_id": "qst_0121",
@@ -1449,7 +1451,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.61
+      "grounding_ms": 59.26
     },
     {
       "question_id": "qst_0122",
@@ -1460,7 +1462,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.93
+      "grounding_ms": 121.8
     },
     {
       "question_id": "qst_0123",
@@ -1471,7 +1473,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.02
+      "grounding_ms": 71.19
     },
     {
       "question_id": "qst_0124",
@@ -1482,7 +1484,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.18
+      "grounding_ms": 68.66
     },
     {
       "question_id": "qst_0125",
@@ -1493,7 +1495,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.2
+      "grounding_ms": 72.32
     },
     {
       "question_id": "qst_0126",
@@ -1504,7 +1506,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.33
+      "grounding_ms": 96.9
     },
     {
       "question_id": "qst_0127",
@@ -1515,7 +1517,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.06
+      "grounding_ms": 62.24
     },
     {
       "question_id": "qst_0128",
@@ -1526,7 +1528,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.81
+      "grounding_ms": 68.89
     },
     {
       "question_id": "qst_0129",
@@ -1537,7 +1539,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.99
+      "grounding_ms": 62.84
     },
     {
       "question_id": "qst_0130",
@@ -1548,7 +1550,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.28
+      "grounding_ms": 355.56
     },
     {
       "question_id": "qst_0131",
@@ -1559,7 +1561,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.21
+      "grounding_ms": 60.43
     },
     {
       "question_id": "qst_0132",
@@ -1570,7 +1572,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.37
+      "grounding_ms": 56.88
     },
     {
       "question_id": "qst_0133",
@@ -1581,7 +1583,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.81
+      "grounding_ms": 71.83
     },
     {
       "question_id": "qst_0134",
@@ -1592,7 +1594,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 28.71
+      "grounding_ms": 126.66
     },
     {
       "question_id": "qst_0135",
@@ -1603,7 +1605,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.13
+      "grounding_ms": 58.11
     },
     {
       "question_id": "qst_0136",
@@ -1614,7 +1616,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 57.08
+      "grounding_ms": 54.38
     },
     {
       "question_id": "qst_0137",
@@ -1625,7 +1627,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.78
+      "grounding_ms": 97.0
     },
     {
       "question_id": "qst_0138",
@@ -1636,7 +1638,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.76
+      "grounding_ms": 61.14
     },
     {
       "question_id": "qst_0139",
@@ -1647,7 +1649,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.88
+      "grounding_ms": 85.18
     },
     {
       "question_id": "qst_0140",
@@ -1658,7 +1660,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.39
+      "grounding_ms": 59.71
     },
     {
       "question_id": "qst_0141",
@@ -1669,7 +1671,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.29
+      "grounding_ms": 61.96
     },
     {
       "question_id": "qst_0142",
@@ -1680,7 +1682,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.79
+      "grounding_ms": 74.22
     },
     {
       "question_id": "qst_0143",
@@ -1691,7 +1693,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.48
+      "grounding_ms": 62.25
     },
     {
       "question_id": "qst_0144",
@@ -1702,7 +1704,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.35
+      "grounding_ms": 64.69
     },
     {
       "question_id": "qst_0145",
@@ -1713,7 +1715,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.9
+      "grounding_ms": 61.07
     },
     {
       "question_id": "qst_0146",
@@ -1724,7 +1726,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.05
+      "grounding_ms": 55.95
     },
     {
       "question_id": "qst_0147",
@@ -1735,7 +1737,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 82.27
+      "grounding_ms": 221.04
     },
     {
       "question_id": "qst_0148",
@@ -1746,7 +1748,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.03
+      "grounding_ms": 286.04
     },
     {
       "question_id": "qst_0149",
@@ -1757,7 +1759,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.42
+      "grounding_ms": 90.0
     },
     {
       "question_id": "qst_0150",
@@ -1768,7 +1770,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.39
+      "grounding_ms": 64.42
     },
     {
       "question_id": "qst_0151",
@@ -1779,7 +1781,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.18
+      "grounding_ms": 58.83
     },
     {
       "question_id": "qst_0152",
@@ -1790,7 +1792,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.58
+      "grounding_ms": 62.03
     },
     {
       "question_id": "qst_0153",
@@ -1801,7 +1803,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.76
+      "grounding_ms": 66.57
     },
     {
       "question_id": "qst_0154",
@@ -1812,7 +1814,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.13
+      "grounding_ms": 59.48
     },
     {
       "question_id": "qst_0155",
@@ -1823,7 +1825,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.08
+      "grounding_ms": 65.79
     },
     {
       "question_id": "qst_0156",
@@ -1834,7 +1836,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.88
+      "grounding_ms": 69.56
     },
     {
       "question_id": "qst_0157",
@@ -1845,7 +1847,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.71
+      "grounding_ms": 59.25
     },
     {
       "question_id": "qst_0158",
@@ -1856,7 +1858,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.87
+      "grounding_ms": 63.03
     },
     {
       "question_id": "qst_0159",
@@ -1867,7 +1869,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.06
+      "grounding_ms": 68.28
     },
     {
       "question_id": "qst_0160",
@@ -1878,7 +1880,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.36
+      "grounding_ms": 63.04
     },
     {
       "question_id": "qst_0161",
@@ -1889,7 +1891,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.64
+      "grounding_ms": 61.82
     },
     {
       "question_id": "qst_0162",
@@ -1900,7 +1902,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.89
+      "grounding_ms": 58.25
     },
     {
       "question_id": "qst_0163",
@@ -1911,7 +1913,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.06
+      "grounding_ms": 62.33
     },
     {
       "question_id": "qst_0164",
@@ -1922,7 +1924,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.09
+      "grounding_ms": 119.85
     },
     {
       "question_id": "qst_0165",
@@ -1933,7 +1935,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.92
+      "grounding_ms": 56.32
     },
     {
       "question_id": "qst_0166",
@@ -1944,7 +1946,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 57.93
+      "grounding_ms": 76.05
     },
     {
       "question_id": "qst_0167",
@@ -1955,7 +1957,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 54.67
+      "grounding_ms": 65.77
     },
     {
       "question_id": "qst_0168",
@@ -1966,7 +1968,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.49
+      "grounding_ms": 61.12
     },
     {
       "question_id": "qst_0169",
@@ -1977,7 +1979,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.33
+      "grounding_ms": 54.76
     },
     {
       "question_id": "qst_0170",
@@ -1988,7 +1990,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.48
+      "grounding_ms": 61.91
     },
     {
       "question_id": "qst_0171",
@@ -1999,7 +2001,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.08
+      "grounding_ms": 63.1
     },
     {
       "question_id": "qst_0172",
@@ -2010,7 +2012,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.85
+      "grounding_ms": 58.58
     },
     {
       "question_id": "qst_0173",
@@ -2021,7 +2023,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.36
+      "grounding_ms": 60.99
     },
     {
       "question_id": "qst_0174",
@@ -2032,7 +2034,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.03
+      "grounding_ms": 52.22
     },
     {
       "question_id": "qst_0175",
@@ -2043,7 +2045,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.07
+      "grounding_ms": 60.84
     },
     {
       "question_id": "qst_0176",
@@ -2054,7 +2056,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.25
+      "grounding_ms": 64.35
     },
     {
       "question_id": "qst_0177",
@@ -2065,7 +2067,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.91
+      "grounding_ms": 65.35
     },
     {
       "question_id": "qst_0178",
@@ -2076,7 +2078,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.26
+      "grounding_ms": 59.99
     },
     {
       "question_id": "qst_0179",
@@ -2087,7 +2089,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.54
+      "grounding_ms": 70.34
     },
     {
       "question_id": "qst_0180",
@@ -2098,7 +2100,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.98
+      "grounding_ms": 57.6
     },
     {
       "question_id": "qst_0181",
@@ -2109,7 +2111,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.09
+      "grounding_ms": 116.14
     },
     {
       "question_id": "qst_0182",
@@ -2120,7 +2122,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.21
+      "grounding_ms": 58.2
     },
     {
       "question_id": "qst_0183",
@@ -2131,7 +2133,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.4
+      "grounding_ms": 62.99
     },
     {
       "question_id": "qst_0184",
@@ -2142,7 +2144,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.29
+      "grounding_ms": 63.85
     },
     {
       "question_id": "qst_0185",
@@ -2153,7 +2155,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 192.24
+      "grounding_ms": 289.72
     },
     {
       "question_id": "qst_0186",
@@ -2164,7 +2166,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.62
+      "grounding_ms": 77.75
     },
     {
       "question_id": "qst_0187",
@@ -2175,7 +2177,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 26.91
+      "grounding_ms": 100.47
     },
     {
       "question_id": "qst_0188",
@@ -2186,7 +2188,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.79
+      "grounding_ms": 66.22
     },
     {
       "question_id": "qst_0189",
@@ -2197,7 +2199,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.53
+      "grounding_ms": 65.28
     },
     {
       "question_id": "qst_0190",
@@ -2208,7 +2210,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 51.05
+      "grounding_ms": 154.22
     },
     {
       "question_id": "qst_0191",
@@ -2219,7 +2221,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.71
+      "grounding_ms": 64.75
     },
     {
       "question_id": "qst_0192",
@@ -2230,7 +2232,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.17
+      "grounding_ms": 66.8
     },
     {
       "question_id": "qst_0193",
@@ -2241,7 +2243,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.75
+      "grounding_ms": 66.15
     },
     {
       "question_id": "qst_0194",
@@ -2252,7 +2254,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.36
+      "grounding_ms": 94.02
     },
     {
       "question_id": "qst_0195",
@@ -2263,7 +2265,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.71
+      "grounding_ms": 73.25
     },
     {
       "question_id": "qst_0196",
@@ -2274,7 +2276,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 59.54
+      "grounding_ms": 66.97
     },
     {
       "question_id": "qst_0197",
@@ -2285,7 +2287,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.33
+      "grounding_ms": 65.29
     },
     {
       "question_id": "qst_0198",
@@ -2296,7 +2298,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.98
+      "grounding_ms": 78.56
     },
     {
       "question_id": "qst_0199",
@@ -2307,7 +2309,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 67.21
+      "grounding_ms": 130.17
     },
     {
       "question_id": "qst_0200",
@@ -2318,7 +2320,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.54
+      "grounding_ms": 82.92
     },
     {
       "question_id": "qst_0201",
@@ -2329,7 +2331,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.87
+      "grounding_ms": 242.88
     },
     {
       "question_id": "qst_0202",
@@ -2340,7 +2342,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.39
+      "grounding_ms": 72.68
     },
     {
       "question_id": "qst_0203",
@@ -2351,7 +2353,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 53.21
+      "grounding_ms": 79.07
     },
     {
       "question_id": "qst_0204",
@@ -2362,7 +2364,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.57
+      "grounding_ms": 74.99
     },
     {
       "question_id": "qst_0205",
@@ -2373,7 +2375,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.41
+      "grounding_ms": 3113.34
     },
     {
       "question_id": "qst_0206",
@@ -2384,7 +2386,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 52.44
+      "grounding_ms": 71.79
     },
     {
       "question_id": "qst_0207",
@@ -2395,7 +2397,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.9
+      "grounding_ms": 58.04
     },
     {
       "question_id": "qst_0208",
@@ -2406,7 +2408,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.98
+      "grounding_ms": 55.04
     },
     {
       "question_id": "qst_0209",
@@ -2417,7 +2419,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.75
+      "grounding_ms": 189.33
     },
     {
       "question_id": "qst_0210",
@@ -2428,7 +2430,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.7
+      "grounding_ms": 94.79
     },
     {
       "question_id": "qst_0211",
@@ -2439,7 +2441,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.7
+      "grounding_ms": 184.39
     },
     {
       "question_id": "qst_0212",
@@ -2450,7 +2452,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 143.43
+      "grounding_ms": 77.56
     },
     {
       "question_id": "qst_0213",
@@ -2461,7 +2463,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.48
+      "grounding_ms": 83.86
     },
     {
       "question_id": "qst_0214",
@@ -2472,7 +2474,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.3
+      "grounding_ms": 61.41
     },
     {
       "question_id": "qst_0215",
@@ -2483,7 +2485,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 57.97
+      "grounding_ms": 67.18
     },
     {
       "question_id": "qst_0216",
@@ -2494,7 +2496,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.34
+      "grounding_ms": 66.73
     },
     {
       "question_id": "qst_0217",
@@ -2505,7 +2507,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 77.89
+      "grounding_ms": 139.75
     },
     {
       "question_id": "qst_0218",
@@ -2516,7 +2518,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.93
+      "grounding_ms": 69.66
     },
     {
       "question_id": "qst_0219",
@@ -2527,7 +2529,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.32
+      "grounding_ms": 64.92
     },
     {
       "question_id": "qst_0220",
@@ -2538,7 +2540,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 255.78
+      "grounding_ms": 733.82
     },
     {
       "question_id": "qst_0221",
@@ -2549,7 +2551,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.36
+      "grounding_ms": 113.86
     },
     {
       "question_id": "qst_0222",
@@ -2560,7 +2562,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.47
+      "grounding_ms": 100.56
     },
     {
       "question_id": "qst_0223",
@@ -2571,7 +2573,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.76
+      "grounding_ms": 73.24
     },
     {
       "question_id": "qst_0224",
@@ -2582,7 +2584,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.52
+      "grounding_ms": 73.68
     },
     {
       "question_id": "qst_0225",
@@ -2593,7 +2595,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.16
+      "grounding_ms": 68.06
     },
     {
       "question_id": "qst_0226",
@@ -2604,7 +2606,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.77
+      "grounding_ms": 83.1
     },
     {
       "question_id": "qst_0227",
@@ -2615,7 +2617,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.57
+      "grounding_ms": 109.56
     },
     {
       "question_id": "qst_0228",
@@ -2626,7 +2628,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 55.92
+      "grounding_ms": 136.15
     },
     {
       "question_id": "qst_0229",
@@ -2637,7 +2639,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 52.23
+      "grounding_ms": 73.64
     },
     {
       "question_id": "qst_0230",
@@ -2648,7 +2650,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.36
+      "grounding_ms": 65.47
     },
     {
       "question_id": "qst_0231",
@@ -2661,7 +2663,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 111.07
+      "grounding_ms": 301.02
     },
     {
       "question_id": "qst_0232",
@@ -2672,7 +2674,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.96
+      "grounding_ms": 74.06
     },
     {
       "question_id": "qst_0233",
@@ -2683,7 +2685,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.98
+      "grounding_ms": 76.27
     },
     {
       "question_id": "qst_0234",
@@ -2694,7 +2696,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.64
+      "grounding_ms": 76.25
     },
     {
       "question_id": "qst_0235",
@@ -2705,7 +2707,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 2882.18
+      "grounding_ms": 122.95
     },
     {
       "question_id": "qst_0236",
@@ -2716,7 +2718,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.97
+      "grounding_ms": 86.39
     },
     {
       "question_id": "qst_0237",
@@ -2727,7 +2729,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 57.11
+      "grounding_ms": 80.72
     },
     {
       "question_id": "qst_0238",
@@ -2738,7 +2740,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.76
+      "grounding_ms": 150.96
     },
     {
       "question_id": "qst_0239",
@@ -2749,7 +2751,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.23
+      "grounding_ms": 66.33
     },
     {
       "question_id": "qst_0240",
@@ -2760,7 +2762,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.17
+      "grounding_ms": 143.05
     },
     {
       "question_id": "qst_0241",
@@ -2771,7 +2773,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.36
+      "grounding_ms": 3854.98
     },
     {
       "question_id": "qst_0242",
@@ -2782,7 +2784,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.17
+      "grounding_ms": 1463.6
     },
     {
       "question_id": "qst_0243",
@@ -2793,7 +2795,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.81
+      "grounding_ms": 78.3
     },
     {
       "question_id": "qst_0244",
@@ -2804,7 +2806,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.1
+      "grounding_ms": 91.66
     },
     {
       "question_id": "qst_0245",
@@ -2815,7 +2817,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.34
+      "grounding_ms": 145.16
     },
     {
       "question_id": "qst_0246",
@@ -2826,7 +2828,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.67
+      "grounding_ms": 64.61
     },
     {
       "question_id": "qst_0247",
@@ -2837,7 +2839,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.56
+      "grounding_ms": 78.28
     },
     {
       "question_id": "qst_0248",
@@ -2848,7 +2850,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.84
+      "grounding_ms": 939.99
     },
     {
       "question_id": "qst_0249",
@@ -2859,7 +2861,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.67
+      "grounding_ms": 74.34
     },
     {
       "question_id": "qst_0250",
@@ -2870,7 +2872,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.01
+      "grounding_ms": 77.87
     },
     {
       "question_id": "qst_0251",
@@ -2881,7 +2883,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.25
+      "grounding_ms": 65.45
     },
     {
       "question_id": "qst_0252",
@@ -2892,7 +2894,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.49
+      "grounding_ms": 70.29
     },
     {
       "question_id": "qst_0253",
@@ -2903,7 +2905,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.48
+      "grounding_ms": 69.91
     },
     {
       "question_id": "qst_0254",
@@ -2914,7 +2916,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 67.8
+      "grounding_ms": 62.17
     },
     {
       "question_id": "qst_0255",
@@ -2925,7 +2927,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.58
+      "grounding_ms": 92.91
     },
     {
       "question_id": "qst_0256",
@@ -2936,7 +2938,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.07
+      "grounding_ms": 62.38
     },
     {
       "question_id": "qst_0257",
@@ -2947,7 +2949,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.7
+      "grounding_ms": 66.92
     },
     {
       "question_id": "qst_0258",
@@ -2958,7 +2960,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.33
+      "grounding_ms": 62.93
     },
     {
       "question_id": "qst_0259",
@@ -2969,7 +2971,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 50.46
+      "grounding_ms": 66.58
     },
     {
       "question_id": "qst_0260",
@@ -2980,7 +2982,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.29
+      "grounding_ms": 65.7
     },
     {
       "question_id": "qst_0261",
@@ -2991,7 +2993,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.81
+      "grounding_ms": 65.66
     },
     {
       "question_id": "qst_0262",
@@ -3002,7 +3004,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 54.59
+      "grounding_ms": 86.02
     },
     {
       "question_id": "qst_0263",
@@ -3013,7 +3015,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.57
+      "grounding_ms": 68.36
     },
     {
       "question_id": "qst_0264",
@@ -3024,7 +3026,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 54.78
+      "grounding_ms": 346.95
     },
     {
       "question_id": "qst_0265",
@@ -3035,7 +3037,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.41
+      "grounding_ms": 63.48
     },
     {
       "question_id": "qst_0266",
@@ -3046,7 +3048,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 55.05
+      "grounding_ms": 809.67
     },
     {
       "question_id": "qst_0267",
@@ -3057,7 +3059,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.53
+      "grounding_ms": 74.56
     },
     {
       "question_id": "qst_0268",
@@ -3068,7 +3070,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.33
+      "grounding_ms": 67.74
     },
     {
       "question_id": "qst_0269",
@@ -3079,7 +3081,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.07
+      "grounding_ms": 75.57
     },
     {
       "question_id": "qst_0270",
@@ -3090,7 +3092,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 48.56
+      "grounding_ms": 72.4
     },
     {
       "question_id": "qst_0271",
@@ -3101,7 +3103,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.94
+      "grounding_ms": 77.52
     },
     {
       "question_id": "qst_0272",
@@ -3112,7 +3114,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.73
+      "grounding_ms": 73.33
     },
     {
       "question_id": "qst_0273",
@@ -3123,7 +3125,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.2
+      "grounding_ms": 92.59
     },
     {
       "question_id": "qst_0274",
@@ -3134,7 +3136,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.64
+      "grounding_ms": 62.01
     },
     {
       "question_id": "qst_0275",
@@ -3145,7 +3147,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.5
+      "grounding_ms": 59.42
     },
     {
       "question_id": "qst_0276",
@@ -3156,7 +3158,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.78
+      "grounding_ms": 67.66
     },
     {
       "question_id": "qst_0277",
@@ -3167,7 +3169,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.61
+      "grounding_ms": 154.06
     },
     {
       "question_id": "qst_0278",
@@ -3178,7 +3180,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.7
+      "grounding_ms": 77.27
     },
     {
       "question_id": "qst_0279",
@@ -3189,7 +3191,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.58
+      "grounding_ms": 66.67
     },
     {
       "question_id": "qst_0280",
@@ -3200,7 +3202,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.43
+      "grounding_ms": 61.23
     },
     {
       "question_id": "qst_0281",
@@ -3211,7 +3213,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.5
+      "grounding_ms": 102.48
     },
     {
       "question_id": "qst_0282",
@@ -3222,7 +3224,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.32
+      "grounding_ms": 245.13
     },
     {
       "question_id": "qst_0283",
@@ -3233,7 +3235,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.11
+      "grounding_ms": 108.58
     },
     {
       "question_id": "qst_0284",
@@ -3244,7 +3246,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.75
+      "grounding_ms": 74.13
     },
     {
       "question_id": "qst_0285",
@@ -3255,7 +3257,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 50.2
+      "grounding_ms": 63.0
     },
     {
       "question_id": "qst_0286",
@@ -3266,7 +3268,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.24
+      "grounding_ms": 123.82
     },
     {
       "question_id": "qst_0287",
@@ -3277,7 +3279,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.49
+      "grounding_ms": 111.21
     },
     {
       "question_id": "qst_0288",
@@ -3288,7 +3290,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.59
+      "grounding_ms": 91.19
     },
     {
       "question_id": "qst_0289",
@@ -3299,7 +3301,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.38
+      "grounding_ms": 71.46
     },
     {
       "question_id": "qst_0290",
@@ -3310,7 +3312,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.27
+      "grounding_ms": 98.43
     },
     {
       "question_id": "qst_0291",
@@ -3321,7 +3323,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.5
+      "grounding_ms": 68.31
     },
     {
       "question_id": "qst_0292",
@@ -3332,7 +3334,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.62
+      "grounding_ms": 127.28
     },
     {
       "question_id": "qst_0293",
@@ -3343,7 +3345,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.48
+      "grounding_ms": 66.65
     },
     {
       "question_id": "qst_0294",
@@ -3354,7 +3356,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.65
+      "grounding_ms": 72.82
     },
     {
       "question_id": "qst_0295",
@@ -3365,7 +3367,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 61.73
+      "grounding_ms": 68.22
     },
     {
       "question_id": "qst_0296",
@@ -3376,7 +3378,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.77
+      "grounding_ms": 68.32
     },
     {
       "question_id": "qst_0297",
@@ -3387,7 +3389,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.01
+      "grounding_ms": 136.45
     },
     {
       "question_id": "qst_0298",
@@ -3398,7 +3400,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.71
+      "grounding_ms": 85.92
     },
     {
       "question_id": "qst_0299",
@@ -3409,7 +3411,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.88
+      "grounding_ms": 74.03
     },
     {
       "question_id": "qst_0300",
@@ -3420,7 +3422,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.22
+      "grounding_ms": 71.0
     },
     {
       "question_id": "qst_0301",
@@ -3431,7 +3433,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.44
+      "grounding_ms": 72.79
     },
     {
       "question_id": "qst_0302",
@@ -3444,7 +3446,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 139.14
+      "grounding_ms": 260.88
     },
     {
       "question_id": "qst_0303",
@@ -3455,7 +3457,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.64
+      "grounding_ms": 75.29
     },
     {
       "question_id": "qst_0304",
@@ -3466,7 +3468,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 475.34
+      "grounding_ms": 70.52
     },
     {
       "question_id": "qst_0305",
@@ -3477,7 +3479,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.53
+      "grounding_ms": 65.87
     },
     {
       "question_id": "qst_0306",
@@ -3488,7 +3490,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.88
+      "grounding_ms": 96.1
     },
     {
       "question_id": "qst_0307",
@@ -3499,7 +3501,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.46
+      "grounding_ms": 85.28
     },
     {
       "question_id": "qst_0308",
@@ -3512,7 +3514,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 480.21
+      "grounding_ms": 530.25
     },
     {
       "question_id": "qst_0309",
@@ -3523,7 +3525,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.09
+      "grounding_ms": 132.37
     },
     {
       "question_id": "qst_0310",
@@ -3534,7 +3536,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.33
+      "grounding_ms": 95.98
     },
     {
       "question_id": "qst_0311",
@@ -3545,7 +3547,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.84
+      "grounding_ms": 97.78
     },
     {
       "question_id": "qst_0312",
@@ -3556,7 +3558,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.58
+      "grounding_ms": 64.48
     },
     {
       "question_id": "qst_0313",
@@ -3567,7 +3569,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.6
+      "grounding_ms": 66.15
     },
     {
       "question_id": "qst_0314",
@@ -3578,7 +3580,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.58
+      "grounding_ms": 396.29
     },
     {
       "question_id": "qst_0315",
@@ -3589,7 +3591,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.19
+      "grounding_ms": 75.23
     },
     {
       "question_id": "qst_0316",
@@ -3600,7 +3602,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.22
+      "grounding_ms": 87.88
     },
     {
       "question_id": "qst_0317",
@@ -3611,7 +3613,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.92
+      "grounding_ms": 97.71
     },
     {
       "question_id": "qst_0318",
@@ -3622,7 +3624,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.15
+      "grounding_ms": 63.41
     },
     {
       "question_id": "qst_0319",
@@ -3633,7 +3635,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.27
+      "grounding_ms": 69.05
     },
     {
       "question_id": "qst_0320",
@@ -3644,7 +3646,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.46
+      "grounding_ms": 74.69
     },
     {
       "question_id": "qst_0321",
@@ -3655,7 +3657,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 28.93
+      "grounding_ms": 68.73
     },
     {
       "question_id": "qst_0322",
@@ -3666,7 +3668,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 53.43
+      "grounding_ms": 135.19
     },
     {
       "question_id": "qst_0323",
@@ -3677,7 +3679,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.39
+      "grounding_ms": 66.15
     },
     {
       "question_id": "qst_0324",
@@ -3688,7 +3690,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.45
+      "grounding_ms": 503.35
     },
     {
       "question_id": "qst_0325",
@@ -3699,7 +3701,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.36
+      "grounding_ms": 70.03
     },
     {
       "question_id": "qst_0326",
@@ -3710,7 +3712,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.79
+      "grounding_ms": 67.85
     },
     {
       "question_id": "qst_0327",
@@ -3723,7 +3725,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 78.23
+      "grounding_ms": 229.48
     },
     {
       "question_id": "qst_0328",
@@ -3734,7 +3736,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.56
+      "grounding_ms": 66.21
     },
     {
       "question_id": "qst_0329",
@@ -3745,7 +3747,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.84
+      "grounding_ms": 66.38
     },
     {
       "question_id": "qst_0330",
@@ -3756,7 +3758,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.51
+      "grounding_ms": 69.99
     },
     {
       "question_id": "qst_0331",
@@ -3767,7 +3769,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.26
+      "grounding_ms": 61.26
     },
     {
       "question_id": "qst_0332",
@@ -3778,7 +3780,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 50.36
+      "grounding_ms": 117.23
     },
     {
       "question_id": "qst_0333",
@@ -3789,7 +3791,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.95
+      "grounding_ms": 57.33
     },
     {
       "question_id": "qst_0334",
@@ -3800,7 +3802,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 33.22
+      "grounding_ms": 60.65
     },
     {
       "question_id": "qst_0335",
@@ -3811,7 +3813,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.24
+      "grounding_ms": 94.54
     },
     {
       "question_id": "qst_0336",
@@ -3822,7 +3824,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.82
+      "grounding_ms": 74.81
     },
     {
       "question_id": "qst_0337",
@@ -3833,7 +3835,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.64
+      "grounding_ms": 60.25
     },
     {
       "question_id": "qst_0338",
@@ -3844,7 +3846,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.42
+      "grounding_ms": 62.43
     },
     {
       "question_id": "qst_0339",
@@ -3855,7 +3857,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.14
+      "grounding_ms": 403.46
     },
     {
       "question_id": "qst_0340",
@@ -3866,7 +3868,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.53
+      "grounding_ms": 70.99
     },
     {
       "question_id": "qst_0341",
@@ -3877,7 +3879,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.82
+      "grounding_ms": 74.62
     },
     {
       "question_id": "qst_0342",
@@ -3888,7 +3890,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 76.42
+      "grounding_ms": 57.32
     },
     {
       "question_id": "qst_0343",
@@ -3899,7 +3901,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.55
+      "grounding_ms": 58.65
     },
     {
       "question_id": "qst_0344",
@@ -3910,7 +3912,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.04
+      "grounding_ms": 52.48
     },
     {
       "question_id": "qst_0345",
@@ -3923,7 +3925,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 77.61
+      "grounding_ms": 147.63
     },
     {
       "question_id": "qst_0346",
@@ -3934,7 +3936,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.43
+      "grounding_ms": 59.9
     },
     {
       "question_id": "qst_0347",
@@ -3945,7 +3947,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.75
+      "grounding_ms": 70.11
     },
     {
       "question_id": "qst_0348",
@@ -3956,7 +3958,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.64
+      "grounding_ms": 72.79
     },
     {
       "question_id": "qst_0349",
@@ -3967,7 +3969,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.29
+      "grounding_ms": 62.49
     },
     {
       "question_id": "qst_0350",
@@ -3978,7 +3980,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.39
+      "grounding_ms": 61.28
     },
     {
       "question_id": "qst_0351",
@@ -3989,7 +3991,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 106.79
+      "grounding_ms": 60.76
     },
     {
       "question_id": "qst_0352",
@@ -4000,7 +4002,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.98
+      "grounding_ms": 90.31
     },
     {
       "question_id": "qst_0353",
@@ -4011,7 +4013,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.76
+      "grounding_ms": 60.06
     },
     {
       "question_id": "qst_0354",
@@ -4022,7 +4024,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 57.05
+      "grounding_ms": 64.85
     },
     {
       "question_id": "qst_0355",
@@ -4033,7 +4035,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.3
+      "grounding_ms": 69.8
     },
     {
       "question_id": "qst_0356",
@@ -4044,7 +4046,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.44
+      "grounding_ms": 61.84
     },
     {
       "question_id": "qst_0357",
@@ -4055,7 +4057,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.24
+      "grounding_ms": 68.96
     },
     {
       "question_id": "qst_0358",
@@ -4066,7 +4068,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.04
+      "grounding_ms": 57.74
     },
     {
       "question_id": "qst_0359",
@@ -4077,7 +4079,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.82
+      "grounding_ms": 59.89
     },
     {
       "question_id": "qst_0360",
@@ -4088,7 +4090,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.66
+      "grounding_ms": 65.8
     },
     {
       "question_id": "qst_0361",
@@ -4099,7 +4101,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.8
+      "grounding_ms": 61.36
     },
     {
       "question_id": "qst_0362",
@@ -4110,7 +4112,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.46
+      "grounding_ms": 60.92
     },
     {
       "question_id": "qst_0363",
@@ -4123,7 +4125,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 97.92
+      "grounding_ms": 481.48
     },
     {
       "question_id": "qst_0364",
@@ -4134,7 +4136,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 47.91
+      "grounding_ms": 123.65
     },
     {
       "question_id": "qst_0365",
@@ -4145,7 +4147,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 53.88
+      "grounding_ms": 79.52
     },
     {
       "question_id": "qst_0366",
@@ -4156,7 +4158,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.47
+      "grounding_ms": 79.05
     },
     {
       "question_id": "qst_0367",
@@ -4167,7 +4169,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.46
+      "grounding_ms": 112.94
     },
     {
       "question_id": "qst_0368",
@@ -4178,7 +4180,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.43
+      "grounding_ms": 113.04
     },
     {
       "question_id": "qst_0369",
@@ -4189,7 +4191,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.08
+      "grounding_ms": 2663.65
     },
     {
       "question_id": "qst_0370",
@@ -4200,7 +4202,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.18
+      "grounding_ms": 107.24
     },
     {
       "question_id": "qst_0371",
@@ -4211,7 +4213,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.64
+      "grounding_ms": 206.91
     },
     {
       "question_id": "qst_0372",
@@ -4222,7 +4224,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.31
+      "grounding_ms": 351.15
     },
     {
       "question_id": "qst_0373",
@@ -4233,7 +4235,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.7
+      "grounding_ms": 166.69
     },
     {
       "question_id": "qst_0374",
@@ -4244,7 +4246,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 48.16
+      "grounding_ms": 88.99
     },
     {
       "question_id": "qst_0375",
@@ -4255,7 +4257,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.68
+      "grounding_ms": 706.75
     },
     {
       "question_id": "qst_0376",
@@ -4266,7 +4268,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.27
+      "grounding_ms": 83.56
     },
     {
       "question_id": "qst_0377",
@@ -4277,7 +4279,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.55
+      "grounding_ms": 77.69
     },
     {
       "question_id": "qst_0378",
@@ -4288,7 +4290,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.46
+      "grounding_ms": 66.3
     },
     {
       "question_id": "qst_0379",
@@ -4299,7 +4301,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 62.51
+      "grounding_ms": 78.32
     },
     {
       "question_id": "qst_0380",
@@ -4310,7 +4312,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 73.71
+      "grounding_ms": 76.77
     },
     {
       "question_id": "qst_0381",
@@ -4321,7 +4323,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.08
+      "grounding_ms": 68.49
     },
     {
       "question_id": "qst_0382",
@@ -4332,7 +4334,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.56
+      "grounding_ms": 71.79
     },
     {
       "question_id": "qst_0383",
@@ -4343,7 +4345,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.96
+      "grounding_ms": 76.09
     },
     {
       "question_id": "qst_0384",
@@ -4354,7 +4356,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.28
+      "grounding_ms": 151.26
     },
     {
       "question_id": "qst_0385",
@@ -4365,7 +4367,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.5
+      "grounding_ms": 118.6
     },
     {
       "question_id": "qst_0386",
@@ -4376,7 +4378,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 59.46
+      "grounding_ms": 114.88
     },
     {
       "question_id": "qst_0387",
@@ -4387,7 +4389,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.87
+      "grounding_ms": 75.72
     },
     {
       "question_id": "qst_0388",
@@ -4398,7 +4400,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 34.43
+      "grounding_ms": 110.84
     },
     {
       "question_id": "qst_0389",
@@ -4409,7 +4411,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.85
+      "grounding_ms": 84.51
     },
     {
       "question_id": "qst_0390",
@@ -4420,7 +4422,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.2
+      "grounding_ms": 80.23
     },
     {
       "question_id": "qst_0391",
@@ -4431,7 +4433,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.09
+      "grounding_ms": 95.02
     },
     {
       "question_id": "qst_0392",
@@ -4442,7 +4444,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.14
+      "grounding_ms": 62.59
     },
     {
       "question_id": "qst_0393",
@@ -4453,7 +4455,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.81
+      "grounding_ms": 107.67
     },
     {
       "question_id": "qst_0394",
@@ -4464,7 +4466,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.5
+      "grounding_ms": 85.45
     },
     {
       "question_id": "qst_0395",
@@ -4475,7 +4477,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.54
+      "grounding_ms": 86.91
     },
     {
       "question_id": "qst_0396",
@@ -4486,7 +4488,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.73
+      "grounding_ms": 94.3
     },
     {
       "question_id": "qst_0397",
@@ -4497,7 +4499,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.33
+      "grounding_ms": 310.68
     },
     {
       "question_id": "qst_0398",
@@ -4508,7 +4510,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.14
+      "grounding_ms": 66.32
     },
     {
       "question_id": "qst_0399",
@@ -4519,7 +4521,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 89.72
+      "grounding_ms": 69.13
     },
     {
       "question_id": "qst_0400",
@@ -4530,7 +4532,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.65
+      "grounding_ms": 87.66
     },
     {
       "question_id": "qst_0401",
@@ -4541,7 +4543,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.3
+      "grounding_ms": 112.27
     },
     {
       "question_id": "qst_0402",
@@ -4554,7 +4556,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 97.58
+      "grounding_ms": 172.1
     },
     {
       "question_id": "qst_0403",
@@ -4565,7 +4567,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.36
+      "grounding_ms": 73.29
     },
     {
       "question_id": "qst_0404",
@@ -4576,7 +4578,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.37
+      "grounding_ms": 113.05
     },
     {
       "question_id": "qst_0405",
@@ -4587,7 +4589,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.22
+      "grounding_ms": 79.8
     },
     {
       "question_id": "qst_0406",
@@ -4598,7 +4600,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 51.82
+      "grounding_ms": 74.96
     },
     {
       "question_id": "qst_0407",
@@ -4609,7 +4611,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.68
+      "grounding_ms": 1131.38
     },
     {
       "question_id": "qst_0408",
@@ -4620,7 +4622,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.53
+      "grounding_ms": 99.28
     },
     {
       "question_id": "qst_0409",
@@ -4631,7 +4633,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.62
+      "grounding_ms": 73.04
     },
     {
       "question_id": "qst_0410",
@@ -4642,7 +4644,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 54.17
+      "grounding_ms": 149.43
     },
     {
       "question_id": "qst_0411",
@@ -4657,7 +4659,7 @@
         "dsid_5f3a672da4974781a5577b0f3d4993e9"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 178.34
+      "grounding_ms": 333.85
     },
     {
       "question_id": "qst_0412",
@@ -4672,7 +4674,7 @@
         "dsid_89c0c31e220c4777b15c3c6ff0eff61d"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 76.53
+      "grounding_ms": 233.51
     },
     {
       "question_id": "qst_0413",
@@ -4683,7 +4685,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CONTESTED",
-      "grounding_ms": 46.15
+      "grounding_ms": 79.08
     },
     {
       "question_id": "qst_0414",
@@ -4694,7 +4696,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 81.47
+      "grounding_ms": 241.98
     },
     {
       "question_id": "qst_0415",
@@ -4705,7 +4707,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 90.99
+      "grounding_ms": 189.86
     },
     {
       "question_id": "qst_0416",
@@ -4720,7 +4722,7 @@
         "dsid_8ca703d991844bd195b4b8fdc16040fd"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 110.01
+      "grounding_ms": 184.51
     },
     {
       "question_id": "qst_0417",
@@ -4733,7 +4735,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 66.66
+      "grounding_ms": 326.42
     },
     {
       "question_id": "qst_0418",
@@ -4744,7 +4746,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 144.07
+      "grounding_ms": 144.86
     },
     {
       "question_id": "qst_0419",
@@ -4759,7 +4761,7 @@
         "dsid_db1c1f64721b468dafb35c2e0080a8f8"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 140.17
+      "grounding_ms": 251.45
     },
     {
       "question_id": "qst_0420",
@@ -4774,7 +4776,7 @@
         "dsid_4e65166659394a90922be6a5c7b110a8"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 87.95
+      "grounding_ms": 217.05
     },
     {
       "question_id": "qst_0421",
@@ -4789,7 +4791,7 @@
         "dsid_b8ab9778e36543159da49dba3ad9c76d"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 76.29
+      "grounding_ms": 168.64
     },
     {
       "question_id": "qst_0422",
@@ -4804,7 +4806,7 @@
         "dsid_9cde32cd0645459b80ec513df27d1eb6"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 141.14
+      "grounding_ms": 156.97
     },
     {
       "question_id": "qst_0423",
@@ -4819,7 +4821,7 @@
         "dsid_c5288dd4874345adb80f4a71c9a18773"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 174.37
+      "grounding_ms": 146.62
     },
     {
       "question_id": "qst_0424",
@@ -4834,7 +4836,7 @@
         "dsid_f039509796f842cd84ba3bfb895c7132"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 71.51
+      "grounding_ms": 135.98
     },
     {
       "question_id": "qst_0425",
@@ -4849,7 +4851,7 @@
         "dsid_834de01417d04878b4257f0f03ccbb88"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 96.04
+      "grounding_ms": 187.75
     },
     {
       "question_id": "qst_0426",
@@ -4864,7 +4866,7 @@
         "dsid_c90bd544f3b5437fba711492db31aeea"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 137.96
+      "grounding_ms": 176.75
     },
     {
       "question_id": "qst_0427",
@@ -4879,7 +4881,7 @@
         "dsid_86f033ed92b84f3a8b381d09b0b95357"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 92.47
+      "grounding_ms": 147.67
     },
     {
       "question_id": "qst_0428",
@@ -4892,7 +4894,7 @@
       ],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 71.11
+      "grounding_ms": 163.22
     },
     {
       "question_id": "qst_0429",
@@ -4907,7 +4909,7 @@
         "dsid_96912c22b0b04024b573606105bd5ea0"
       ],
       "graph_state": "CANON",
-      "grounding_ms": 97.25
+      "grounding_ms": 151.91
     },
     {
       "question_id": "qst_0430",
@@ -4918,7 +4920,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 81.8
+      "grounding_ms": 149.48
     },
     {
       "question_id": "qst_0431",
@@ -4929,7 +4931,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 31.28
+      "grounding_ms": 65.83
     },
     {
       "question_id": "qst_0432",
@@ -4940,7 +4942,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.67
+      "grounding_ms": 56.91
     },
     {
       "question_id": "qst_0433",
@@ -4951,7 +4953,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.88
+      "grounding_ms": 65.47
     },
     {
       "question_id": "qst_0434",
@@ -4962,7 +4964,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.59
+      "grounding_ms": 56.29
     },
     {
       "question_id": "qst_0435",
@@ -4973,7 +4975,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.77
+      "grounding_ms": 59.26
     },
     {
       "question_id": "qst_0436",
@@ -4984,7 +4986,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 36.48
+      "grounding_ms": 72.63
     },
     {
       "question_id": "qst_0437",
@@ -4995,7 +4997,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 61.24
+      "grounding_ms": 65.7
     },
     {
       "question_id": "qst_0438",
@@ -5006,7 +5008,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 56.02
+      "grounding_ms": 907.18
     },
     {
       "question_id": "qst_0439",
@@ -5017,7 +5019,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.52
+      "grounding_ms": 65.92
     },
     {
       "question_id": "qst_0440",
@@ -5028,7 +5030,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "CANON",
-      "grounding_ms": 107.1
+      "grounding_ms": 192.85
     },
     {
       "question_id": "qst_0441",
@@ -5039,7 +5041,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 123.82
+      "grounding_ms": 75.72
     },
     {
       "question_id": "qst_0442",
@@ -5050,7 +5052,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 71.45
+      "grounding_ms": 68.9
     },
     {
       "question_id": "qst_0443",
@@ -5061,7 +5063,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.47
+      "grounding_ms": 67.21
     },
     {
       "question_id": "qst_0444",
@@ -5072,7 +5074,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.28
+      "grounding_ms": 105.39
     },
     {
       "question_id": "qst_0445",
@@ -5083,7 +5085,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 57.39
+      "grounding_ms": 73.08
     },
     {
       "question_id": "qst_0446",
@@ -5094,7 +5096,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 67.77
+      "grounding_ms": 68.28
     },
     {
       "question_id": "qst_0447",
@@ -5105,7 +5107,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.08
+      "grounding_ms": 60.94
     },
     {
       "question_id": "qst_0448",
@@ -5116,7 +5118,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.88
+      "grounding_ms": 60.4
     },
     {
       "question_id": "qst_0449",
@@ -5127,7 +5129,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.8
+      "grounding_ms": 61.9
     },
     {
       "question_id": "qst_0450",
@@ -5138,7 +5140,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 53.57
+      "grounding_ms": 59.11
     },
     {
       "question_id": "qst_0451",
@@ -5149,7 +5151,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.99
+      "grounding_ms": 58.61
     },
     {
       "question_id": "qst_0452",
@@ -5160,7 +5162,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 52.92
+      "grounding_ms": 66.96
     },
     {
       "question_id": "qst_0453",
@@ -5171,7 +5173,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.83
+      "grounding_ms": 60.82
     },
     {
       "question_id": "qst_0454",
@@ -5182,7 +5184,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.0
+      "grounding_ms": 58.84
     },
     {
       "question_id": "qst_0455",
@@ -5193,7 +5195,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.11
+      "grounding_ms": 56.91
     },
     {
       "question_id": "qst_0456",
@@ -5204,7 +5206,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.52
+      "grounding_ms": 64.84
     },
     {
       "question_id": "qst_0457",
@@ -5215,7 +5217,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 50.85
+      "grounding_ms": 57.15
     },
     {
       "question_id": "qst_0458",
@@ -5226,7 +5228,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 32.32
+      "grounding_ms": 59.9
     },
     {
       "question_id": "qst_0459",
@@ -5237,7 +5239,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.9
+      "grounding_ms": 57.66
     },
     {
       "question_id": "qst_0460",
@@ -5248,7 +5250,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 146.53
+      "grounding_ms": 62.88
     },
     {
       "question_id": "qst_0461",
@@ -5259,7 +5261,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.98
+      "grounding_ms": 67.03
     },
     {
       "question_id": "qst_0462",
@@ -5270,7 +5272,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.25
+      "grounding_ms": 58.66
     },
     {
       "question_id": "qst_0463",
@@ -5281,7 +5283,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.5
+      "grounding_ms": 59.78
     },
     {
       "question_id": "qst_0464",
@@ -5292,7 +5294,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.02
+      "grounding_ms": 60.51
     },
     {
       "question_id": "qst_0465",
@@ -5303,7 +5305,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.77
+      "grounding_ms": 56.56
     },
     {
       "question_id": "qst_0466",
@@ -5314,7 +5316,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 43.92
+      "grounding_ms": 52.43
     },
     {
       "question_id": "qst_0467",
@@ -5325,7 +5327,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 45.75
+      "grounding_ms": 91.37
     },
     {
       "question_id": "qst_0468",
@@ -5336,7 +5338,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.36
+      "grounding_ms": 67.33
     },
     {
       "question_id": "qst_0469",
@@ -5347,7 +5349,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.47
+      "grounding_ms": 66.95
     },
     {
       "question_id": "qst_0470",
@@ -5358,7 +5360,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 26.93
+      "grounding_ms": 55.44
     },
     {
       "question_id": "qst_0471",
@@ -5369,7 +5371,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.25
+      "grounding_ms": 99.3
     },
     {
       "question_id": "qst_0472",
@@ -5380,7 +5382,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 25.72
+      "grounding_ms": 55.27
     },
     {
       "question_id": "qst_0473",
@@ -5391,7 +5393,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 27.82
+      "grounding_ms": 53.93
     },
     {
       "question_id": "qst_0474",
@@ -5402,7 +5404,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 39.53
+      "grounding_ms": 71.36
     },
     {
       "question_id": "qst_0475",
@@ -5413,7 +5415,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 87.64
+      "grounding_ms": 71.43
     },
     {
       "question_id": "qst_0476",
@@ -5424,7 +5426,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.3
+      "grounding_ms": 53.11
     },
     {
       "question_id": "qst_0477",
@@ -5435,7 +5437,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.25
+      "grounding_ms": 74.03
     },
     {
       "question_id": "qst_0478",
@@ -5446,7 +5448,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.8
+      "grounding_ms": 59.38
     },
     {
       "question_id": "qst_0479",
@@ -5457,7 +5459,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 49.41
+      "grounding_ms": 74.02
     },
     {
       "question_id": "qst_0480",
@@ -5468,7 +5470,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.61
+      "grounding_ms": 61.84
     },
     {
       "question_id": "qst_0481",
@@ -5479,7 +5481,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 46.12
+      "grounding_ms": 101.55
     },
     {
       "question_id": "qst_0482",
@@ -5490,7 +5492,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.68
+      "grounding_ms": 60.14
     },
     {
       "question_id": "qst_0483",
@@ -5501,7 +5503,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.24
+      "grounding_ms": 58.42
     },
     {
       "question_id": "qst_0484",
@@ -5512,7 +5514,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.2
+      "grounding_ms": 63.55
     },
     {
       "question_id": "qst_0485",
@@ -5523,7 +5525,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 42.1
+      "grounding_ms": 67.03
     },
     {
       "question_id": "qst_0486",
@@ -5534,7 +5536,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 38.45
+      "grounding_ms": 62.31
     },
     {
       "question_id": "qst_0487",
@@ -5545,7 +5547,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 26.77
+      "grounding_ms": 70.9
     },
     {
       "question_id": "qst_0488",
@@ -5556,7 +5558,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.76
+      "grounding_ms": 56.14
     },
     {
       "question_id": "qst_0489",
@@ -5567,7 +5569,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.32
+      "grounding_ms": 117.09
     },
     {
       "question_id": "qst_0490",
@@ -5578,7 +5580,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 37.73
+      "grounding_ms": 65.88
     },
     {
       "question_id": "qst_0491",
@@ -5589,7 +5591,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.54
+      "grounding_ms": 92.26
     },
     {
       "question_id": "qst_0492",
@@ -5600,7 +5602,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 29.77
+      "grounding_ms": 61.77
     },
     {
       "question_id": "qst_0493",
@@ -5611,7 +5613,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.52
+      "grounding_ms": 60.54
     },
     {
       "question_id": "qst_0494",
@@ -5622,7 +5624,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.34
+      "grounding_ms": 61.56
     },
     {
       "question_id": "qst_0495",
@@ -5633,7 +5635,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 28.19
+      "grounding_ms": 66.84
     },
     {
       "question_id": "qst_0496",
@@ -5644,7 +5646,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 35.54
+      "grounding_ms": 62.57
     },
     {
       "question_id": "qst_0497",
@@ -5655,7 +5657,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 30.68
+      "grounding_ms": 68.6
     },
     {
       "question_id": "qst_0498",
@@ -5666,7 +5668,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 40.37
+      "grounding_ms": 63.5
     },
     {
       "question_id": "qst_0499",
@@ -5677,7 +5679,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 44.85
+      "grounding_ms": 95.96
     },
     {
       "question_id": "qst_0500",
@@ -5688,7 +5690,7 @@
       "pinned_doc_ids": [],
       "expected_docs_dropped": [],
       "graph_state": "UNKNOWN",
-      "grounding_ms": 41.2
+      "grounding_ms": 66.02
     }
   ]
 }
