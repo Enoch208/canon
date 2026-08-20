@@ -338,6 +338,12 @@ the graph is for.
 The wider the retrieval, the more retired truth leaks into the baseline. Canon stays at 1 — the
 contested claim, where dropping anything would be wrong.
 
+**The effect is not model-specific.** The same 20 conflict questions, same contexts, answered by
+a much weaker model (`claude-haiku-4-5`) and scored by the same official harness: baseline
+**75.0%** → Temporal Cut **80.0%** (`evidence/second_model.json`). A stronger model and a weaker
+model both improve when the graph fixes the evidence, because the intervention never depended on
+the model — it fixes what the model is allowed to read.
+
 ### The safety envelope: all 500 questions
 
 A grounding layer that helps on 20 questions and silently corrupts the other 480 would be
