@@ -43,10 +43,12 @@ Only the context topology changes.
 
 ## Judge Canon in 90 seconds
 
-**Live console: [canon-bay.vercel.app](https://canon-bay.vercel.app)** — the frontend is on
-Vercel; the API, HydraDB, and the full 511,958-document corpus are served live from the
-development machine, so the site is up whenever that machine is. Everything below also runs
-locally in four commands.
+**Live console: [canon-bay.vercel.app](https://canon-bay.vercel.app)** — frontend on Vercel,
+and behind it a dedicated server running the real thing: HydraDB OSS against its S3 backend, the
+FastAPI service, and the full 511,958-document corpus indexed on that machine from the published
+dataset. No snapshot, no cached analytics — every answer on the live site is a live HydraDB
+traversal, and the graph going down takes the answers with it. Everything also runs locally in
+four commands.
 
 Four numbers, all reproducible from this repository:
 
