@@ -243,8 +243,10 @@ actually depends on (`evidence/hydra_perf.json`):
   that was really an infrastructure artifact.
 - **The 1024-row truncation catch.** Person and Alias counts both read exactly 1,024 — suspicious
   in the way only powers of two are. The count was implemented by counting returned rows, and the
-  server caps result sets at 1024. Real values: 35,703 and 4,193. Every count in the product now
-  uses a server-side `count(*)`.
+  server caps result sets at 1024. Real values: 35,703 Person and 4,193 Alias nodes materialised
+  in HydraDB — the stratified sample of the corpus-wide identity index, whose full totals live in
+  the Identity resolution section below. Every count in the product now uses a server-side
+  `count(*)`.
 - **Paid work is never lost.** The benchmark runner validates its output path *before* spending on
   API calls, records `answers_completed` and the verbatim error when a provider dies mid-run, and
   a `--limit` smoke run writes to `partial.json` — it can never overwrite the headline results.
@@ -287,7 +289,9 @@ judge `claude-sonnet-4-6`) — their harness, their judge, their gold answers:
 | Combined (corr × comp) | 56.84 | 56.26 | **65.82** | 59.85 |
 | Document recall | 80.0% | 72.5% | 52.5% | 52.5% |
 
-**The middle column carries no claim-graph note** — nothing tells the model which value is current —
+**The no-note arm is Canon's production behavior** — `/v1/ground` returns evidence and proof,
+never an answer hint, so `canon_filtered` is the configuration the product ships and the note arm
+is kept as an ablation. Nothing tells the model which value is current —
 and it still moves correctness from 70.0% to 82.5%. Context topology alone does the work. Document
 recall falls by construction: the harness counts *both* conflicting gold documents as expected, and
 Canon removes the superseded one on purpose. That trade — recall for correctness — is the product.
@@ -371,10 +375,19 @@ curl -X POST localhost:8000/v1/ground -H 'Content-Type: application/json' -d '{
   "question": "What monthly token volume discount breakpoints apply for Hosted pricing?",
   "mode": "current"
 }'
-# → { "state": "CANON", "answer_value": "250k / 2M / 10M",
-#     "current_evidence": [...], "suppressed_evidence": [...],
-#     "historical_evidence": [...], "backfill_evidence": [...], "proof": [...] }
+# → a Temporal Context Receipt:
+# { "state": "CANON", "answer_value": "250k / 2M / 10M",
+#   "input_ranking": [10 doc ids as BM25 returned them],
+#   "cut": [{ "doc_id", "claim_key", "transition", "temporal_quality", "evidence_span" }],
+#   "current_evidence": [...], "suppressed_evidence": [...], "backfill_evidence": [...],
+#   "final_context": [...], "context_sha256": "…",
+#   "hydra_query_ids": [...], "proof": [17 HydraDB query cards] }
 ```
+
+Every grounding decision ships as **proof-carrying context**: the ranking that came in, the exact
+cut set with the supersession that justifies each cut, the context that went out, a hash of it,
+and the HydraDB query ids that decided it. An auditor can replay the decision without trusting
+the service.
 
 **It fails closed.** If HydraDB is unreachable, `/v1/ground` returns `503
 TEMPORAL_GRAPH_UNAVAILABLE` instead of silently degrading to plain retrieval — turn the graph off
@@ -399,8 +412,10 @@ RESOLVED 182,249 · PROBABLE 48,190 · AMBIGUOUS 21,059
 
 `Grace O'Connor`, `Grace Oconnor` and `AM Grace O'Connor` collapse onto one person. `Alyssa Chen`
 exists at three different companies, so that alias stays ambiguous — the graph shows the fork
-instead of guessing. `evidence/entities.json` records both the corpus totals and the stratified
-sample materialised into HydraDB.
+instead of guessing. Two scales, labelled exactly: the numbers above are the **corpus-wide
+identity index** built by the deterministic scan (177,377 people / 251,498 aliases, held in the
+lexical store); a **stratified sample of 35,703 Person and 4,193 Alias nodes** is materialised as
+real HydraDB vertices for graph traversal. `evidence/entities.json` records both.
 
 ## The live console
 
