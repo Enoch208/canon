@@ -190,28 +190,50 @@ export function CutClient({
         <div className="rounded-lg border border-retired/30 bg-surface p-6">
           <div className="flex items-center justify-between">
             <p className="text-[10px] font-light tracking-[0.2em] text-faint uppercase">
-              Baseline answer · model-judged {baselineCorrect === false ? "incorrect" : ""}
+              Plain retrieval
             </p>
             {baselineCorrect === false ? (
-              <Icon name="cancel-circle" size={18} className="text-retired" />
+              <span className="flex items-center gap-2 font-mono text-[10px] tracking-[0.14em] text-retired uppercase">
+                model-judged incorrect
+                <Icon name="cancel-circle" size={18} className="text-retired" />
+              </span>
             ) : null}
           </div>
-          <p className="pt-3 text-sm leading-relaxed font-light text-muted">
+          <p className="pt-4 text-[10px] font-light tracking-[0.2em] text-faint uppercase">
+            Value left in its context
+          </p>
+          <p className="pt-1 font-mono text-2xl font-light text-retired line-through decoration-retired/40">
+            {oldValue}
+          </p>
+          <p className="pt-4 text-sm leading-relaxed font-light text-muted">
             {baselineAnswer ?? "not generated"}
           </p>
         </div>
         <div className="rounded-lg border border-accent/30 bg-surface p-6">
           <div className="flex items-center justify-between">
             <p className="text-[10px] font-light tracking-[0.2em] text-faint uppercase">
-              Temporal Cut answer · model-judged {canonCorrect ? "correct" : ""}
+              Temporal Cut
             </p>
-            {canonCorrect ? <Icon name="checkmark-circle-02" size={18} className="text-accent" /> : null}
+            {canonCorrect ? (
+              <span className="flex items-center gap-2 font-mono text-[10px] tracking-[0.14em] text-accent uppercase">
+                model-judged correct
+                <Icon name="checkmark-circle-02" size={18} className="text-accent" />
+              </span>
+            ) : null}
           </div>
-          <p className="pt-3 text-sm leading-relaxed font-light text-muted">
+          <p className="pt-4 text-[10px] font-light tracking-[0.2em] text-faint uppercase">
+            Value left in its context
+          </p>
+          <p className="pt-1 font-mono text-2xl font-light text-accent">{newValue}</p>
+          <p className="pt-4 text-sm leading-relaxed font-light text-muted">
             {canonAnswer ?? "not generated"}
           </p>
         </div>
       </section>
+
+      <p className="text-center font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+        Same BM25 · same model · same prompt · same 10-document budget
+      </p>
 
       <section className="rounded-lg border border-line bg-surface">
         <button
